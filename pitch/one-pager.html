@@ -5,97 +5,148 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Scheda Politica — one-pager</title>
 <style>
-  :root{--ink:#111827;--ink2:#3F4A5C;--mute:#66707F;--line:#D8DEE8;--accent:#0A7C74}
+  :root{
+    --ink:#0E1726; --ink2:#3C4859; --mute:#6B7688; --line:#DCE2EC;
+    --teal:#0A7C74; --teal-soft:#E4F3F1; --red:#C0392B; --red-soft:#FBEAE8; --sand:#F4F6FA;
+  }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:#EEF1F6}
-  body{font:400 10.5pt/1.45 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink)}
-  .sheet{background:#fff;width:210mm;min-height:297mm;margin:12mm auto;padding:14mm 16mm;box-shadow:0 2px 14px rgba(16,24,40,.12)}
-  h1{font-size:16pt;line-height:1.1;margin:0 0 2mm;letter-spacing:-.02em}
-  h2{font-size:10pt;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:5mm 0 1.5mm;padding-bottom:1mm;border-bottom:1px solid var(--line)}
-  p{margin:0 0 1.8mm}
-  .lede{font-size:11pt;color:var(--ink2);margin:0 0 1mm}
-  .note{font-size:8.5pt;color:var(--mute);font-style:italic;margin:0 0 4mm}
-  strong{font-weight:600}
-  ul,ol{margin:0 0 1.5mm;padding-left:4.5mm}
-  li{margin:0 0 1.1mm}
-  table{border-collapse:collapse;width:100%;font-size:9.5pt;margin:0 0 1mm}
-  th,td{text-align:left;padding:1.2mm 2mm;border-bottom:1px solid var(--line)}
-  th{font-size:8.5pt;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);font-weight:600}
-  td:not(:first-child),th:not(:first-child){text-align:right}
-  .fill{background:#FFF3C4;padding:0 .6mm;border-radius:2px}
-  .foot{margin-top:5mm;padding-top:2.5mm;border-top:1px solid var(--line);font-size:9.5pt}
-  .badge{display:inline-block;font-size:8pt;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:.6mm 2mm;border-radius:99px;vertical-align:2px;margin-left:2mm}
+  html,body{margin:0;padding:0;background:#E9EDF3}
+  body{font:400 10.4pt/1.42 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  .sheet{background:#fff;width:210mm;min-height:277mm;margin:10mm auto;padding:15mm 15mm 0;
+    display:flex;flex-direction:column;justify-content:space-between;
+    box-shadow:0 3px 18px rgba(14,23,38,.14)}
+
+  /* header */
+  .top{display:flex;align-items:flex-start;justify-content:space-between;gap:8mm;border-bottom:2px solid var(--ink);padding-bottom:4mm}
+  h1{margin:0;font-size:22pt;line-height:1;letter-spacing:-.03em;font-weight:700}
+  h1 span{color:var(--teal)}
+  .claim{margin:2.5mm 0 0;font-size:11.8pt;line-height:1.3;color:var(--ink2);max-width:108mm}
+  .claim b{color:var(--ink)}
+  .stamp{flex:0 0 auto;text-align:right;font-size:7.6pt;letter-spacing:.11em;text-transform:uppercase;color:var(--mute);line-height:1.5;padding-top:1mm}
+  .stamp strong{display:block;font-size:8.2pt;letter-spacing:.07em;color:var(--teal)}
+
+  /* kpi */
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);padding:1mm 0 4mm;border-bottom:1px solid var(--line)}
+  .kpi div{padding:0 5mm;border-left:1px solid var(--line)}
+  .kpi div:first-child{padding-left:0;border-left:0}
+  .kpi b{display:block;font-size:27pt;line-height:1;letter-spacing:-.045em;color:var(--teal);font-weight:700}
+  .kpi span{display:block;margin-top:1.4mm;font-size:8.8pt;color:var(--mute);line-height:1.35}
+
+  /* blocchi */
+  .block{display:block}
+  h2{margin:0 0 3.5mm;font-size:8pt;text-transform:uppercase;letter-spacing:.15em;color:var(--mute);font-weight:600;display:flex;align-items:center;gap:3mm}
+  h2:after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* schede */
+  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm}
+  .card{border:1px solid var(--line);border-radius:3mm;padding:3.2mm 2.8mm;background:var(--sand);min-height:20mm}
+  .card strong{display:block;font-size:9.8pt;letter-spacing:-.01em}
+  .card em{display:block;font-style:normal;margin-top:1.6mm;font-size:8.2pt;color:var(--mute);line-height:1.5}
+  .card b{font-weight:700;color:var(--teal)}
+
+  /* is / is not */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:4.5mm}
+  .box{border-radius:3mm;padding:3.6mm 4mm 4mm}
+  .box h3{margin:0 0 2.4mm;font-size:9pt;text-transform:uppercase;letter-spacing:.11em;font-weight:700}
+  .box ul{margin:0;padding:0;list-style:none}
+  .box li{position:relative;padding-left:5mm;margin:0 0 1.9mm;font-size:9.6pt;line-height:1.35}
+  .box li:last-child{margin-bottom:0}
+  .box li:before{position:absolute;left:0;top:0;font-weight:700}
+  .yes{background:var(--teal-soft)} .yes h3{color:var(--teal)} .yes li:before{content:"✓";color:var(--teal)}
+  .no{background:var(--red-soft)}   .no h3{color:var(--red)}   .no li:before{content:"✕";color:var(--red)}
+
+  /* ask */
+  .asks{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;counter-reset:ask}
+  .ask{border:1px solid var(--line);border-top:2.5px solid var(--teal);border-radius:0 0 3mm 3mm;padding:3.2mm 3.4mm 3.6mm;counter-increment:ask}
+  .ask:before{content:counter(ask);display:block;font-size:7.8pt;font-weight:700;color:var(--teal);letter-spacing:.1em;margin-bottom:1.4mm}
+  .ask strong{display:block;font-size:9.6pt;margin-bottom:1mm}
+  .ask span{font-size:8.6pt;color:var(--mute);line-height:1.4}
+
+  /* quote */
+  .quote{padding-left:5.5mm;border-left:3px solid var(--teal)}
+  .quote p{margin:0;font-size:16pt;line-height:1.24;letter-spacing:-.02em;font-weight:500;color:var(--ink);max-width:158mm}
+
+  /* footer */
+  .foot{background:var(--ink);color:#fff;padding:4mm 4.5mm;border-radius:3mm 3mm 0 0;display:flex;align-items:center;justify-content:space-between;gap:5mm}
+  .foot .promise{font-size:9.2pt;letter-spacing:.005em}
+  .foot .promise b{color:#7FD8CF}
+  .foot .me{text-align:right;font-size:8.6pt;line-height:1.5;color:#C9D3E1}
+  .foot .me strong{color:#fff;font-size:9.2pt}
+
   @media print{
     html,body{background:#fff}
-    .sheet{margin:0;box-shadow:none;width:auto;min-height:0;padding:0}
-    @page{size:A4;margin:14mm}
+    .sheet{margin:0;box-shadow:none;width:auto;min-height:0;padding:0;height:277mm}
+    .foot{border-radius:0}
+    @page{size:A4;margin:10mm}
   }
 </style>
 </head>
 <body>
 <div class="sheet">
 
-  <h1>Scheda Politica <span class="badge">one-pager</span></h1>
-  <p class="note">Documento di una pagina. Sostituire i campi evidenziati prima dell'invio.</p>
+  <header class="top">
+    <div>
+      <h1>Scheda <span>Politica</span></h1>
+      <p class="claim">Un test anonimo che ti dice <b>dove ti collochi</b> e quanto sei vicino alle liste della tua città.</p>
+    </div>
+    <div class="stamp"><strong>one-pager</strong>comunali 2027</div>
+  </header>
 
-  <p class="lede"><strong>In una riga.</strong> Un questionario anonimo che mostra a chi lo compila dove si colloca su 2-8 assi tematici e quanto è vicino alle liste che si presentano nella sua città.</p>
+  <section class="kpi">
+    <div><b>5</b><span>schede attive<br>nazionale + 4 città</span></div>
+    <div><b>39</b><span>capoluoghi al voto<br>primavera 2027</span></div>
+    <div><b>0</b><span>dati raccolti<br>nessun server</span></div>
+  </section>
 
-  <h2>Il formato, in numeri</h2>
-  <table>
-    <thead>
-      <tr><th>Scheda</th><th>Sezioni</th><th>Domande</th><th>Assi</th><th>Liste confrontate</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Nazionale</td><td>12</td><td>224</td><td>8</td><td>12</td></tr>
-      <tr><td>Bologna</td><td>6</td><td>30</td><td>5</td><td>7</td></tr>
-      <tr><td>Milano</td><td>4</td><td>20</td><td>4</td><td>6</td></tr>
-      <tr><td>Rimini</td><td>3</td><td>10</td><td>3</td><td>4</td></tr>
-      <tr><td>Todi</td><td>3</td><td>11</td><td>2</td><td>2</td></tr>
-    </tbody>
-  </table>
-  <p>Gratuito, senza registrazione, utilizzabile da telefono e <strong>anche offline</strong> dopo il primo accesso. Nessuna app da installare.</p>
+  <section class="block">
+    <h2>Le schede</h2>
+    <div class="cards">
+      <div class="card"><strong>Nazionale</strong><em><b>224</b> domande<br>8 assi · <b>12</b> liste</em></div>
+      <div class="card"><strong>Bologna</strong><em><b>30</b> domande<br>5 assi · <b>7</b> liste</em></div>
+      <div class="card"><strong>Milano</strong><em><b>20</b> domande<br>4 assi · <b>6</b> liste</em></div>
+      <div class="card"><strong>Rimini</strong><em><b>10</b> domande<br>3 assi · <b>4</b> liste</em></div>
+      <div class="card"><strong>Todi</strong><em><b>11</b> domande<br>2 assi · <b>2</b> liste</em></div>
+    </div>
+  </section>
 
-  <h2>Cosa non è (la parte che conta per una redazione)</h2>
-  <ul>
-    <li><strong>Non è un sondaggio.</strong> Non è un campione, non produce stime sull'elettorato e non pubblichiamo percentuali come se lo fossero.</li>
-    <li><strong>Non raccoglie dati.</strong> Nessun account, nessun server, nessun cookie di tracciamento, nessun servizio esterno: font e immagini sono incorporati nel file. Le risposte restano nel browser e il link di condivisione contiene solo i numeri delle risposte, non le note libere.</li>
-    <li><strong>Non fa endorsement.</strong> Nessuna classifica di candidati, nessun "vota X", nessuna indicazione di voto.</li>
-    <li><strong>Non è un partito, un comitato o una lista.</strong> È un progetto personale con un comitato di garanzia in costituzione.</li>
-  </ul>
+  <section class="block split">
+    <div class="box yes">
+      <h3>È</h3>
+      <ul>
+        <li><b>Anonimo</b>: senza registrazione, senza account</li>
+        <li><b>Gratuito e offline</b> dopo il primo accesso</li>
+        <li><b>Documentato</b>: una fonte per ogni domanda</li>
+        <li><b>Datato</b>: changelog pubblico delle modifiche</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <h3>Non è</h3>
+      <ul>
+        <li><b>Un sondaggio</b>: nessun campione né stime</li>
+        <li><b>Una raccolta dati</b>: nessun tracking</li>
+        <li><b>Un endorsement</b>: nessun voto indicato</li>
+        <li><b>Una lista o un comitato</b> politico</li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Perché è verificabile</h2>
-  <ul>
-    <li>Ogni domanda ha una <strong>guida</strong> che spiega da dove nasce (atti del Consiglio comunale, stampa locale, programmi, proposte dei civici).</li>
-    <li>Le attribuzioni di posizione alle liste sono <strong>dichiarate, datate e tracciate</strong> con changelog pubblico.</li>
-    <li><strong>Data dell'ultimo aggiornamento</strong> visibile in ogni pagina, città per città.</li>
-    <li>Metodo e limiti scritti in chiaro, a partire dal fatto che la versione è pilota: i candidati 2027 non sono ancora noti e non esistono programmi ufficiali.</li>
-  </ul>
+  <section class="block">
+    <h2>Cosa chiedo</h2>
+    <div class="asks">
+      <div class="ask"><strong>Un widget da incorporare</strong><span>Nella vostra pagina elezioni. Pronto in 24 ore, zero lavoro redazionale.</span></div>
+      <div class="ask"><strong>Un pezzo</strong><span>Con i dati d'uso che vi fornisco, senza aggregati.</span></div>
+      <div class="ask"><strong>Una verifica</strong><span>Controllate le attribuzioni alle liste: vi cito come verificatori.</span></div>
+    </div>
+  </section>
 
-  <h2>Le tre obiezioni che avete in mente</h2>
-  <ol>
-    <li><strong>Chi aggiorna le schede a maggio 2027?</strong> Io, con changelog pubblico e una data per città. Ogni attribuzione contestata viene corretta e la correzione resta visibile.</li>
-    <li><strong>E i 15 giorni di blackout prima del voto?</strong> Nessun dato aggregato viene pubblicato in quel periodo: l'interruttore esiste già ed è accompagnato da una nota pubblica che spiega il motivo (l. 28/2000 art. 8; regolamento AGCOM 256/10/CSP art. 7).</li>
-    <li><strong>Quanto è accurato il confronto con le liste?</strong> Ogni lista è confrontata solo sulle domande in cui esiste una posizione documentata; dove non c'è, la pagina dichiara "nessuna base" invece di indovinare.</li>
-  </ol>
+  <section class="quote">
+    <p>Un questionario che non raccoglie dati è una scelta, non una dimenticanza.</p>
+  </section>
 
-  <h2>Cosa chiediamo (una delle tre, non tutte)</h2>
-  <ol>
-    <li><strong>Un widget incorporabile</strong> nella vostra pagina sulle elezioni: iframe, nessun tracciamento, nessun lavoro redazionale, pronto in 24 ore per la vostra città.</li>
-    <li><strong>Un pezzo</strong>: "un test per capire dove ti colloca quello che pensi", con i dati di utilizzo che vi fornisco.</li>
-    <li><strong>Una partnership di verifica</strong>: controllate le attribuzioni di posizione prima della pubblicazione e vi citiamo come verificatori.</li>
-  </ol>
-
-  <h2>Cosa offriamo</h2>
-  <ul>
-    <li>Nessun costo, nessuna esclusiva, nessuna richiesta di pubblicità o di visibilità sul vostro dominio.</li>
-    <li>Contenuti e codice riutilizzabili e adattabili alla vostra città.</li>
-    <li>Nessun dato dei vostri lettori, in nessun caso e in nessuna forma.</li>
-  </ul>
-
-  <h2>Stato</h2>
-  <p>Online dal <span class="fill">[data]</span>. <span class="fill">[XX.XXX]</span> questionari completati, <span class="fill">[XX]</span> citazioni stampa, pilota su 4 città più la scheda nazionale. Nel 2027 vanno al voto circa 2.000 comuni e almeno 38 capoluoghi di provincia, tra cui Milano, Bologna, Rimini, Roma, Torino, Napoli e Palermo: le schede già pronte coprono tre di queste città.</p>
-
-  <p class="foot"><strong>Contatti:</strong> <span class="fill">[nome e cognome]</span> · <span class="fill">[email]</span> · <span class="fill">[sito]</span></p>
+  <footer class="foot">
+    <div class="promise">Nessun server. Nessun account. <b>Nessun tracciamento.</b></div>
+    <div class="me"><strong>[nome e cognome]</strong><br>[email] · [sito]</div>
+  </footer>
 
 </div>
 </body>
