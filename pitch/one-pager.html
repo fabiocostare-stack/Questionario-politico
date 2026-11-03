@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scheda Politica — one-pager</title>
+<style>
+  :root{--ink:#111827;--ink2:#3F4A5C;--mute:#66707F;--line:#D8DEE8;--accent:#0A7C74}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#EEF1F6}
+  body{font:400 10.5pt/1.45 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink)}
+  .sheet{background:#fff;width:210mm;min-height:297mm;margin:12mm auto;padding:14mm 16mm;box-shadow:0 2px 14px rgba(16,24,40,.12)}
+  h1{font-size:16pt;line-height:1.1;margin:0 0 2mm;letter-spacing:-.02em}
+  h2{font-size:10pt;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:5mm 0 1.5mm;padding-bottom:1mm;border-bottom:1px solid var(--line)}
+  p{margin:0 0 1.8mm}
+  .lede{font-size:11pt;color:var(--ink2);margin:0 0 1mm}
+  .note{font-size:8.5pt;color:var(--mute);font-style:italic;margin:0 0 4mm}
+  strong{font-weight:600}
+  ul,ol{margin:0 0 1.5mm;padding-left:4.5mm}
+  li{margin:0 0 1.1mm}
+  table{border-collapse:collapse;width:100%;font-size:9.5pt;margin:0 0 1mm}
+  th,td{text-align:left;padding:1.2mm 2mm;border-bottom:1px solid var(--line)}
+  th{font-size:8.5pt;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);font-weight:600}
+  td:not(:first-child),th:not(:first-child){text-align:right}
+  .fill{background:#FFF3C4;padding:0 .6mm;border-radius:2px}
+  .foot{margin-top:5mm;padding-top:2.5mm;border-top:1px solid var(--line);font-size:9.5pt}
+  .badge{display:inline-block;font-size:8pt;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--accent);padding:.6mm 2mm;border-radius:99px;vertical-align:2px;margin-left:2mm}
+  @media print{
+    html,body{background:#fff}
+    .sheet{margin:0;box-shadow:none;width:auto;min-height:0;padding:0}
+    @page{size:A4;margin:14mm}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <h1>Scheda Politica <span class="badge">one-pager</span></h1>
+  <p class="note">Documento di una pagina. Sostituire i campi evidenziati prima dell'invio.</p>
+
+  <p class="lede"><strong>In una riga.</strong> Un questionario anonimo che mostra a chi lo compila dove si colloca su 2-8 assi tematici e quanto è vicino alle liste che si presentano nella sua città.</p>
+
+  <h2>Il formato, in numeri</h2>
+  <table>
+    <thead>
+      <tr><th>Scheda</th><th>Sezioni</th><th>Domande</th><th>Assi</th><th>Liste confrontate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Nazionale</td><td>12</td><td>224</td><td>8</td><td>12</td></tr>
+      <tr><td>Bologna</td><td>6</td><td>30</td><td>5</td><td>7</td></tr>
+      <tr><td>Milano</td><td>4</td><td>20</td><td>4</td><td>6</td></tr>
+      <tr><td>Rimini</td><td>3</td><td>10</td><td>3</td><td>4</td></tr>
+      <tr><td>Todi</td><td>3</td><td>11</td><td>2</td><td>2</td></tr>
+    </tbody>
+  </table>
+  <p>Gratuito, senza registrazione, utilizzabile da telefono e <strong>anche offline</strong> dopo il primo accesso. Nessuna app da installare.</p>
+
+  <h2>Cosa non è (la parte che conta per una redazione)</h2>
+  <ul>
+    <li><strong>Non è un sondaggio.</strong> Non è un campione, non produce stime sull'elettorato e non pubblichiamo percentuali come se lo fossero.</li>
+    <li><strong>Non raccoglie dati.</strong> Nessun account, nessun server, nessun cookie di tracciamento, nessun servizio esterno: font e immagini sono incorporati nel file. Le risposte restano nel browser e il link di condivisione contiene solo i numeri delle risposte, non le note libere.</li>
+    <li><strong>Non fa endorsement.</strong> Nessuna classifica di candidati, nessun "vota X", nessuna indicazione di voto.</li>
+    <li><strong>Non è un partito, un comitato o una lista.</strong> È un progetto personale con un comitato di garanzia in costituzione.</li>
+  </ul>
+
+  <h2>Perché è verificabile</h2>
+  <ul>
+    <li>Ogni domanda ha una <strong>guida</strong> che spiega da dove nasce (atti del Consiglio comunale, stampa locale, programmi, proposte dei civici).</li>
+    <li>Le attribuzioni di posizione alle liste sono <strong>dichiarate, datate e tracciate</strong> con changelog pubblico.</li>
+    <li><strong>Data dell'ultimo aggiornamento</strong> visibile in ogni pagina, città per città.</li>
+    <li>Metodo e limiti scritti in chiaro, a partire dal fatto che la versione è pilota: i candidati 2027 non sono ancora noti e non esistono programmi ufficiali.</li>
+  </ul>
+
+  <h2>Le tre obiezioni che avete in mente</h2>
+  <ol>
+    <li><strong>Chi aggiorna le schede a maggio 2027?</strong> Io, con changelog pubblico e una data per città. Ogni attribuzione contestata viene corretta e la correzione resta visibile.</li>
+    <li><strong>E i 15 giorni di blackout prima del voto?</strong> Nessun dato aggregato viene pubblicato in quel periodo: l'interruttore esiste già ed è accompagnato da una nota pubblica che spiega il motivo (l. 28/2000 art. 8; regolamento AGCOM 256/10/CSP art. 7).</li>
+    <li><strong>Quanto è accurato il confronto con le liste?</strong> Ogni lista è confrontata solo sulle domande in cui esiste una posizione documentata; dove non c'è, la pagina dichiara "nessuna base" invece di indovinare.</li>
+  </ol>
+
+  <h2>Cosa chiediamo (una delle tre, non tutte)</h2>
+  <ol>
+    <li><strong>Un widget incorporabile</strong> nella vostra pagina sulle elezioni: iframe, nessun tracciamento, nessun lavoro redazionale, pronto in 24 ore per la vostra città.</li>
+    <li><strong>Un pezzo</strong>: "un test per capire dove ti colloca quello che pensi", con i dati di utilizzo che vi fornisco.</li>
+    <li><strong>Una partnership di verifica</strong>: controllate le attribuzioni di posizione prima della pubblicazione e vi citiamo come verificatori.</li>
+  </ol>
+
+  <h2>Cosa offriamo</h2>
+  <ul>
+    <li>Nessun costo, nessuna esclusiva, nessuna richiesta di pubblicità o di visibilità sul vostro dominio.</li>
+    <li>Contenuti e codice riutilizzabili e adattabili alla vostra città.</li>
+    <li>Nessun dato dei vostri lettori, in nessun caso e in nessuna forma.</li>
+  </ul>
+
+  <h2>Stato</h2>
+  <p>Online dal <span class="fill">[data]</span>. <span class="fill">[XX.XXX]</span> questionari completati, <span class="fill">[XX]</span> citazioni stampa, pilota su 4 città più la scheda nazionale. Nel 2027 vanno al voto circa 2.000 comuni e almeno 38 capoluoghi di provincia, tra cui Milano, Bologna, Rimini, Roma, Torino, Napoli e Palermo: le schede già pronte coprono tre di queste città.</p>
+
+  <p class="foot"><strong>Contatti:</strong> <span class="fill">[nome e cognome]</span> · <span class="fill">[email]</span> · <span class="fill">[sito]</span></p>
+
+</div>
+</body>
+</html>
