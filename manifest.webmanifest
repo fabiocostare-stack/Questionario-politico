@@ -3,7 +3,7 @@
  "short_name": "Scheda",
  "description": "Dove ti colloca quello che pensi? Questionario politico anonimo, nazionale e comunale.",
  "lang": "it",
- "id": "./",
+ "id": "scheda-politica-app",
  "start_url": "./index.html",
  "scope": "./",
  "display": "standalone",
