@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+import json
+G={}
+G[11]=dict(what="Se prorogare ancora le zone a vigilanza rafforzata di Bolognina, Montagnola e stazione, in vigore fino al 31 marzo 2027.",
+ agree="Chi è d'accordo cita i dati della Prefettura sul calo dei reati nelle aree interessate e sostiene che la percezione di sicurezza dei residenti sia migliorata.",
+ disagree="Chi è in disaccordo osserva che i provvedimenti di allontanamento colpiscono soprattutto persone senza dimora, che i dati completi non sono pubblici e che il fenomeno tende a spostarsi di qualche via.")
+G[12]=dict(what="Se la spesa per la Polizia locale debba crescere più delle altre voci di bilancio.",
+ agree="Chi è d'accordo ricorda che i controlli nelle zone rosse e sulla velocità richiedono personale, che l'organico è sotto i livelli storici e che la sicurezza è la prima richiesta dei residenti.",
+ disagree="Chi è in disaccordo sostiene che il bilancio è una scelta tra priorità: ogni euro in più agli agenti è un euro in meno a scuola, sociale e manutenzioni, e che la sicurezza non dipende solo dal numero di divise.")
+G[13]=dict(what="Se il Comune debba continuare a distribuire materiali sterili per ridurre i rischi sanitari del consumo di droga.",
+ agree="Chi è d'accordo cita le evidenze sanitarie: la riduzione del danno abbassa infezioni e decessi senza aumentare i consumi, e alleggerisce pronto soccorso e servizi sociali.",
+ disagree="Chi è in disaccordo ritiene che distribuire materiali significhi tollerare il consumo, che lo Stato debba concentrarsi su cura e repressione e che la misura vada decisa a livello nazionale.")
+G[14]=dict(what="Se l'accoglienza dei richiedenti asilo a Bologna debba essere ridotta.",
+ agree="Chi è d'accordo sostiene che i numeri di arrivi e le strutture disponibili non siano più sostenibili, che l'accoglienza diffusa pesi sui quartieri e chiede che la competenza resti allo Stato.",
+ disagree="Chi è in disaccordo ricorda che l'accoglienza è un obbligo di legge e costituzionale, che il Comune non decide i flussi e che ridurre i servizi significa lasciare persone senza tutele nelle strade della città.")
+G[15]=dict(what="Se la tariffa dei rifiuti debba restare invariata anche nel 2027, come annunciato dall'amministrazione.",
+ agree="Chi è d'accordo cita il costo del servizio in aumento e il peso della tassa sulle famiglie, e sostiene che i tagli statali non vadano scaricati sui cittadini.",
+ disagree="Chi è in disaccordo osserva che congelare la tariffa significa coprire la differenza con altre entrate o con meno servizi, e che un costo non pagato oggi torna come arretrato o come degrado.")
+G[16]=dict(what="Se la bolletta dei rifiuti debba dipendere da quanta indifferenziata produce ogni famiglia.",
+ agree="Chi è d'accordo sostiene che far pagare in base a quanto si conferisce incentivi la raccolta differenziata e premi chi si impegna, e cita i comuni che hanno adottato la tariffa puntuale.",
+ disagree="Chi è in disaccordo segnala che le famiglie numerose producono più rifiuti per definizione, che la misura richiede contenitori tracciati e controlli e che rischia di favorire il conferimento irregolare.")
+G[17]=dict(what="Se, per mantenere i servizi, il Comune debba aumentare le tasse locali.",
+ agree="Chi è d'accordo sostiene che i tagli ai trasferimenti statali hanno già ridotto i margini, che i servizi hanno un costo e che l'alternativa è chiuderli.",
+ disagree="Chi è in disaccordo ricorda che Bologna ha già una pressione fiscale locale tra le più alte, che l'aumento colpisce famiglie e imprese e che la priorità è ridurre la spesa improduttiva.")
+G[18]=dict(what="Se la tassa di soggiorno debba essere alzata per finanziare i servizi ai residenti.",
+ agree="Chi è d'accordo sostiene che il turismo generi costi, dalla pulizia ai trasporti alla sicurezza, oggi pagati dai residenti, e che l'imposta faccia pagare chi usa la città per pochi giorni.",
+ disagree="Chi è in disaccordo teme un calo delle presenze, ricorda che l'imposta ha già fasce massime fissate e che le strutture ricettive la considerano un costo che ricade sui clienti.")
+G[19]=dict(what="Se il sindaco della Città metropolitana debba essere eletto direttamente dai cittadini, come proposto in un disegno di legge in discussione.",
+ agree="Chi è d'accordo sostiene che un ente che gestisce trasporti, scuole e territorio senza voto diretto abbia una legittimazione debole, e che l'elezione diretta lo renda responsabile verso gli elettori.",
+ disagree="Chi è in disaccordo osserva che per questi enti l'elezione diretta non è prevista dalla Costituzione, che costa un turno elettorale in più e che rischia di sovrapporre due sindaci sullo stesso territorio.")
+json.dump(G,open('pitch/build/guide_b.json','w'),ensure_ascii=False)
+print('ok',len(G))
