@@ -1,18 +1,19 @@
 # Scheda Politica — documenti di lavoro
 
-Repository **privato**: contiene i documenti di lavoro del progetto. Il sito pubblico vive altrove.
+Branch **`lavoro`** di un repository privato. Contiene i documenti di lavoro; il sito pubblicato sta su **`main`**.
 
 | | |
 |---|---|
-| Sito pubblicato | https://fabiocostare-stack.github.io/Questionario-politico/ |
-| Repo del sito | `fabiocostare-stack/Questionario-politico` (pubblico, GitHub Pages da `main`) |
-| Questo repo | privato, **solo documenti** |
+| Sito | https://scheda-politica.fabio-costa-re.workers.dev/ |
+| Hosting | Cloudflare Workers (asset statici), deploy automatico dal branch `main` |
+| Repository | privato |
+| Documenti | questo branch (`lavoro`) |
 
-## Regole
+## La regola che conta
 
-- Nel repo del sito, `main` contiene **solo ciò che è pubblicato**. Ogni modifica passa da un branch e da una pull request.
-- Qui non serve nessun vincolo: è tutto materiale di lavoro.
-- **Non copiare `pitch/` nel repo pubblico**: è il motivo per cui esiste questo repository.
+**In `main` solo i file del sito.** Cloudflare pubblica tutto ciò che sta in `main`: qualunque documento finisca lì diventa leggibile sul sito. I documenti stanno qui, su `lavoro`, e non vanno mai spostati su `main`.
+
+L’unica eccezione ammessa in `main` sono i sei file di redirect in `Scheda_Politica_sito/`, che servono a non rompere i vecchi link.
 
 ## Come vedere il sito in locale
 
@@ -20,45 +21,47 @@ Repository **privato**: contiene i documenti di lavoro del progetto. Il sito pub
 git clone https://github.com/fabiocostare-stack/Questionario-politico.git
 cd Questionario-politico
 python3 -m http.server 8000
-# poi apri http://localhost:8000/bologna.html
+# http://localhost:8000/bologna.html
 ```
 
-Serve il server locale, non il doppio clic sul file: da `file://` il service worker e il manifest non funzionano (il questionario sì, ma non puoi provare l'offline).
+Serve il server locale, non il doppio clic: da `file://` il service worker e il manifest non funzionano.
 
-## Cosa contiene
+## Cosa contiene questo branch
 
 | File | A cosa serve |
 |---|---|
-| `pitch/one-pager.md` · `.html` · `.pdf` | la scheda di presentazione per le testate |
-| `pitch/mail-facta.md` | il testo della mail a Facta e le note di invio |
+| `pitch/one-pager.md` · `.html` · `.pdf` | presentazione per le testate |
+| `pitch/mail-facta.md` | testo della mail e note di invio |
 | `pitch/revisione-domande-bologna.md` | audit delle 30 domande vecchie |
 | `pitch/domande-bologna-v2.md` | le 29 domande riscritte, con i fatti datati |
-| `pitch/fonti-bologna-v2.md` | fonti con URL e stato della verifica |
-| `pitch/guide-bologna-v2.md` | le guide per domanda, in forma leggibile |
-| `pitch/checklist-bologna.md` | le 9 tappe di lancio con i criteri di chiusura |
-| `pitch/build/` | script e JSON che generano `bologna-v2.html` |
+| `pitch/fonti-bologna-v2.md` | fonti con URL e stato di verifica |
+| `pitch/guide-bologna-v2.md` | guide per domanda, forma leggibile |
+| `pitch/checklist-bologna.md` | le 9 tappe di lancio |
+| `pitch/build/` | script, JSON e `bologna-v2.html` |
 
 ## Rigenerare `bologna-v2.html`
 
-Lo script `pitch/build/build_v2.py` legge `bologna.html` dalla cartella corrente e scrive `pitch/build/bologna-v2.html`. Serve quindi una copia del repo del sito:
+Lo script legge `bologna.html` dalla cartella corrente, quindi serve una copia del branch `main`:
 
 ```bash
-cp /percorso/Questionario-politico/bologna.html .
+git show main:bologna.html > bologna.html
 python3 pitch/build/build_v2.py
 rm bologna.html
 ```
 
+## Note tecniche sull’hosting
+
+- Cloudflare riscrive gli URL: `/bologna.html` risponde **307** verso `/bologna`. Funziona, i parametri si conservano (`?app=1` compreso). Non è un errore, e non va “corretto”: si romperebbe il deploy.
+- `sw.js` esce con `cache-control: max-age=0, must-revalidate`: gli aggiornamenti del sito arrivano subito.
+- Il vecchio indirizzo `fabiocostare-stack.github.io/Questionario-politico/` non esiste più (Pages si disattiva con il repo privato).
+
 ## Punto della situazione
 
-**Fatto**: scheda di Bologna riscritta (29 domande, 6 assi), guide per domanda scritte e integrate nell'interfaccia, fonti raccolte e classificate.
+**Fatto**: scheda di Bologna riscritta (29 domande, 6 assi), guide per domanda integrate nell’interfaccia, fonti raccolte e classificate, sito migrato e repository privatizzato.
 
 **Da fare**:
-1. chiudere le **6 fonti mancanti** elencate in fondo a `fonti-bologna-v2.md`;
-2. la **tappa 3**: matrice delle posizioni documentate per ogni lista (target: 8 posizioni su almeno 3 assi per lista);
-3. solo dopo, il confronto con le liste può essere riacceso.
+1. chiudere le **6 fonti mancanti** (in fondo a `fonti-bologna-v2.md`);
+2. **tappa 3**: matrice delle posizioni documentate per ogni lista (obiettivo: 8 posizioni su almeno 3 assi);
+3. solo dopo, riaccendere il confronto con le liste.
 
-**Regola ferma**: nessuna posizione attribuita a una lista senza una fonte primaria. Meglio 23 domande documentate che 29 con sei buchi.
-
----
-
-*Questo repository sostituisce il branch `lavoro` del repo del sito, dove i documenti erano finiti per errore nella pubblicazione Pages.*
+**Regola ferma**: nessuna posizione attribuita a una lista senza una fonte primaria.
