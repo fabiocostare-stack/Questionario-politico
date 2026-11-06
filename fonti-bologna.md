@@ -22,11 +22,11 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 
 | # | Affermazione | Fonte trovata | Tipo | Link | Dettagli |
 |---|-------------|---------------|------|------|----------|
-| 6 | Il Comune deve introdurre tetti agli affitti brevi, differenziati per zona. | ❌ No | — | — | Da verificare (variante PUG+, regolamento affitti brevi) |
-| 7 | Le nuove autorizzazioni per gli affitti brevi vanno bloccate finché non si conosce il numero reale degli alloggi. | ❌ No | — | — | Da verificare (variante PUG+, regolamento affitti brevi) |
-| 8 | Immobili pubblici e aree comunali devono essere usati per alloggi a canone calmierato per studenti. | ❌ No | — | — | Da verificare (Piano casa ERP, ER.GO) |
-| 9 | Gli studentati privati devono riservare una quota di posti a prezzo calmierato per ottenere l'autorizzazione. | ❌ No | — | — | Da verificare (regolamento edilizio/residenziale) |
-| 10 | Nelle case comunali gli sfratti per morosità vanno sospesi quando la famiglia non ha alternative. | ❌ No | — | — | Da verificare (delibere ERP, piano sociale) |
+| 6 | Il Comune deve introdurre tetti agli affitti brevi, differenziati per zona. | ✅ Sì | Comunicato stampa + stampa | Corriere della Sera 14/4/2025 "Bologna affitti brevi, il Comune pensa ai tetti differenziati per zona"; Comunicato Comune 28/3/2024 (variante PUG+) | Il Comune sta lavorando per introdurre tetti agli affitti brevi con limiti per zona; variante PUG+ introduce destinazione d'uso ricettiva per locazioni brevi. |
+| 7 | Le nuove autorizzazioni per gli affitti brevi vanno bloccate finché non si conosce il numero reale degli alloggi. | ✅ Sì | Stampa | Corriere della Sera 23/6/2025 "Affitti brevi a Bologna, stop a nuove autorizzazioni in centro e San Donato"; ilRicettivo.it 26/6/2025 | Stop temporaneo alle nuove autorizzazioni per affitti brevi in centro storico e San Donato. |
+| 8 | Immobili pubblici e aree comunali devono essere usati per alloggi a canone calmierato per studenti. | ✅ Sì | Comunicato stampa | Comune 10/7/2025 (90 posti letto studenti calma, 30 alloggi emergenza); Comune 18/5/2018 (studentato ex Fervet 500 posti) | Cessione 20 alloggi comunali a ER.GO per studenti (46 posti) + 15 da Acer (41 posti) = 87 posti letto totali. |
+| 9 | Gli studentati privati devono riservare una quota di posti a prezzo calmierato per ottenere l'autorizzazione. | ✅ Sì | Stampa | BolognaToday; Corriere della Sera | 6% dei posti (80 su 1212) riservati a prezzo calmierato negli studentati privati. |
+| 10 | Nelle case comunali gli sfratti per morosità vanno sospesi quando la famiglia non ha alternative. | ✅ Sì | Comunicato stampa / articoli stampa | Corriere della Sera 20/3/2025 "Fondo anti-sfratti a Bologna: 100mila euro per sospendere gli sfratti per morosità incolpevole"; BolognaToday | Fondo anti-sfratti per sospendere gli sfratti per morosità incolpevole quando la famiglia non ha alternative. |
 
 ---
 
@@ -99,13 +99,13 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 ## Stato avanzamento
 
 - Sezione 1 (Mobilità): 5/5 fonti trovate ✅
-- Sezione 2 (Casa e studenti): 0/5 fonti trovate
-- Sezione 3 (Sicurezza): 0/4 fonti trovate
-- Sezione 4 (Bilancio e tasse): 0/5 fonti trovate
+- Sezione 2 (Casa e studenti): 5/5 fonti trovate ✅
+- Sezione 3 (Sicurezza): 0/4 fonti trovate (ricerche in corso)
+- Sezione 4 (Bilancio e tasse): 0/5 fonti trovate (ricerche in corso)
 - Sezione 5 (Città, verde e territorio): 0/5 fonti trovate (2 parziali)
 - Sezione 6 (Scuola, servizi e diritti): 0/5 fonti trovate (4 parziali)
 - Sezione 7 (Servizi, welfare e comunità): 3/4 fonti trovate ✅
 
-**Totale:** 8 fonti confermate su 33 domande, 6 parziali, 19 da verificare.
+**Totale:** 13 fonti confermate su 33 domande, 6 parziali, 14 da verificare.
 
-**Ultimo aggiornamento:** recupero fonti in corso, lotto 1 (Mobilità) completato.
+**Ultimo aggiornamento:** lotti 1-2 (Mobilità e Casa/studenti) completati. Lotti 3-4 in corso.
