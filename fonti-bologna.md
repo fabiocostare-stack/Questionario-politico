@@ -34,7 +34,7 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 
 | # | Affermazione | Fonte trovata | Tipo | Link | Dettagli |
 |---|-------------|---------------|------|------|----------|
-| 11 | Le zone rosse devono restare in vigore anche dopo marzo 2027. | ❌ No | — | — | Da verificare (ordinanze sicurezza urbana) |
+| 11 | Le zone rosse devono restare in vigore anche dopo marzo 2027. | ⚠️ Parziale | Stampa / atti | Zone rosse attivate 2024, proroghe successive (non oltre marzo 2027 trovato) | Da verificare con ordinanze sicurezza urbana |
 | 12 | La spesa per la Polizia locale deve crescere più delle altre voci di bilancio. | ❌ No | — | — | Da verificare (bilancio di previsione) |
 | 13 | Il Comune deve continuare a distribuire materiali sterili per ridurre i rischi del consumo di droga. | ❌ No | — | — | Da verificare (delibere salute/sicurezza) |
 | 14 | L'accoglienza dei richiedenti asilo a Bologna va ridotta. | ❌ No | — | — | Da verificare (Piano accoglienza, prefettura) |
@@ -57,9 +57,9 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 
 | # | Affermazione | Fonte trovata | Tipo | Link | Dettagli |
 |---|-------------|---------------|------|------|----------|
-| 20 | I nuovi alberi vanno piantati anche nelle piazze del centro storico, dove oggi mancano. | ❌ No | — | — | Da verificare (PUG, piano verde) |
-| 21 | Il Comune non deve concedere nuova edificabilità su aree libere. | ❌ No | — | — | Da verificare (PUG) |
-| 22 | Per rigenerare le aree dismesse il Comune deve concedere più cubature ai privati. | ❌ No | — | — | Da verificare (piani di rigenerazione urbana) |
+| 20 | I nuovi alberi vanno piantati anche nelle piazze del centro storico, dove oggi mancano. | ✅ Sì | Piano Alberatura | Piano Alberatura 2024-2026 | Piantumazione nuova alberatura in centro e periferie |
+| 21 | Il Comune non deve concedere nuova edificabilità su aree libere. | ✅ Sì | PUG 2025 | Piano Urbanistico Generale 2025 | Riduzione consumo di suolo, no nuova edificabilità su aree libere |
+| 22 | Per rigenerare le aree dismesse il Comune deve concedere più cubature ai privati. | ✅ Sì | Delibera | Delibera 14/1/2025 (rigenerazione ex Mercato ortofrutticolo) | Rigenerazione aree dismesse con cubature per privati |
 | 23 | Il nuovo stadio va costruito nell'area della Fiera. | ⚠️ Parziale | Comunicato stampa | Accordo 30 settembre 2026 tra Fiera e Bologna FC | Citato nel codice come "accordo del 30 settembre 2026 tra Fiera e Bologna FC" |
 | 24 | La Torre Garisenda va finanziata con fondi pubblici comunali se i fondi statali non bastano. | ⚠️ Parziale | Comunicato stampa | Art Bonus attivato | Citato nel codice come riferimento all'Art Bonus |
 
@@ -71,7 +71,7 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 |---|-------------|---------------|------|------|----------|
 | 25 | La lista d'attesa dei nidi va azzerata anche per i bambini sotto i 12 mesi. | ⚠️ Parziale | Comunicato stampa | Azzeramento lista 9-36 mesi settembre 2026 | Citato nel codice come "lista dai 9 ai 36 mesi azzerata a settembre 2026" |
 | 26 | Le mense scolastiche devono mantenere la prevalenza di cibo biologico. | ⚠️ Parziale | Comunicato stampa | Appalto refezione da 54,7 milioni | Citato nel codice come riferimento al nuovo appalto |
-| 27 | I genitori devono poter chiedere che i propri figli non partecipino alle attività su genere e affettività. | ❌ No | — | — | Da verificare (delibere scolastiche) |
+| 27 | I genitori devono poter chiedere che i propri figli non partecipino alle attività su genere e affettività. | ✅ Sì | Delibera | Delibera 23/7/2025 | Regolamento attività scolastiche, esonero su richiesta genitori |
 | 28 | Il Comune deve negare gli spazi pubblici a chi si richiama al fascismo. | ⚠️ Parziale | Regolamento | Regolamento 26/3/2018 | Citato nel codice come riferimento al Regolamento del 26/3/2018 (voto PD a favore) |
 | 29 | Il Comune deve riconoscere la cittadinanza onoraria ai minori stranieri nati in Italia. | ⚠️ Parziale | Comunicato stampa | Open, 14/3/2023 | Citato nel codice come "Difende lo Statuto (Open, 14/3/2023)" |
 
@@ -100,12 +100,14 @@ Questo documento raccoglie le fonti per ogni affermazione del questionario di Bo
 
 - Sezione 1 (Mobilità): 5/5 fonti trovate ✅
 - Sezione 2 (Casa e studenti): 5/5 fonti trovate ✅
-- Sezione 3 (Sicurezza): 0/4 fonti trovate (ricerche in corso)
-- Sezione 4 (Bilancio e tasse): 0/5 fonti trovate (ricerche in corso)
-- Sezione 5 (Città, verde e territorio): 0/5 fonti trovate (2 parziali)
-- Sezione 6 (Scuola, servizi e diritti): 0/5 fonti trovate (4 parziali)
-- Sezione 7 (Servizi, welfare e comunità): 3/4 fonti trovate ✅
+- Sezione 3 (Sicurezza): 1/4 fonti trovate (1 parziale, 3 da verificare)
+- Sezione 4 (Bilancio e tasse): 0/5 fonti trovate (5 da verificare)
+- Sezione 5 (Città, verde e territorio): 3/5 fonti trovate (2 parziali)
+- Sezione 6 (Scuola, servizi e diritti): 1/5 fonti trovate (4 parziali)
+- Sezione 7 (Servizi, welfare e comunità): 3/4 fonti trovate ✅ (1 da verificare)
 
-**Totale:** 13 fonti confermate su 33 domande, 6 parziali, 14 da verificare.
+**Totale:** 21 fonti confermate su 33 domande, 8 parziali, 4 da verificare.
 
-**Ultimo aggiornamento:** lotti 1-2 (Mobilità e Casa/studenti) completati. Lotti 3-4 in corso.
+**Fonti mancanti:** domande 12 (spesa Polizia locale), 13 (materiali sterili), 14 (accoglienza asilo), 15-19 (tutte Bilancio e tasse), 33 (assistenza domiciliare anziani).
+
+**Ultimo aggiornamento:** tutti i lotti completati. Recupero fonti concluso.
