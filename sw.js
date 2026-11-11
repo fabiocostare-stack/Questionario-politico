@@ -1,6 +1,27 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v4';
-const FILES=['./','index.html','nazionale.html','bologna.html','milano.html','rimini.html','todi.html','scheda.webmanifest','icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png','icons/favicon-32.png'];
+const V='scheda-v5';
+const FILES=[
+  './',
+  'index.html',
+  'nazionale.html',
+  'bologna.html',
+  'milano.html',
+  'rimini.html',
+  'todi.html',
+  'css/fonts.css',
+  'css/scheda.css',
+  'js/engine.js',
+  'data/bologna.js',
+  'data/milano.js',
+  'data/rimini.js',
+  'data/todi.js',
+  'scheda.webmanifest',
+  'icons/icon-192.png',
+  'icons/icon-512.png',
+  'icons/icon-maskable-512.png',
+  'icons/apple-touch-icon.png',
+  'icons/favicon-32.png'
+];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 /* pagine: prima la rete (per avere gli aggiornamenti), se manca la rete la copia salvata */
