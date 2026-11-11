@@ -1,5 +1,5 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v7';
+const V='scheda-v8';
 const FILES=[
   './',
   'index.html',
@@ -7,6 +7,7 @@ const FILES=[
   'bologna.html',
   'bologna-2027.html',
   'bologna-estratto.html',
+  'bologna-fonti.html',
   'milano.html',
   'rimini.html',
   'todi.html',
