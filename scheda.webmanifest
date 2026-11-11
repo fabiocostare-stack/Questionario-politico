@@ -1,7 +1,7 @@
 {
- "name": "Scheda Politica",
- "short_name": "Scheda",
- "description": "Dove ti colloca quello che pensi? Questionario politico anonimo, nazionale e comunale.",
+ "name": "Scheda Politica · Bologna 2027",
+ "short_name": "Bologna 2027",
+ "description": "Questionario civico indipendente sui 33 temi concreti di Bologna, con fonti documentate.",
  "lang": "it",
  "id": "scheda-politica-v2",
  "start_url": "./index.html?app=1",
@@ -36,19 +36,8 @@
  ],
  "shortcuts": [
   {
-   "name": "Elezioni nazionali",
-   "short_name": "Nazionali",
-   "url": "./nazionale.html",
-   "icons": [
-    {
-     "src": "icons/icon-192.png",
-     "sizes": "192x192"
-    }
-   ]
-  },
-  {
-   "name": "Scheda Bologna",
-   "short_name": "Bologna",
+   "name": "Questionario Bologna",
+   "short_name": "Questionario",
    "url": "./bologna.html",
    "icons": [
     {
@@ -58,9 +47,9 @@
    ]
   },
   {
-   "name": "Scheda Milano",
-   "short_name": "Milano",
-   "url": "./milano.html",
+   "name": "Estratto one-pager",
+   "short_name": "Estratto",
+   "url": "./bologna-estratto.html",
    "icons": [
     {
      "src": "icons/icon-192.png",
@@ -69,20 +58,9 @@
    ]
   },
   {
-   "name": "Scheda Rimini",
-   "short_name": "Rimini",
-   "url": "./rimini.html",
-   "icons": [
-    {
-     "src": "icons/icon-192.png",
-     "sizes": "192x192"
-    }
-   ]
-  },
-  {
-   "name": "Scheda Todi",
-   "short_name": "Todi",
-   "url": "./todi.html",
+   "name": "Registro fonti",
+   "short_name": "Fonti",
+   "url": "./bologna-fonti.html",
    "icons": [
     {
      "src": "icons/icon-192.png",
