@@ -366,6 +366,21 @@
         </form>
       </dialog>
 
+      <section id="progetto">
+        <h2>Chi cura il progetto e perché</h2>
+        <div class="panel">
+          <p style="margin:0 0 12px;color:var(--ink)">
+            <strong>Scheda Politica</strong> è un’iniziativa personale indipendente curata da <strong>Fabio Costa</strong>, nata senza alcun fine di lucro né legami con partiti, comitati o liste elettorali.
+          </p>
+          <p style="margin:0 0 12px;font-size:15px;color:var(--ink2)">
+            L’obiettivo principale è offrire ai cittadini uno strumento semplice per misurarsi sui temi caldi della propria città e conoscere più nel dettaglio ciò che viene effettivamente discusso e votato. In vista delle elezioni, le domande vengono tarate anche a partire dai <strong>programmi elettorali ufficiali</strong>, così da rendere trasparente lo schieramento e la posizione di ciascuna forza politica su ogni tema.
+          </p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink2)">
+            Vuoi segnalare un atto pubblico, un programma elettorale o suggerire un miglioramento? Apri la <a href="#scheda-replica" class="open-replica-link" style="color:var(--me);font-weight:600">scheda di segnalazione</a>.
+          </p>
+        </div>
+      </section>
+
       <section id="diffondi">
         <h2>Vuoi condividere o portare il progetto nel tuo quartiere?</h2>
         <p class="sec-sub">
@@ -379,7 +394,7 @@
     </main>
 
     <footer>
-      <div><strong>Scheda Politica</strong> · Progetto civico indipendente senza scopo di lucro</div>
+      <div><strong>Scheda Politica</strong> · Progetto civico indipendente curato da Fabio Costa (senza scopo di lucro)</div>
       <div style="display:flex;gap:16px;flex-wrap:wrap">
         <a href="bologna.html">Questionario Bologna</a>
         <a href="fonti-bologna.md">Registro fonti</a>
@@ -516,6 +531,7 @@
       else dlg.removeAttribute('open');
     }
     openBtn.addEventListener('click', openSheet);
+    document.querySelectorAll('.open-replica-link').forEach(el => el.addEventListener('click', openSheet));
     if (closeBtn) closeBtn.addEventListener('click', closeSheet);
     dlg.addEventListener('click', (e) => { if (e.target === dlg) closeSheet(); });
     if (location.hash === '#scheda-replica') openSheet();
