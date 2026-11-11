@@ -44,7 +44,7 @@
     /* Barra superiore */
     .topbar{
       display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-      padding:calc(18px + env(safe-area-inset-top,0px)) 0 12px;
+      padding:calc(14px + env(safe-area-inset-top,0px)) 0 10px;
     }
     .brand{
       font:800 19px/1 var(--f-display);letter-spacing:-.03em;
@@ -62,17 +62,17 @@
     .pill.cta-sm:hover{filter:brightness(1.06)}
 
     /* Hero */
-    .hero{padding:28px 0 24px}
+    .hero{padding:14px 0 22px}
     .badge{
       display:inline-block;background:var(--soft);color:var(--me);
-      font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;
-      padding:5px 12px;border-radius:999px;margin-bottom:14px;
+      font-weight:700;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase;
+      padding:5px 12px;border-radius:999px;margin-bottom:10px;
     }
     h1{
       font:800 clamp(30px,5.5vw,48px)/1.06 var(--f-display);
-      letter-spacing:-.03em;margin:0 0 16px;max-width:18ch;
+      letter-spacing:-.03em;margin:0 0 14px;max-width:18ch;
     }
-    .lead{font-size:18px;color:var(--ink2);max-width:56ch;margin:0 0 24px}
+    .lead{font-size:18px;color:var(--ink2);max-width:56ch;margin:0 0 22px}
     .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
     .btn-primary{
       display:inline-flex;align-items:center;gap:10px;
@@ -88,6 +88,16 @@
       padding:15px 20px;border-radius:16px;
     }
     .btn-secondary:hover{border-color:var(--me)}
+    @media (max-width:640px){
+      .topbar{gap:10px;padding:calc(12px + env(safe-area-inset-top,0px)) 0 6px}
+      .navlinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}
+      .navlinks .pill{justify-content:center;text-align:center;padding:8px 10px;font-size:13.5px;white-space:nowrap}
+      .hero{padding:8px 0 20px}
+      .badge{font-size:12px;padding:4px 10px;margin-bottom:8px}
+      .lead{font-size:16.5px;margin-bottom:18px}
+      .actions{flex-direction:column;align-items:stretch}
+      .btn-primary,.btn-secondary{justify-content:center;width:100%}
+    }
 
     /* Metriche */
     .stats{
