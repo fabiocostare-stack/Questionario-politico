@@ -17,6 +17,7 @@ const CFG = {
   "openSection": -1,
   "whyDefault": "Posizione documentata da atti e fonti di stampa.",
   "rankTitle": "Vicinanza alle forze politiche",
+  "bandMode": true,
   "shareFooter": "Confronto basato su atti e posizioni documentate. Non è un giudizio.",
   "intro": {
     "h1": "Cosa vuoi per Bologna?",

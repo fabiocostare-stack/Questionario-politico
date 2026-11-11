@@ -32,6 +32,8 @@ const BLURB=CFG.blurb;
 const SUBJ=CFG.subjects;
 const SECT=DATA.secs.map(s=>s.t.replace(/^\d+\.\s*/,''));
 const OPEN_S=CFG.openSection>=0?CFG.openSection:DATA.secs.length, KEY=CFG.legacyKey||'__nessuna__';
+const BAND_MODE=!!CFG.bandMode;
+function bandInfo(pct,c,min=10){if(c<min)return {label:'—',fill:0};return pct>=58?{label:'Alta',fill:100}:pct>=34?{label:'Media',fill:58}:{label:'Bassa',fill:24}}
 const VOTES={};SUBJ.forEach(s=>VOTES[s.k]={});let fsrc=CFG.layers===false?'prog':'oggi';
 function buildFV(){SUBJ.forEach(s=>{const V=VOTES[s.k];for(const k in V)delete V[k];const D=s.data;for(const n in D){const e=D[n];const p=e[0],o=e[1];const v=(s.single||fsrc==='prog')?p:(o!==null&&o!==undefined?o:p);if(v>0&&!(s.skipTitle&&String(e[2]).includes(s.skipTitle)))V[n]=v}})}buildFV();
 const QTXT={};DATA.secs.forEach((s,i)=>{if(i!==OPEN_S)s.q.forEach(([n,t])=>QTXT[n]=t)});
@@ -102,18 +104,18 @@ function exitShared(){shared=false;try{history.replaceState(null,'',location.pat
 function cssVar(n){return getComputedStyle(document.documentElement).getPropertyValue('--'+n).trim()||'#888'}
 function resolveVars(t){return t.replace(/var\(--([a-z0-9-]+)\)/g,(m,n)=>cssVar(n))}
 function buildShareSVG(){
-  const W=1080,H=1440,ink=cssVar('ink'),ink2=cssVar('ink2'),track=cssVar('track'),me=cssVar('me');
+  const SVGW=1080,SVGH=1440,ink=cssVar('ink'),ink2=cssVar('ink2'),track=cssVar('track'),me=cssVar('me');
   const rows=PARTIES.map(p=>({k:p[0],l:p[1],a:aff(p[3]())})).filter(r=>r.a.c>=10).sort((x,y)=>y.a.pct-x.a.pct).slice(0,CFG.map?6:10);
   let g='<style>text{font-family:Helvetica,Arial,sans-serif;fill:'+ink2+';font-size:12px}.lab{font-weight:700;font-size:13px;fill:'+ink+'}.lab.me{fill:'+me+';font-size:14px}.t1{font-size:68px;font-weight:800;fill:'+ink+'}.t2{font-size:30px}.t3{font-size:26px;font-weight:700;fill:'+ink+'}.nm{font-size:30px;font-weight:600;fill:'+ink+'}.pc{font-size:32px;font-weight:800;fill:'+ink+'}.ft{font-size:22px}</style>';
-  g+='<rect width="'+W+'" height="'+H+'" fill="'+cssVar('bg')+'"/>';
+  g+='<rect width="'+SVGW+'" height="'+SVGH+'" fill="'+cssVar('bg')+'"/>';
   g+='<text class="t1" x="80" y="130">'+esc(CFG.title)+'</text><text class="t2" x="80" y="186">Il mio profilo'+(CFG.subtitle?' · '+esc(CFG.subtitle):'')+' · '+Object.keys(ans).filter(k=>QTXT[k]&&ans[k]>0).length+' risposte con un voto</text>';
   g+='<text class="t3" x="80" y="250">'+esc(CFG.rankTitle)+'</text>';
-  rows.forEach((r,i)=>{const y=300+i*62;g+=glyph(r.k,106,y-10,36)+'<text class="nm" x="146" y="'+y+'">'+esc(r.l)+'</text><rect x="400" y="'+(y-26)+'" width="520" height="22" rx="11" fill="'+track+'"/><rect x="400" y="'+(y-26)+'" width="'+(520*r.a.pct/100)+'" height="22" rx="11" fill="var(--'+r.k+')"/><text class="pc" x="1000" y="'+y+'" text-anchor="end">'+r.a.pct+'%</text>'});
+  rows.forEach((r,i)=>{const y=300+i*62,b=BAND_MODE?bandInfo(r.a.pct,r.a.c):{label:r.a.pct+'%',fill:r.a.pct};g+=glyph(r.k,106,y-10,36)+'<text class="nm" x="146" y="'+y+'">'+esc(r.l)+'</text><rect x="400" y="'+(y-26)+'" width="520" height="22" rx="11" fill="'+track+'"/><rect x="400" y="'+(y-26)+'" width="'+(520*b.fill/100)+'" height="22" rx="11" fill="var(--'+r.k+')"/><text class="pc" x="1000" y="'+y+'" text-anchor="end">'+b.label+'</text>'});
   if(CFG.map){g+='<text class="t3" x="80" y="700">Sulla mappa</text>';
   g+=mapSVG().replace('<svg class="map"','<svg x="210" y="720" width="660" height="660"')}
   g+='<text class="ft" x="80" y="1412">'+esc(W(CFG.shareFooter))+'</text>';
   g=resolveVars(g);
-  return '<svg xmlns="http://www.w3.org/2000/svg" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">'+g+'</svg>'}
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="'+SVGW+'" height="'+SVGH+'" viewBox="0 0 '+SVGW+' '+SVGH+'">'+g+'</svg>'}
 async function saveImage(st){
   try{const svg=buildShareSVG();const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}));const img=new Image();await new Promise((ok,ko)=>{img.onload=ok;img.onerror=ko;img.src=url});
     const c=document.createElement('canvas');c.width=1080;c.height=1440;c.getContext('2d').drawImage(img,0,0);URL.revokeObjectURL(url);
@@ -153,7 +155,7 @@ function affinity(items,src,min=1){
     let e=0,ew=0;for(let x=1;x<=5;x++){const wx=cnt[x]*answerWeight(x);e+=matchPoints[Math.abs(x-v)]*wx;ew+=wx}
     b+=(ew?e/ew:0)*w*q;wb+=w*q});
   if(c<min)return {c};
-  const raw=t/wt,base=b/wb,adj=base>=99.9?0:(raw-base)/(100-base)*100;
+  const raw=t/wt,base=b/wb,adj=BAND_MODE?raw:(base>=99.9?0:(raw-base)/(100-base)*100);
   return {pct:Math.max(0,Math.min(100,Math.round(adj))),c,raw:Math.round(raw),base:Math.round(base)}}
 function aff(src){const r=affinity(Object.keys(ans),src);return r.pct===undefined?{pct:0,c:r.c}:r}
 const SH={me:'<svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--me)"/></svg>'};SUBJ.forEach(x=>SH[x.k]=x.glyph);
@@ -279,7 +281,7 @@ function splitBlock(){
 function topicDistanceBlock(){
   const selected=PARTIES.find(p=>p[0]===topicParty)||PARTIES[0],source=selected[3]();
   const rows=AXES.map(a=>({axis:a,stat:axisAff(a,source)})).filter(r=>r.stat.pct!==undefined).sort((a,b)=>b.stat.pct-a.stat.pct);
-  const block=h('section','block','<h2>Affinità per tema</h2><p class="lead">Guarda dove le tue risposte sono più vicine o più lontane dalle posizioni attribuite a un partito o lista. Ogni percentuale usa solo le domande a cui avete entrambi una posizione.</p>');
+  const block=h('section','block','<h2>Affinità per tema</h2><p class="lead">Guarda dove le tue risposte sono più vicine o più lontane dalle posizioni attribuite a un partito o lista. Ogni '+(BAND_MODE?'fascia':'percentuale')+' usa solo le domande a cui avete entrambi una posizione.</p>');
   const control=h('div','row');const picker=h('div','seg');
   PARTIES.forEach(([key,label])=>{const b=h('button','',esc(label));b.type='button';b.setAttribute('aria-pressed',key===topicParty);b.onclick=()=>{topicParty=key;const next=topicDistanceBlock();block.replaceWith(next)};picker.appendChild(b)});
   control.appendChild(h('span','small','Confronta con:'));control.appendChild(picker);block.appendChild(control);
@@ -287,7 +289,7 @@ function topicDistanceBlock(){
   const closest=rows.slice(0,3).map(r=>r.axis.n).join(', '),furthest=rows.slice(-3).reverse().map(r=>r.axis.n).join(', ');
   block.appendChild(h('p','small','Più vicini: '+closest+'. Più lontani: '+furthest+'.'));
   const grid=h('div','topic-grid');
-  rows.forEach(({axis,stat},i)=>{const low=i>=rows.length-3;const card=h('article','topic-card'+(low?' low':''));card.innerHTML='<span class="tn">'+esc(axis.n)+'</span><strong class="tp">'+stat.pct+'%</strong><span class="tm"><i style="width:'+stat.pct+'%;background:var(--'+selected[0]+')"></i></span><span class="tc">'+stat.c+' domande confrontate'+(low?' · area più distante':'')+'</span>';grid.appendChild(card)});
+  rows.forEach(({axis,stat},i)=>{const b=BAND_MODE?bandInfo(stat.pct,stat.c,3):{label:stat.pct+'%',fill:stat.pct},low=BAND_MODE?b.label==='Bassa':i>=rows.length-3;const card=h('article','topic-card'+(low?' low':''));card.innerHTML='<span class="tn">'+esc(axis.n)+'</span><strong class="tp">'+b.label+'</strong><span class="tm"><i style="width:'+b.fill+'%;background:var(--'+selected[0]+')"></i></span><span class="tc">'+stat.c+' domande confrontate'+(low?' · area più distante':'')+'</span>';grid.appendChild(card)});
   block.appendChild(grid);return block
 }
 function glyph(k,x,y,sz){const inner=(SH[k]||'').replace(/<\/?svg[^>]*>/g,'');const sc=sz/14;return '<g transform="translate('+(x-sz/2)+' '+(y-sz/2)+') scale('+sc+')" stroke="var(--surface)" stroke-width="'+(2.2/sc).toFixed(2)+'" paint-order="stroke" stroke-linejoin="round">'+inner+'</g>'}
@@ -349,7 +351,8 @@ function renderRes(m){
   if(a.length<10){res.innerHTML='<h1>Servono più risposte</h1><p class="lead">Per calcolare un profilo servono almeno 10 risposte con un voto da 1 a 5. Finora ne hai '+a.length+'.</p>';const c=h('div','cta');const b=h('button','btn','Torna alle domande');b.onclick=()=>{view='flow';save();render()};c.appendChild(b);res.appendChild(c);return}
   const AF={};SUBJ.forEach(x=>AF[x.k]=aff(VOTES[x.k]));
   const rankItems=SUBJ.filter(x=>AF[x.k].c>=10&&(!x.rankMin||AF[x.k].c>=x.rankMin)).map(x=>[x.rank[0],AF[x.k].pct,x.rank[1],x.k]);const rk=rankItems.sort((x,y)=>y[1]-x[1]),gap=rk.length>1?rk[0][1]-rk[1][1]:0;if(topicParty===null)topicParty=rk.length?rk[0][3]:SUBJ[0].k;
-  res.innerHTML='<h1>'+(shared?'Il profilo condiviso':'Il tuo profilo')+'</h1><p class="lead">'+(rk.length<2?'Sulle '+a.length+' affermazioni a cui hai risposto: per ora le posizioni documentate dei partiti e liste sono troppo poche per un confronto affidabile. Qui sotto vedi il tuo profilo sui temi.':'Sulle '+a.length+' affermazioni a cui hai risposto, sei '+(gap<3?'a pari merito tra '+rk[0][2]+' e '+rk[1][2]:'più vicino '+rk[0][0]+' ('+gap+' punti di vantaggio su '+SUBJ.find(z=>z.k===rk[1][3]).full+')')+'. Questo conta solo le affermazioni su cui ho assegnato un voto al partito o lista.')+'</p>';
+  const leadTxt=(()=>{if(rk.length<2)return 'Sulle '+a.length+' affermazioni a cui hai risposto: per ora le posizioni documentate dei partiti e liste sono troppo poche per un confronto affidabile. Qui sotto vedi il tuo profilo sui temi.';if(BAND_MODE){const topB=bandInfo(rk[0][1],AF[rk[0][3]].c).label,same=rk.filter(r=>bandInfo(r[1],AF[r[3]].c).label===topB);if(topB==='Bassa')return 'Sulle '+a.length+' affermazioni a cui hai risposto non emerge una vicinanza alta o media con nessuna delle forze documentate.';return same.length>1?'Sulle '+a.length+' affermazioni a cui hai risposto, sei nella fascia di vicinanza '+topB+' con '+same.map(r=>r[2]).join(', ')+'.':'Sulle '+a.length+' affermazioni a cui hai risposto, sei più vicino '+rk[0][0]+' (fascia '+topB+').'}return 'Sulle '+a.length+' affermazioni a cui hai risposto, sei '+(gap<3?'a pari merito tra '+rk[0][2]+' e '+rk[1][2]:'più vicino '+rk[0][0]+' ('+gap+' punti di vantaggio su '+SUBJ.find(z=>z.k===rk[1][3]).full+')')+'.'})();
+  res.innerHTML='<h1>'+(shared?'Il profilo condiviso':'Il tuo profilo')+'</h1><p class="lead">'+leadTxt+' Questo conta solo le affermazioni su cui è documentata una posizione.</p>';
   if(testRun){const bn=h('div','banner','<span><b>Modalità prova.</b> Queste risposte sono casuali e non modificano il tuo profilo.</span>');const bw=h('span','');bw.style.cssText='display:flex;gap:8px;flex-wrap:wrap';const again=h('button','btn ghost','Nuova prova casuale');again.onclick=randomTest;const exit=h('button','btn','Esci dalla prova');exit.onclick=exitRandomTest;bw.append(again,exit);bn.appendChild(bw);res.prepend(bn)}
   if(shared){const bn=h('div','banner','<span>Stai guardando un risultato condiviso. Le tue risposte non sono state toccate.</span>');const bt=h('button','btn ghost','Fai il test tu');bt.onclick=()=>{exitShared();render();window.scrollTo(0,0)};const bs=h('button','btn','Salva come mio profilo');bs.onclick=importShared;const bw=h('span','');bw.style.cssText='display:flex;gap:8px;flex-wrap:wrap';bw.append(bs,bt);bn.appendChild(bw);res.prepend(bn)}
   SUBJ.forEach(x=>{if(x.note)res.appendChild(h('p','small',x.note.replace('{N}',TOTAL).replace('{V}',Object.keys(VOTES[x.k]).length)))});
@@ -358,8 +361,8 @@ function renderRes(m){
   SUBJ.slice().sort((a,b)=>a.ordList-b.ordList).map(x=>[x.full,x.k,AF[x.k],subText(x)])
 .sort((x,y)=>y[2].pct-x[2].pct).forEach(([l,cls,stat,sub])=>{
     const d=h('div','aff');
-    const shape=SH[cls]||'<svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--'+cls+')"/></svg>';const percent=stat.c>=10?stat.pct+'%':'—';const meterWidth=stat.c>=10?stat.pct:0;
-    d.innerHTML='<div class="top">'+shape+'<span>'+esc(l)+'</span></div><div class="big">'+percent+'</div><div class="meter"><i style="width:'+meterWidth+'%;background:var(--'+cls+')"></i></div><p>'+esc(sub)+'</p>';
+    const shape=SH[cls]||'<svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--'+cls+')"/></svg>';const b=BAND_MODE?bandInfo(stat.pct,stat.c):{label:stat.c>=10?stat.pct+'%':'—',fill:stat.c>=10?stat.pct:0};
+    d.innerHTML='<div class="top">'+shape+'<span>'+esc(l)+'</span></div><div class="big'+(BAND_MODE&&b.label!=='—'?' band':'')+'">'+b.label+'</div><div class="meter"><i style="width:'+b.fill+'%;background:var(--'+cls+')"></i></div><p>'+esc(sub)+'</p>';
     af2.appendChild(d);
   });
   res.appendChild(af2);
@@ -384,7 +387,8 @@ function renderRes(m){
   /* azioni */
   const ft=h('div','foot');const r1=h('button','btn ghost','Rivedi le risposte');r1.onclick=()=>{view='flow';idx=firstStep(0);save();render();window.scrollTo(0,0)};
   const r2=h('button','btn ghost',confirmReset?'Conferma: cancella tutto':'Ricomincia');r2.onclick=()=>{if(!confirmReset){confirmReset=true;render();return}ans={};open={};idx=0;view='intro';confirmReset=false;save();render();window.scrollTo(0,0)};if(!shared&&!testRun){ft.append(r1,r2);res.appendChild(ft)}
-  res.appendChild(h('p','small',"Come si calcola: ogni risposta viene confrontata con il voto da 1 a 5 assegnato al partito o lista. Una coincidenza vale 100 punti; uno scarto di 1, 2, 3 o 4 punti vale rispettivamente 60, 25, 5 o 0. Le risposte nette (1 e 5) pesano di più, quelle centrali (3) meno, e contano di più le domande su cui i partiti e liste si distinguono davvero. Le affermazioni che segni come «Conta molto per me» pesano il doppio. Poi il punteggio viene depurato dal caso: 0% significa che hai in comune con quel partito o lista quanto, o meno, di quanto ne avresti rimescolando a caso le tue risposte; 100% una coincidenza piena. Per questo le percentuali sono più basse e più distanti di una semplice media. La copertura varia da partito o lista a partito o lista: inserisco un voto solo quando trovo una posizione o una fonte documentabile. La copertura varia da partito o lista a partito o lista: inserisco una posizione solo quando trovo una fonte documentata (atti del Consiglio o della Giunta comunale, ordini del giorno, emendamenti, votazioni in aula, programmi elettorali o dichiarazioni formali dei capigruppo). Le affermazioni senza riscontro documentato restano escluse dal calcolo per quel partito. Le risposte e i profili restano esclusivamente all'interno del tuo dispositivo e del tuo browser.")).style.marginTop='24px';
+  const calcNote=BAND_MODE?"Come si calcola: ogni risposta viene confrontata con la posizione da 1 a 5 documentata per il partito o la lista. Una coincidenza piena vale 100 punti; uno scarto di 1, 2, 3 o 4 punti vale rispettivamente 60, 25, 5 o 0. Le risposte nette (1 e 5) pesano di più, quelle centrali (3) meno, e contano di più le domande su cui le forze politiche si distinguono davvero. Le affermazioni che segni come «Conta molto per me» pesano il doppio. Dalla media pesata dell'accordo diretto si ricava la fascia di vicinanza: Alta (almeno 58 su 100), Media (34–57) o Bassa (sotto 34), senza forzare percentuali esatte finché mancano i programmi elettorali completi. Con meno di 10 posizioni confrontabili compare «—». ":"Come si calcola: ogni risposta viene confrontata con il voto da 1 a 5 assegnato al partito o lista. Una coincidenza vale 100 punti; uno scarto di 1, 2, 3 o 4 punti vale rispettivamente 60, 25, 5 o 0. Le risposte nette (1 e 5) pesano di più, quelle centrali (3) meno, e contano di più le domande su cui i partiti e liste si distinguono davvero. Le affermazioni che segni come «Conta molto per me» pesano il doppio. Poi il punteggio viene depurato dal caso: 0% significa che hai in comune con quel partito o lista quanto, o meno, di quanto ne avresti rimescolando a caso le tue risposte; 100% una coincidenza piena. Per questo le percentuali sono più basse e più distanti di una semplice media. ";
+  res.appendChild(h('p','small',calcNote+"La copertura varia da partito o lista a partito o lista: inserisco una posizione solo quando trovo una fonte documentata (atti del Consiglio o della Giunta comunale, ordini del giorno, emendamenti, votazioni in aula, programmi elettorali o dichiarazioni formali dei capigruppo). Le affermazioni senza riscontro documentato restano escluse dal calcolo per quel partito. Le risposte e i profili restano esclusivamente all'interno del tuo dispositivo e del tuo browser.")).style.marginTop='24px';
 }
 function render(){
   if(shared&&view!=='res')exitShared();
