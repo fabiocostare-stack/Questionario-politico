@@ -1,11 +1,12 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v6';
+const V='scheda-v7';
 const FILES=[
   './',
   'index.html',
   'nazionale.html',
   'bologna.html',
   'bologna-2027.html',
+  'bologna-estratto.html',
   'milano.html',
   'rimini.html',
   'todi.html',

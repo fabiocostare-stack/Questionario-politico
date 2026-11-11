@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Scheda Politica · Bologna 2027 — Estratto di presentazione</title>
+  <meta name="description" content="One-pager di presentazione del questionario civico indipendente su Bologna 2027: 33 affermazioni sui nodi concreti della città, pro e contro neutrali e fonti documentate.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scheda Politica · Bologna 2027 — Estratto">
+  <meta property="og:description" content="33 affermazioni sui temi concreti di Bologna, spiegazioni pro/contro neutrali e confronto documentato sui voti d’aula e programmi. Gratuito e anonimo.">
+  <meta name="theme-color" content="#0A7C74">
+  <link rel="manifest" href="scheda.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/fonts.css">
+  <style>
+    :root{
+      color-scheme:light;
+      --bg:#EDF0F5;--surface:#FFFFFF;--ink:#0E1726;--ink2:#434F65;--mute:#5D6980;
+      --line:#D3D9E3;--track:#E3E8F0;--me:#0A7C74;--me-ink:#FFFFFF;--soft:#D9EFEC;
+      --f-display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+      --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        color-scheme:dark;
+        --bg:#0B1120;--surface:#141C2F;--ink:#EAEFF8;--ink2:#B0BACD;--mute:#8F9CB3;
+        --line:#26304A;--track:#1E2840;--me:#37B5AB;--me-ink:#04201E;--soft:#12332F;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font:400 15.5px/1.55 var(--f-body);padding:0 16px 40px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .page{max-width:860px;margin:0 auto}
+
+    /* Topbar */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      padding:calc(16px + env(safe-area-inset-top,0px)) 0 12px;
+    }
+    .brand{
+      font:800 18px/1 var(--f-display);letter-spacing:-.03em;
+      display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:inherit;
+    }
+    .brand svg{width:24px;height:24px;flex:none}
+    .top-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill{
+      border:1.5px solid var(--line);background:var(--surface);color:var(--ink);
+      border-radius:999px;padding:6px 13px;font:500 13.5px/1.2 var(--f-body);
+      text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    }
+    .pill:hover{border-color:var(--me)}
+    .pill.cta{background:var(--me);border-color:var(--me);color:var(--me-ink);font-weight:700}
+    .pill.cta:hover{filter:brightness(1.06)}
+
+    /* Sheet principale (1 schermata) */
+    .sheet{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:22px;
+      padding:26px 26px 24px;margin-top:6px;
+      box-shadow:0 8px 28px rgba(14,23,38,.05);
+    }
+    .eyebrow{
+      display:inline-block;background:var(--soft);color:var(--me);
+      font:700 12px/1 var(--f-body);letter-spacing:.03em;text-transform:uppercase;
+      padding:5px 11px;border-radius:999px;margin-bottom:10px;
+    }
+    h1{
+      font:800 clamp(26px,4.5vw,38px)/1.08 var(--f-display);
+      letter-spacing:-.03em;margin:0 0 10px;
+    }
+    .lead{font-size:16px;color:var(--ink2);margin:0 0 18px;max-width:68ch}
+    .lead strong{color:var(--ink)}
+
+    /* 4 KPI compatti */
+    .kpis{
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;
+      margin:0 0 22px;
+    }
+    .kpi{
+      background:var(--bg);border:1px solid var(--line);border-radius:14px;
+      padding:11px 13px;
+    }
+    .kpi b{display:block;font:800 22px/1.1 var(--f-display);color:var(--me);font-variant-numeric:tabular-nums}
+    .kpi span{display:block;font-size:12.5px;color:var(--ink2);margin-top:2px}
+    @media (max-width:680px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+    /* Box estratto interattivo: esempio di domanda + pro/contro */
+    .sample-box{
+      border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;
+      background:var(--bg);margin-bottom:20px;
+    }
+    .sample-head{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .sample-head h2{font:800 16px/1.2 var(--f-display);margin:0}
+    .tabs{display:flex;gap:6px;flex-wrap:wrap}
+    .tab{
+      border:1px solid var(--line);background:var(--surface);color:var(--ink2);
+      border-radius:999px;padding:4px 10px;font:600 12.5px/1.2 var(--f-body);cursor:pointer;
+    }
+    .tab[aria-pressed="true"]{background:var(--me);border-color:var(--me);color:var(--me-ink)}
+    .sample-q{font:700 16.5px/1.3 var(--f-display);margin:0 0 10px}
+    .sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .side{
+      background:var(--surface);border:1px solid var(--line);border-radius:12px;
+      padding:10px 12px;font-size:13.5px;color:var(--ink2);
+    }
+    .side strong{display:block;color:var(--ink);font-size:12.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:3px}
+    @media (max-width:640px){.sides{grid-template-columns:1fr}}
+
+    /* Mappa rapida dei 7 temi */
+    .sec-title{font:800 17px/1.2 var(--f-display);margin:0 0 10px}
+    .themes-mini{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;
+      margin-bottom:20px;
+    }
+    .t-mini{
+      border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);
+    }
+    .t-mini-top{display:flex;justify-content:space-between;gap:8px;font-size:13.5px;margin-bottom:4px}
+    .t-mini-top strong{font-family:var(--f-display)}
+    .t-mini-top span{color:var(--mute);font-size:12px;white-space:nowrap}
+    .t-mini p{margin:0;font-size:12.5px;color:var(--ink2);line-height:1.4}
+
+    /* Chiusura: metodo, autore, CTA */
+    .bottom-grid{
+      display:grid;grid-template-columns:1.25fr 1fr;gap:14px;align-items:stretch;
+      padding-top:16px;border-top:1.5px solid var(--line);
+    }
+    @media (max-width:700px){.bottom-grid{grid-template-columns:1fr}}
+    .note-box{
+      background:var(--bg);border-radius:14px;padding:14px 16px;font-size:13.5px;color:var(--ink2);
+    }
+    .note-box strong{color:var(--ink)}
+    .note-box p{margin:0 0 8px}
+    .note-box p:last-child{margin-bottom:0}
+    .cta-box{
+      background:var(--soft);border:1.5px solid var(--me);border-radius:14px;
+      padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;
+    }
+    .cta-box h3{font:800 16px/1.2 var(--f-display);margin:0}
+    .cta-box p{margin:0;font-size:13.5px;color:var(--ink2)}
+    .cta-row{display:flex;gap:8px;flex-wrap:wrap}
+    .btn-main{
+      display:inline-flex;align-items:center;gap:6px;background:var(--me);color:var(--me-ink);
+      text-decoration:none;font:700 14px/1.2 var(--f-display);padding:10px 15px;border-radius:11px;
+    }
+    .btn-sec{
+      display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink);
+      border:1px solid var(--line);text-decoration:none;font:600 13.5px/1.2 var(--f-body);
+      padding:9px 13px;border-radius:11px;
+    }
+    .btn-main:hover{filter:brightness(1.06)}
+    .btn-sec:hover{border-color:var(--me)}
+
+    footer{
+      margin-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      font-size:13px;color:var(--mute);padding:0 4px;
+    }
+    footer a{color:var(--ink);text-decoration:none;font-weight:500}
+    footer a:hover{text-decoration:underline}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--me);outline-offset:2px}
+
+    /* Stampa / Salva in PDF A4 su 1 pagina */
+    @media print{
+      body{background:#fff;color:#000;padding:0;font-size:12.5px}
+      .topbar .top-actions,.tabs{display:none!important}
+      .sheet{border:0;box-shadow:none;padding:8px 0}
+      .kpi,.sample-box,.side,.t-mini,.note-box,.cta-box{break-inside:avoid}
+      .cta-box{border-color:#0A7C74}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="bologna-estratto.html">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M7.5 13.5l3.8 3.8 7.2-8" fill="none" stroke="var(--me)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scheda Politica · Bologna 2027
+      </a>
+      <nav class="top-actions" aria-label="Azioni rapide">
+        <button type="button" class="pill" id="print-btn">Stampa / PDF</button>
+        <a class="pill" href="bologna-2027.html">Metodo e tutte le fonti</a>
+        <a class="pill cta" href="bologna.html">Prova il questionario →</a>
+      </nav>
+    </header>
+
+    <main class="sheet">
+      <span class="eyebrow">Scheda sintetica di presentazione · Bologna 2027</span>
+      <h1>Uno strumento civico semplice per misurarsi sui temi concreti di Bologna.</h1>
+      <p class="lead">
+        Curato per interesse civico personale da <strong>Fabio Costa</strong> (senza sponsor, pubblicità o legami politici), aiuta i cittadini a farsi un’idea sui dossier reali discussi in Consiglio comunale — e, in vista del 2027, verrà tarato anche sui <strong>programmi elettorali ufficiali</strong>. In secondo piano, mostra dove si schierano i partiti su ogni punto, solo su atti documentati.
+      </p>
+
+      <div class="kpis">
+        <div class="kpi"><b id="k-q">33</b><span>affermazioni reali (2025–2026)</span></div>
+        <div class="kpi"><b id="k-a">7</b><span>ambiti della vita cittadina</span></div>
+        <div class="kpi"><b id="k-v">112</b><span>posizioni già verificate su atti</span></div>
+        <div class="kpi"><b>0</b><span>cookie, login o dati raccolti</span></div>
+      </div>
+
+      <section class="sample-box" aria-label="Esempio di domanda">
+        <div class="sample-head">
+          <h2>Com’è fatta una domanda (esempio reale con pro e contro)</h2>
+          <div class="tabs" id="sample-tabs" role="group" aria-label="Scegli tema di esempio"></div>
+        </div>
+        <p class="sample-q" id="sample-q"></p>
+        <div class="sides">
+          <div class="side"><strong>Argomenti a favore</strong><span id="sample-agree"></span></div>
+          <div class="side"><strong>Argomenti contrari</strong><span id="sample-disagree"></span></div>
+        </div>
+      </section>
+
+      <h2 class="sec-title">I 7 temi coperti dal questionario</h2>
+      <div class="themes-mini" id="themes-mini"></div>
+
+      <div class="bottom-grid">
+        <div class="note-box">
+          <p><strong>Come assegniamo le posizioni dei partiti:</strong> punteggio da 1 a 5 solo con voto d’aula, atto pubblico o programma ufficiale; in mancanza di fonti verificabili la casella resta vuota (nessuna stima arbitraria).</p>
+          <p><strong>Cosa cerchiamo ora:</strong> osservazioni sulla neutralità delle domande, segnalazioni di atti mancanti dalle liste/comitati e disponibilità a integrare i programmi 2027 quando usciranno.</p>
+        </div>
+        <div class="cta-box">
+          <div>
+            <h3>Vuoi provarlo o inviare una segnalazione?</h3>
+            <p>Il test si compila in ~12 minuti nel browser, senza registrazione. Dalla pagina metodo puoi consultare tutte le fonti o aprire la scheda di segnalazione.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn-main" href="bologna.html">Apri il questionario →</a>
+            <a class="btn-sec" href="bologna-2027.html#scheda-replica">Segnala un atto o tema</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div><strong>Fabio Costa</strong> · Iniziativa civica indipendente su Bologna (senza scopo di lucro)</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="bologna.html">Questionario</a>
+        <a href="bologna-2027.html">Metodo e 112 fonti</a>
+        <a href="bologna-2027.html#scheda-replica">Invia segnalazione</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="data/bologna.js"></script>
+  <script>
+  (function () {
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) printBtn.addEventListener('click', () => window.print());
+    if (typeof CFG === 'undefined') return;
+
+    const totalQ = CFG.sections.reduce((acc, s) => acc + (s.q ? s.q.length : 0), 0);
+    let totalVotes = 0;
+    CFG.subjects.forEach(sb => {
+      Object.values(sb.data || {}).forEach(v => { if (v && v[0] > 0) totalVotes++; });
+    });
+    document.getElementById('k-q').textContent = totalQ;
+    document.getElementById('k-a').textContent = CFG.sections.length;
+    document.getElementById('k-v').textContent = totalVotes;
+
+    // 7 temi compatti con 1 domanda rappresentativa
+    const themesEl = document.getElementById('themes-mini');
+    CFG.sections.forEach((sec, idx) => {
+      const card = document.createElement('div');
+      card.className = 't-mini';
+      const title = sec.t.replace(/^\d+\.\s*/, '');
+      const sample = (sec.q && sec.q[0]) ? sec.q[0][1] : '';
+      card.innerHTML =
+        '<div class="t-mini-top"><strong>' + esc(title) + '</strong><span>' + sec.q.length + ' dom.</span></div>' +
+        '<p>Es: «' + esc(sample) + '»</p>';
+      themesEl.appendChild(card);
+    });
+
+    // Selettore esempi reali (Mobilità Q1, Casa Q6, Sicurezza Q12, Garisenda Q24)
+    const samplePicks = [
+      { label: 'Città 30', secIdx: 0, qId: 1 },
+      { label: 'Affitti brevi', secIdx: 1, qId: 6 },
+      { label: 'Taser Polizia locale', secIdx: 2, qId: 12 },
+      { label: 'Torre Garisenda', secIdx: 4, qId: 24 }
+    ];
+    const tabsEl = document.getElementById('sample-tabs');
+    const qEl = document.getElementById('sample-q');
+    const agreeEl = document.getElementById('sample-agree');
+    const disEl = document.getElementById('sample-disagree');
+
+    function showSample(idx) {
+      const pick = samplePicks[idx];
+      const sec = CFG.sections[pick.secIdx];
+      const qTuple = sec && sec.q.find(item => item[0] === pick.qId);
+      const guideSec = CFG.guide && CFG.guide.sections && CFG.guide.sections[pick.secIdx];
+      const g = guideSec && guideSec[String(pick.qId)];
+      if (!qTuple || !g) return;
+      qEl.textContent = qTuple[0] + '. «' + qTuple[1] + '»';
+      agreeEl.textContent = g.agree;
+      disEl.textContent = g.disagree;
+      tabsEl.querySelectorAll('.tab').forEach((b, i) => b.setAttribute('aria-pressed', i === idx ? 'true' : 'false'));
+    }
+
+    samplePicks.forEach((p, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'tab';
+      btn.textContent = p.label;
+      btn.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
+      btn.addEventListener('click', () => showSample(idx));
+      tabsEl.appendChild(btn);
+    });
+    showSample(0);
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  })();
+  </script>
+</body>
+</html>
