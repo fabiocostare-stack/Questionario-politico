@@ -279,11 +279,13 @@ function splitBlock(){
   bl.appendChild(h('p','small','I numeri sono, nell\'ordine, la tua risposta e il voto dei due partiti e liste nella legenda.')).style.marginTop='10px';
   return bl}
 function topicDistanceBlock(){
-  const selected=PARTIES.find(p=>p[0]===topicParty)||PARTIES[0],source=selected[3]();
+  const avail=PARTIES.filter(p=>AXES.some(a=>axisAff(a,p[3]()).pct!==undefined)),listP=avail.length?avail:PARTIES;
+  if(!listP.some(p=>p[0]===topicParty))topicParty=listP[0][0];
+  const selected=listP.find(p=>p[0]===topicParty)||listP[0],source=selected[3]();
   const rows=AXES.map(a=>({axis:a,stat:axisAff(a,source)})).filter(r=>r.stat.pct!==undefined).sort((a,b)=>b.stat.pct-a.stat.pct);
   const block=h('section','block','<h2>Affinità per tema</h2><p class="lead">Guarda dove le tue risposte sono più vicine o più lontane dalle posizioni attribuite a un partito o lista. Ogni '+(BAND_MODE?'fascia':'percentuale')+' usa solo le domande a cui avete entrambi una posizione.</p>');
   const control=h('div','row');const picker=h('div','seg');
-  PARTIES.forEach(([key,label])=>{const b=h('button','',esc(label));b.type='button';b.setAttribute('aria-pressed',key===topicParty);b.onclick=()=>{topicParty=key;const next=topicDistanceBlock();block.replaceWith(next)};picker.appendChild(b)});
+  listP.forEach(([key,label])=>{const b=h('button','',esc(label));b.type='button';b.setAttribute('aria-pressed',key===topicParty);b.onclick=()=>{topicParty=key;const next=topicDistanceBlock();block.replaceWith(next)};picker.appendChild(b)});
   control.appendChild(h('span','small','Confronta con:'));control.appendChild(picker);block.appendChild(control);
   if(!rows.length){block.appendChild(h('p','wait','Servono almeno tre risposte confrontabili nello stesso tema.'));return block}
   const closest=rows.slice(0,3).map(r=>r.axis.n).join(', '),furthest=rows.slice(-3).reverse().map(r=>r.axis.n).join(', ');
@@ -358,14 +360,15 @@ function renderRes(m){
   SUBJ.forEach(x=>{if(x.note)res.appendChild(h('p','small',x.note.replace('{N}',TOTAL).replace('{V}',Object.keys(VOTES[x.k]).length)))});
   {const ni=Object.keys(imp).filter(n=>QTXT[n]&&ans[n]>0).length;if(ni)res.appendChild(h('p','small','Hai segnato '+ni+(ni===1?' affermazione':' affermazioni')+' come molto importanti: nel calcolo pesano il doppio.')).style.marginTop='8px'}
   const af2=h('div','affs');const subText=x=>{const t=typeof x.sub==='string'?x.sub:(x.sub[fsrc]||x.sub.oggi||'');return t.replace('{c}',AF[x.k].c).replace('{N}',TOTAL)};
-  SUBJ.slice().sort((a,b)=>a.ordList-b.ordList).map(x=>[x.full,x.k,AF[x.k],subText(x)])
-.sort((x,y)=>y[2].pct-x[2].pct).forEach(([l,cls,stat,sub])=>{
+  const ranked=SUBJ.slice().sort((a,b)=>a.ordList-b.ordList).map(x=>[x.full,x.k,AF[x.k],subText(x)]).sort((x,y)=>y[2].pct-x[2].pct);const evalList=ranked.filter(x=>x[2].c>=10),unranked=ranked.filter(x=>x[2].c<10);
+  (evalList.length?evalList:ranked).forEach(([l,cls,stat,sub])=>{
     const d=h('div','aff');
     const shape=SH[cls]||'<svg viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="var(--'+cls+')"/></svg>';const b=BAND_MODE?bandInfo(stat.pct,stat.c):{label:stat.c>=10?stat.pct+'%':'—',fill:stat.c>=10?stat.pct:0};
     d.innerHTML='<div class="top">'+shape+'<span>'+esc(l)+'</span></div><div class="big'+(BAND_MODE&&b.label!=='—'?' band':'')+'">'+b.label+'</div><div class="meter"><i style="width:'+b.fill+'%;background:var(--'+cls+')"></i></div><p>'+esc(sub)+'</p>';
     af2.appendChild(d);
   });
   res.appendChild(af2);
+  if(evalList.length&&unranked.length)res.appendChild(h('p','small','Dati ancora insufficienti per una valutazione (servono almeno 10 posizioni confrontabili): '+unranked.map(([l,,stat])=>esc(l)+' ('+stat.c+'/'+TOTAL+')').join(', ')+'.')).style.marginTop='10px';
   res.appendChild(topicDistanceBlock());
   {const sb=splitBlock();if(sb)res.appendChild(sb)}
   if(!shared&&!testRun)res.appendChild(shareBlock());
