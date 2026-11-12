@@ -68,7 +68,7 @@ p{margin:0}
 .ov[aria-checked=true]{background:var(--me);border-color:var(--me);color:#fff}.ovc{display:flex;flex-direction:column;align-items:center;gap:9px;width:auto;flex:1 1 0;max-width:82px;min-width:0}.ovl{font-size:12px;line-height:1.25;color:var(--ink2);text-align:center}.ovc[data-sel=true] .ovl{color:var(--me);font-weight:600}@media (max-width:560px){.ovals{gap:8px}.ovc{max-width:none}.ov{width:46px;height:46px;font-size:15px}.ovl{font-size:10.5px;line-height:1.15}}.ov:focus-visible{outline:3px solid var(--me);outline-offset:3px}
 .ov[aria-checked=true] svg{opacity:1}
 .ends{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2);margin-top:12px;gap:12px}
-.notes{max-width:68ch;color:var(--ink2);font-size:14px;margin-top:8px;padding-bottom:12px}
+.notes{color:var(--ink2);font-size:14px;margin-top:8px;padding-bottom:12px}
 /* flusso */
 .flow{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;padding-block:28px 24px;align-items:start}
 .card{background:var(--surface);border:1.5px solid var(--line);border-radius:24px;padding:clamp(22px,4vw,44px);min-height:420px;display:flex;flex-direction:column}
@@ -131,7 +131,7 @@ p{margin:0}
 /* risultato */
 .res{padding-block:32px 8px}
 .res h1{font-size:clamp(36px,6vw,64px);font-weight:800;letter-spacing:-.04em;margin-bottom:10px}
-.res .lead{font-size:18px;color:var(--ink2);max-width:60ch}
+.res .lead{font-size:18px;color:var(--ink2)}
 .affs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:32px}
 .aff{background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:24px}
 .aff .top{display:flex;align-items:center;gap:12px;font:600 18px var(--f-display)}
@@ -144,7 +144,7 @@ p{margin:0}
 @media (min-width:1000px){.affs{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}.aff{border-radius:18px;padding:16px}.aff .top{gap:8px;font-size:15px;line-height:1.15}.aff .top svg{width:15px;height:15px}.aff .big{font-size:clamp(38px,4.1vw,58px);margin-block:12px 10px}.aff .big.band{font-size:clamp(24px,2.3vw,32px);letter-spacing:-.03em}.aff p{font-size:12px;line-height:1.3;margin-top:10px}}
 .block{margin-top:44px}
 .block>h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:8px}
-.block>.lead{font-size:16px;margin-bottom:22px;color:var(--ink2);max-width:62ch}
+.block>.lead{font-size:16px;margin-bottom:22px;color:var(--ink2)}
 .srow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;border-top:1px solid var(--line);padding:10px 0;font-size:14px;line-height:1.4}.srow .dots{white-space:nowrap}
 .topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.topic-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;align-items:center;background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:15px 16px}.topic-card .tn{font-weight:600;line-height:1.25}.topic-card .tp{font:700 20px/1 var(--f-display);font-variant-numeric:tabular-nums}.topic-card .tm{grid-column:1/-1;height:7px;background:var(--track);border-radius:99px;overflow:hidden}.topic-card .tm i{display:block;height:100%;border-radius:inherit}.topic-card .tc{grid-column:1/-1;font-size:12px;color:var(--mute)}.topic-card.low .tp{color:var(--mute)}
 .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:start}
@@ -185,9 +185,9 @@ p{margin:0}
 :root[data-theme=dark] .dots b.eu{color:#0B1120}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .dots b.eu{color:#0B1120}}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]) .dots b.p,:root:not([data-theme=light]) .dots b.f{color:#0B1120}}
-.cmp .why{font-size:14px;color:var(--ink2);padding-top:10px;max-width:70ch}
+.cmp .why{font-size:14px;color:var(--ink2);padding-top:10px}
 .foot{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
-.small{font-size:14px;color:var(--ink2);max-width:72ch}
+.small{font-size:14px;color:var(--ink2)}
 @media (max-width:700px){.bar .wrap{gap:10px 12px}.prog{order:3;flex-basis:100%}.barin{margin-left:auto}.map text{font-size:12.5px}.map .lab{font-size:14px}}
 @media (max-width:900px){
   .hero,.flow,.two{grid-template-columns:minmax(0,1fr)}
