@@ -346,7 +346,7 @@ const CFG = {
       "dot": "pd",
       "light": "#C2410C",
       "dark": "#FB923C",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [
@@ -562,7 +562,7 @@ const CFG = {
       "dot": "fdi",
       "light": "#1D4ED8",
       "dark": "#93C5FD",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [
@@ -778,7 +778,7 @@ const CFG = {
       "dot": "lg",
       "light": "#047857",
       "dark": "#6EE7B7",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [
@@ -994,7 +994,7 @@ const CFG = {
       "dot": "fi",
       "light": "#0E7490",
       "dark": "#67E8F9",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [
@@ -1210,7 +1210,7 @@ const CFG = {
       "dot": "cc",
       "light": "#BE185D",
       "dark": "#F9A8D4",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [
@@ -1426,7 +1426,7 @@ const CFG = {
       "dot": "ls",
       "light": "#6D28D9",
       "dark": "#C4B5FD",
-      "sub": "Solo posizioni documentate",
+      "sub": "Su {c} posizioni documentate",
       "ordList": 0,
       "data": {
         "1": [

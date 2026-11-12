@@ -225,7 +225,7 @@
 
         <div class="kpis">
           <div class="kpi"><b id="k-q">33</b><span>affermazioni nel questionario</span></div>
-          <div class="kpi"><b id="k-ctx">31 / 33</b><span>fonti di contesto attive (2 in attesa)</span></div>
+          <div class="kpi"><b id="k-ctx">33 / 33</b><span>fonti di contesto attive</span></div>
           <div class="kpi"><b id="k-pos">193</b><span>posizioni partitiche documentate</span></div>
           <div class="kpi"><b id="k-parties">6</b><span>gruppi consiliari monitorati</span></div>
         </div>
@@ -284,11 +284,11 @@
       10: { status: 'ok', type: 'Delibera 20/3/2025', detail: 'Istituzione del Fondo anti-sfratti comunale per morosità incolpevole senza soluzione abitativa alternativa.' },
       11: { status: 'ok', type: 'Ordinanze Prefettura / Question time CC', detail: 'Zone rosse attivate per stazione, Montagnola e Bolognina; richieste di proroga dell’opposizione.' },
       12: { status: 'ok', type: 'Ordini del giorno Consiglio comunale', detail: 'Ripetuti Odg del centrodestra a favore del taser; voti contrari di PD e Coalizione Civica.' },
-      13: { status: 'ok', type: 'Delibere salute / Interventi politici', detail: 'Politiche sanitarie di riduzione del danno; presa di posizione contraria della Lega (Salvini).' },
+      13: { status: 'ok', type: 'Delibere salute / Interventi politici', detail: 'Politiche sanitarie di riduzione del danno; presa di posizione contraria della Lega, esposto FdI alla Corte dei Conti e posizione critica di FI.' },
       14: { status: 'ok', type: 'Atti Consiglio / Dichiarazioni parlamentari', detail: 'Scontro sulla saturazione dell’hub Mattei e sul modello SAI diffuso sostenuto dalla Giunta.' },
-      15: { status: 'wait', type: 'Delibere PEF / Tariffe rifiuti', detail: 'In attesa dell’approvazione del Piano Economico Finanziario annuale di ATERSIR.' },
+      15: { status: 'ok', type: 'Delibere PEF TARI / Voti Consiglio', detail: 'Delibere annuali su tariffe TARI e PEF ATERSIR (PG 287518/2024): approvazione maggioranza, voto contrario centrodestra.' },
       16: { status: 'ok', type: 'Piano rifiuti / Legge regionale E-R', detail: 'Introduzione Carta Smeraldo e cassonetti intelligenti per abilitare la tariffazione puntuale (Tarip).' },
-      17: { status: 'wait', type: 'Bilancio di previsione', detail: 'In attesa di atti o voti puntuali su addizionale IRPEF e manovre di bilancio locale.' },
+      17: { status: 'ok', type: 'Bilancio di previsione / Voti Consiglio', detail: 'Bilancio di previsione 2025-2027 e manovra su aliquote e servizi: voto favorevole maggioranza, voto contrario centrodestra.' },
       18: { status: 'ok', type: 'Delibera imposta soggiorno', detail: 'Aumento dell’imposta di soggiorno per finanziare decoro e trasporto pubblico locale.' },
       19: { status: 'ok', type: 'Delibera Consiglio 27/12/2021', detail: 'Approvazione della conformità urbanistica del Passante di nuova generazione con mitigazioni e verde.' },
       20: { status: 'ok', type: 'Piano Alberatura 2024-2026', detail: 'Piantumazioni di nuovi alberi in centro e piazze storiche contro le isole di calore.' },
@@ -331,14 +331,13 @@
     });
 
     const chipsEl = document.getElementById('party-chips');
-    let partyFilter = 'all'; // 'all' | partyKey | 'uncovered'
+    let partyFilter = 'all'; // 'all' | partyKey
     const chipDefs = [
       { id: 'all', label: 'Tutte le forze' },
       ...CFG.subjects.map(sb => ({
         id: sb.k,
         label: sb.short + ' (' + Object.values(sb.data || {}).filter(v => v && v[0] > 0).length + ')'
-      })),
-      { id: 'uncovered', label: 'Senza posizioni partitiche' }
+      }))
     ];
     chipDefs.forEach(def => {
       const btn = document.createElement('button');
@@ -378,8 +377,7 @@
           }));
           const docCount = entries.filter(x => x.entry).length;
 
-          if (partyFilter === 'uncovered' && docCount > 0) return;
-          if (partyFilter !== 'all' && partyFilter !== 'uncovered') {
+          if (partyFilter !== 'all') {
             const matchParty = entries.find(x => x.sb.k === partyFilter && x.entry);
             if (!matchParty) return;
           }
@@ -404,7 +402,7 @@
             ? '<div><a class="ctx-link" href="' + esc(ctx.url) + '" target="_blank" rel="noopener">' + esc(ctx.url) + '</a></div>'
             : '';
 
-          const visibleEntries = (partyFilter !== 'all' && partyFilter !== 'uncovered')
+          const visibleEntries = partyFilter !== 'all'
             ? entries.filter(x => x.sb.k === partyFilter)
             : entries;
 
@@ -441,7 +439,7 @@
         });
       });
 
-      noteEl.textContent = shown + ' affermazioni mostrate su ' + totalQ + ' (' + ctxWaitCount + ' fonti di contesto in attesa di atti 2027).';
+      noteEl.textContent = shown + ' affermazioni mostrate su ' + totalQ + (ctxWaitCount > 0 ? ' (' + ctxWaitCount + ' fonti di contesto in attesa di atti 2027).' : ' · tutte le fonti di contesto sono attive.');
       if (!shown) {
         listEl.innerHTML = '<div class="q-card">Nessuna affermazione corrisponde ai filtri selezionati.</div>';
       }

@@ -370,7 +370,7 @@
           <button type="button" class="sheet-close" id="close-replica" aria-label="Chiudi scheda">×</button>
         </div>
         <form class="sheet-body" id="replica-form">
-          <p class="sheet-note">Puoi usare questo modulo per contatti stampa/radio, collaborazioni civiche o per segnalare un atto pubblico o una rettifica.</p>
+          <p class="sheet-note">Puoi usare questo modulo per contatti stampa/radio, collaborazioni civiche o per segnalare un atto pubblico o una rettifica, oppure scrivere direttamente a <a href="mailto:schedapolitica@gmail.com" style="color:var(--me);font-weight:600">schedapolitica@gmail.com</a>.</p>
           <div class="field">
             <label for="rep-name">Nominativo (nome, cognome o lista/testata)</label>
             <input type="text" id="rep-name" name="name" required autocomplete="name" placeholder="Es. Mario Rossi — Comitato ...">
@@ -533,7 +533,7 @@
   </script>
   <script>
   (function () {
-    const CONTACT_EMAIL = '';
+    const CONTACT_EMAIL = 'schedapolitica@gmail.com';
     const dlg = document.getElementById('scheda-replica');
     const openBtn = document.getElementById('open-replica');
     const closeBtn = document.getElementById('close-replica');
@@ -594,7 +594,9 @@
         const full = (CONTACT_EMAIL ? 'A: ' + CONTACT_EMAIL + '\n' : '') + 'Oggetto: ' + p.subject + '\n\n' + p.body;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(full).then(() => {
-            statusEl.textContent = 'Testo copiato negli appunti: puoi incollarlo in qualsiasi email.';
+            statusEl.textContent = CONTACT_EMAIL
+              ? 'Testo copiato negli appunti: puoi incollarlo in una email verso ' + CONTACT_EMAIL + '.'
+              : 'Testo copiato negli appunti: puoi incollarlo in qualsiasi email.';
             statusEl.classList.add('show');
           }).catch(() => {
             statusEl.textContent = full;
