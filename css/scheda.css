@@ -161,6 +161,7 @@ p{margin:0}
 .seg button[aria-pressed=true]{background:var(--surface);box-shadow:0 1px 4px rgba(8,14,28,.2);font-weight:600}
 .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
 .cmp{display:flex;flex-direction:column;gap:2px}
+.cmp-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding-bottom:8px;font-size:12px;font-weight:700;color:var(--ink2);letter-spacing:.02em}.cmp-head .dots span{min-width:26px;text-align:center}
 .cmp details{border-top:1px solid var(--line);padding-block:12px}
 .cmp summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
 .cmp summary::-webkit-details-marker{display:none}

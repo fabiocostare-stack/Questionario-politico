@@ -383,10 +383,11 @@ function renderRes(m){
   const ctl=h('div','row');const s1=h('div','seg');SUBJ.slice().sort((a,b)=>a.ordList-b.ordList).map(x=>[x.k,x.btn]).forEach(([k,l])=>{const b=h('button','',l);b.setAttribute('aria-pressed',k===cmp);b.onclick=()=>{cmp=k;render()};s1.appendChild(b)});
   const s2=h('div','seg');[['close','Dove coincidete'],['far','Dove siete più lontani']].forEach(([k,l])=>{const b=h('button','',l);b.setAttribute('aria-pressed',k===mode);b.onclick=()=>{mode=k;render()};s2.appendChild(b)});ctl.append(s1,s2);bd.appendChild(ctl);
   const lc=h('div','panel cmp');
+  if(list.length)lc.appendChild(h('div','cmp-head','<span>Affermazione</span><span class="dots"><span>Tu</span><span>'+esc(cs.btn)+'</span></span>'));
   list.forEach(({n})=>{const e=DD[n];const why=!cs.nobasis&&e?((cs.single||(fsrc==='oggi'&&e[1]!==null))?e[3]:e[2]||''):'';const src=cs.srcRules&&e?((cs.srcRules.find(r=>e[2].includes(r[0]))||[0,cs.srcDefault])[1]):'';const citation=src?'<a class="source-link" href="'+src+'" target="_blank" rel="noopener">Fonte: '+esc(e[2])+'</a>':'';
     const d=h('details','','<summary><span class="qt">'+esc(QTXT[n])+'</span><span class="dots"><b>'+ans[n]+'</b><b class="'+DOTCLS[cmp]+'">'+P[n]+'</b></span></summary>'+(why?'<p class="why">'+esc(why)+'</p>':'<p class="why">'+(cs.single?'Nessuna posizione documentata.':CFG.whyDefault)+'</p>')+citation);lc.appendChild(d)});
   if(!list.length)lc.appendChild(h('p','small','Nessuna affermazione da confrontare.'));
-  bd.appendChild(lc);bd.appendChild(h('p','small','Il numero tondo è la tua risposta, quello quadrato è il voto da 1 a 5 che ho dato al partito o lista.')).style.marginTop='12px';res.appendChild(bd);
+  bd.appendChild(lc);res.appendChild(bd);
   /* azioni */
   const ft=h('div','foot');const r1=h('button','btn ghost','Rivedi le risposte');r1.onclick=()=>{view='flow';idx=firstStep(0);save();render();window.scrollTo(0,0)};
   const r2=h('button','btn ghost',confirmReset?'Conferma: cancella tutto':'Ricomincia');r2.onclick=()=>{if(!confirmReset){confirmReset=true;render();return}ans={};open={};idx=0;view='intro';confirmReset=false;save();render();window.scrollTo(0,0)};if(!shared&&!testRun){ft.append(r1,r2);res.appendChild(ft)}
