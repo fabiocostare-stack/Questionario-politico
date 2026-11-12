@@ -434,10 +434,10 @@ const CFG = {
           "Atti Consiglio accoglienza"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Approvazione delibere PEF TARI con adeguamento tariffario legato all'inflazione ed esenzioni per redditi bassi",
+          "Delibera PEF TARI Consiglio comunale"
         ],
         "16": [
           5,
@@ -446,10 +446,10 @@ const CFG = {
           "Contratto Hera / Tarip"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Difesa della leva fiscale progressiva (esenzione IRPEF fino a 15.000 €) per finanziare welfare, scuola e trasporto pubblico",
+          "Bilancio di previsione Comune"
         ],
         "18": [
           5,
@@ -464,10 +464,10 @@ const CFG = {
           "Delibera CC 27/12/2021"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Promozione del piano di alberi nelle piazze storiche tramite il Fondo per l'adattamento climatico",
+          "Comune di Bologna 2025"
         ],
         "21": [
           5,
@@ -476,16 +476,16 @@ const CFG = {
           "PUG 2025"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "PUG: rigenerazione delle aree dismesse ammessa solo con vincoli di sostenibilità e quote di edilizia sociale",
+          "PUG Bologna"
         ],
         "23": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Avvio del percorso pubblico sull'ipotesi Fiera/Dall'Ara evitando speculazioni e congelando i 40M sul vecchio stadio",
+          "Gruppo PD / Resto del Carlino 2025"
         ],
         "24": [
           5,
@@ -494,16 +494,16 @@ const CFG = {
           "Comunicato Garisenda 2024"
         ],
         "25": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Azzeramento liste d'attesa nidi 9-36 mesi e piano di ampliamento posti per la fascia lattanti 0-12 mesi",
+          "Comune di Bologna 2025"
         ],
         "26": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Difesa del modello Ribò con prevalenza di cibo biologico, locale e di qualità nelle mense scolastiche",
+          "Atti refezione scolastica Comune"
         ],
         "27": [
           1,
@@ -530,10 +530,10 @@ const CFG = {
           "Regolamento beni comuni"
         ],
         "31": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Apertura serale prolungata fino a mezzanotte di Salaborsa nell'ambito del piano Bologna di Notte",
+          "Comune di Bologna"
         ],
         "32": [
           5,
@@ -608,10 +608,10 @@ const CFG = {
           "Interventi PUG+"
         ],
         "8": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche alla gestione pubblica degli immobili e richiesta di favorire il mercato privato degli alloggi",
+          "Dibattito casa FdI"
         ],
         "9": [
           2,
@@ -638,10 +638,10 @@ const CFG = {
           "Odg FdI Taser"
         ],
         "13": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Esposto alla Corte dei Conti e denuncia di Cavedagna e Lisei contro la distribuzione di pipe e kit",
+          "Resto del Carlino / Fanpage 2024"
         ],
         "14": [
           5,
@@ -650,10 +650,10 @@ const CFG = {
           "Bignami Quotidiano.net"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Voto contrario alla delibera TARI in Consiglio comunale e denuncia dei rincari per famiglie e imprese",
+          "Voto PEF TARI / Resto del Carlino"
         ],
         "16": [
           1,
@@ -662,10 +662,10 @@ const CFG = {
           "Question time rifiuti"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario al bilancio comunale contro l'alta pressione fiscale locale e addizionale IRPEF",
+          "Voto bilancio FdI"
         ],
         "18": [
           1,
@@ -680,10 +680,10 @@ const CFG = {
           "Delibera CC 27/12/2021"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Dura critica di Stefano Cavedagna agli alberi in vaso nelle piazze definiti operazione di greenwashing costosa",
+          "Finestre sull'Arte / Carlino 2025"
         ],
         "21": [
           2,
@@ -692,16 +692,16 @@ const CFG = {
           "Dibattito PUG"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Richiesta di sbloccare la rigenerazione delle aree dismesse con incentivi volumetrici ai privati",
+          "Proposte PUG FdI"
         ],
         "23": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche alla Giunta per i continui cambi di rotta sul Dall'Ara e i nodi viari sull'ipotesi Fiera",
+          "Gazzetta di Bologna / Carlino"
         ],
         "24": [
           1,
@@ -710,16 +710,16 @@ const CFG = {
           "Dichiarazioni FdI Garisenda"
         ],
         "25": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Favorevole ad azzerare le liste d'attesa dei nidi ma con critiche sui posti mancanti fascia 0-12 mesi",
+          "Resto del Carlino"
         ],
         "26": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Richiesta di maggiori controlli su costi, tariffe e qualità effettiva dei pasti nelle mense Ribò/Camst",
+          "Resto del Carlino"
         ],
         "27": [
           5,
@@ -746,10 +746,10 @@ const CFG = {
           "Interrogazioni sicurezza FdI"
         ],
         "31": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Priorità alla sicurezza serale e al potenziamento delle biblioteche di quartiere rispetto alle sole aperture in centro",
+          "Interventi cultura/sicurezza FdI"
         ],
         "32": [
           2,
@@ -824,16 +824,16 @@ const CFG = {
           "Interventi Lega"
         ],
         "8": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche di Di Benedetto alla gestione pubblica degli spazi universitari e richiesta di sbloccare investimenti privati",
+          "Resto del Carlino"
         ],
         "9": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Contrarietà a vincoli urbanistici rigidi del PUG che frenano la realizzazione di nuovi studentati",
+          "Dibattito PUG Lega"
         ],
         "10": [
           1,
@@ -866,10 +866,10 @@ const CFG = {
           "Dichiarazioni Lega"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Voto contrario in Consiglio comunale agli aumenti TARI e richiesta di riduzione delle tariffe",
+          "Voto PEF TARI / Carlino"
         ],
         "16": [
           1,
@@ -878,10 +878,10 @@ const CFG = {
           "Campagna Carta Smeraldo"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario al bilancio e richiesta di taglio delle tasse comunali e dell'addizionale IRPEF",
+          "Voto bilancio Lega"
         ],
         "18": [
           1,
@@ -896,28 +896,28 @@ const CFG = {
           "Delibera CC 27/12/2021"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Critica del capogruppo Matteo Di Benedetto ai 128mila euro per gli alberi temporanei in vaso nelle piazze",
+          "Finestre sull'Arte / Carlino 2025"
         ],
         "21": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche ai blocchi del PUG sul consumo di suolo ritenuti penalizzanti per lo sviluppo edilizio",
+          "Resto del Carlino / PUG"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Favorevole a concedere maggiori premialità edilizie ai privati per rigenerare aree degradate e dismesse",
+          "Dibattito PUG Lega"
         ],
         "23": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche ai ritardi sul restyling del Dall'Ara e interrogazioni sulle criticità dell'ipotesi Fiera",
+          "Gazzetta di Bologna / Carlino"
         ],
         "24": [
           1,
@@ -926,16 +926,16 @@ const CFG = {
           "Dichiarazioni Borgonzoni"
         ],
         "25": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Favorevole all'ampliamento dei nidi con priorità alle famiglie lavoratrici residenti",
+          "Proposte famiglia Lega"
         ],
         "26": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Contestazione dei rincari e richiesta di verifiche sulla qualità e sulle porzioni nelle mense scolastiche",
+          "Resto del Carlino"
         ],
         "27": [
           5,
@@ -962,22 +962,22 @@ const CFG = {
           "Dichiarazioni Lega sicurezza"
         ],
         "31": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Richiesta di presidi di sicurezza negli orari serali e attenzione alle periferie",
+          "Interventi aula Lega"
         ],
         "32": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Contrarietà a divieti generalizzati alle imprese ma richiesta di controlli mirati contro il degrado nei minimarket",
+          "Interventi commercio Lega"
         ],
         "33": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Favorevole a sostenere direttamente le famiglie con anziani non autosufficienti tramite contributi e voucher",
+          "Programma welfare Lega"
         ]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"10\" height=\"10\" rx=\"2\" fill=\"var(--lg)\"/></svg>"
@@ -998,34 +998,34 @@ const CFG = {
       "ordList": 0,
       "data": {
         "1": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Ricorso straordinario al Presidente della Repubblica contro Città 30 e sostegno al referendum (Stanzani/Castaldini)",
+          "Dire / Resto del Carlino 2024"
         ],
         "2": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Interrogazioni del capogruppo Nicola Stanzani contro la paralisi del traffico e le corsie riservate del tram",
+          "Resto del Carlino / Question time FI"
         ],
         "3": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Opposizione e raccolta firme con i comitati contro il tracciato della Linea Blu sui viali e in via Andrea Costa",
+          "Gazzetta di Bologna 2025"
         ],
         "4": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Contrarietà alla soppressione dei parcheggi per residenti e attività commerciali lungo i cantieri del tram",
+          "Interventi aula FI / Confesercenti"
         ],
         "5": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Critiche del capogruppo Stanzani alle restrizioni ZTL e alla penalizzazione della mobilità privata",
+          "Resto del Carlino"
         ],
         "6": [
           1,
@@ -1034,10 +1034,10 @@ const CFG = {
           "Voto aula PUG+"
         ],
         "7": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario alla variante PUG+ e ai blocchi amministrativi sulle locazioni turistiche brevi",
+          "Voto aula PUG+"
         ],
         "8": [
           0,
@@ -1046,58 +1046,58 @@ const CFG = {
           ""
         ],
         "9": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche ai vincoli urbanistici che frenano gli investimenti privati sugli studentati",
+          "Dibattito PUG / Consiglio comunale"
         ],
         "10": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Tutela dei piccoli proprietari immobiliari contro il blocco degli sfratti e le occupazioni",
+          "Interventi aula FI / Resto del Carlino"
         ],
         "11": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Richiesta di potenziamento dei presidi di ordine pubblico e proroga delle zone rosse",
+          "Resto del Carlino"
         ],
         "12": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Ordini del giorno e interventi in Consiglio comunale per dotare la Polizia locale del taser",
+          "Atti Consiglio / Resto del Carlino"
         ],
         "13": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Contrarietà alle politiche comunali di distribuzione di materiali per il consumo di stupefacenti",
+          "Dichiarazioni centrodestra / FI"
         ],
         "14": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Critiche alla gestione comunale dell'accoglienza e richiesta di maggiore controllo sui flussi",
+          "Interventi aula FI"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Voto contrario agli aumenti TARI in Consiglio comunale e richiesta di sgravi ed esenzioni",
+          "Voto PEF TARI / Resto del Carlino"
         ],
         "16": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Critiche al sistema Carta Smeraldo per disagi ai residenti e costi del servizio rifiuti",
+          "Interventi aula FI"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario in sede di bilancio a qualsiasi aumento della pressione fiscale locale e IRPEF",
+          "Voto bilancio FI"
         ],
         "18": [
           1,
@@ -1106,28 +1106,28 @@ const CFG = {
           "Interventi bilancio FI"
         ],
         "19": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario alla delibera 27/12/2021 sul Passante di Mezzo e richiesta di ripensare l'opera",
+          "Delibera CC 27/12/2021 / Carlino"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Critiche ai costi dell'operazione degli alberi in vaso nelle piazze storiche",
+          "Dibattito Consiglio comunale 2025"
         ],
         "21": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Critiche all'impostazione restrittiva del PUG sullo sviluppo edilizio e produttivo",
+          "Dibattito PUG FI"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Favorevole a incentivi e premialità per favorire la rigenerazione privata delle aree dismesse",
+          "Proposte urbanistiche FI"
         ],
         "23": [
           0,
@@ -1136,10 +1136,10 @@ const CFG = {
           ""
         ],
         "24": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Dure critiche del capogruppo Stanzani sulla gestione del caso Garisenda, dei fondi PNRR e della viabilità",
+          "Resto del Carlino 2024"
         ],
         "25": [
           0,
@@ -1154,10 +1154,10 @@ const CFG = {
           ""
         ],
         "27": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Difesa del ruolo educativo primario e del consenso informato delle famiglie nelle scuole",
+          "Resto del Carlino / Dire"
         ],
         "28": [
           1,
@@ -1166,16 +1166,16 @@ const CFG = {
           "Voto aula 26/3/2018"
         ],
         "29": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Voto contrario in Consiglio alla modifica statutaria sullo Ius Soli simbolico",
+          "Voto aula Statuto 2023"
         ],
         "30": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Interrogazioni di Stanzani contro la tolleranza verso occupazioni abusive e concessioni ai collettivi",
+          "Resto del Carlino / Dire"
         ],
         "31": [
           0,
@@ -1197,222 +1197,6 @@ const CFG = {
         ]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M7 1.5L13 12.5H1Z\" fill=\"var(--fi)\"/></svg>"
-    },
-    {
-      "k": "m5",
-      "short": "M5S",
-      "full": "Movimento 5 Stelle",
-      "rank": [
-        "al M5S",
-        "il M5S"
-      ],
-      "btn": "M5S",
-      "dot": "m5",
-      "light": "#A16207",
-      "dark": "#FCD34D",
-      "sub": "Solo posizioni documentate",
-      "ordList": 0,
-      "data": {
-        "1": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "2": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "3": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "4": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "5": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "6": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "7": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "8": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "9": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "10": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "11": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "12": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "13": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "14": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "15": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "16": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "17": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "18": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "19": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "20": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "21": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "22": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "23": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "24": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "25": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "26": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "27": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "28": [
-          5,
-          5,
-          "Regolamento 26/3/2018: voto a favore",
-          "Regolamento 26/3/2018: voto a favore"
-        ],
-        "29": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "30": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "31": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "32": [
-          0,
-          0,
-          "",
-          ""
-        ],
-        "33": [
-          0,
-          0,
-          "",
-          ""
-        ]
-      },
-      "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M4 1.5H10L13 7L10 12.5H4L1 7Z\" fill=\"var(--m5)\"/></svg>"
     },
     {
       "k": "cc",
@@ -1514,10 +1298,10 @@ const CFG = {
           "Atti accoglienza CoCi"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Voto favorevole al PEF TARI di maggioranza con tutela delle fasce di reddito più basse",
+          "Voto Consiglio PEF TARI"
         ],
         "16": [
           5,
@@ -1526,16 +1310,16 @@ const CFG = {
           "Piano rifiuti CoCi"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Sostegno alla fiscalità locale progressiva per potenziare welfare pubblico, casa e servizi",
+          "Bilancio Comune / CoCi"
         ],
         "18": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Proposta e voto per alzare l'imposta di soggiorno destinando il gettito a casa e servizi per i residenti",
+          "coalizionecivica.it / Carlino"
         ],
         "19": [
           4,
@@ -1544,10 +1328,10 @@ const CFG = {
           "Delibera CC 27/12/2021"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Sostegno agli interventi di depavimentazione, forestazione e alberature nelle piazze contro le isole di calore",
+          "coalizionecivica.it"
         ],
         "21": [
           5,
@@ -1556,34 +1340,34 @@ const CFG = {
           "PUG 2025 CoCi"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Forte contrarietà a premi volumetrici e cubature speculative ai privati nelle aree dismesse",
+          "Atti urbanistica CoCi"
         ],
         "23": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Forti riserve sull'ipotesi nuovo stadio in Fiera per rischi di consumo di suolo e speculazione edilizia",
+          "Resto del Carlino / CoCi"
         ],
         "24": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Sostegno ai fondi pubblici per la messa in sicurezza della Garisenda con tutela del trasporto pubblico Tper",
+          "coalizionecivica.it"
         ],
         "25": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Priorità all'azzeramento totale delle liste d'attesa nei nidi pubblici anche per la fascia 0-12 mesi",
+          "Programma educazione CoCi"
         ],
         "26": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Sostegno a mense scolastiche 100% biologiche, a filiera corta e con controllo pubblico della qualità",
+          "Programma scuola CoCi"
         ],
         "27": [
           1,
@@ -1610,10 +1394,10 @@ const CFG = {
           "Atti patrimonio CoCi"
         ],
         "31": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Promozione delle aperture serali delle biblioteche e degli spazi culturali pubblici gratuiti",
+          "Piano Bologna di Notte / CoCi"
         ],
         "32": [
           5,
@@ -1706,46 +1490,46 @@ const CFG = {
           "Politiche abitative"
         ],
         "11": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Condivisione delle zone rosse prefettizie affiancate da interventi sociali e di rigenerazione",
+          "Dichiarazioni Sindaco Lepore"
         ],
         "12": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Contrarietà del sindaco Lepore alla dotazione del taser per la Polizia locale di Bologna",
+          "Dichiarazioni Giunta / Consiglio"
         ],
         "13": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Difesa dei progetti comunali e AUSL di riduzione del danno e unità di strada",
+          "Atti Giunta / Welfare"
         ],
         "14": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Difesa del sistema bolognese di accoglienza diffusa SAI e critica ai tagli governativi",
+          "Dichiarazioni Sindaco Lepore"
         ],
         "15": [
-          0,
-          0,
-          "",
-          ""
+          2,
+          2,
+          "Proposta di Giunta sul PEF TARI con adeguamento ai costi Istat/Arera e sconti sociali",
+          "Delibera Giunta PEF TARI"
         ],
         "16": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Attuazione del piano per la tariffazione puntuale dei rifiuti con Carta Smeraldo",
+          "Piano rifiuti Giunta Lepore"
         ],
         "17": [
-          0,
-          0,
-          "",
-          ""
+          4,
+          4,
+          "Impostazione del bilancio comunale con IRPEF progressiva a sostegno del welfare e del trasporto pubblico",
+          "Bilancio mandato Lepore"
         ],
         "18": [
           5,
@@ -1760,52 +1544,52 @@ const CFG = {
           "Delibera CC 27/12/2021"
         ],
         "20": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Varo del progetto di alberi nelle piazze del centro storico con il Fondo di adattamento climatico",
+          "Comune di Bologna 2025"
         ],
         "21": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Adozione del PUG a saldo zero consumo di suolo su aree libere",
+          "PUG mandato Lepore"
         ],
         "22": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Rigenerazione urbana su aree ex ferroviarie e militari vincolata a quote di edilizia sociale e verde",
+          "PUG mandato Lepore"
         ],
         "23": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Confronto aperto sull'ipotesi stadio in Fiera e sospensione dei 40M comunali per il restyling Dall'Ara",
+          "Resto del Carlino / Gazzetta di Bologna"
         ],
         "24": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Stanziamento di risorse comunali e Art Bonus per il cantiere di messa in sicurezza della Garisenda",
+          "Comune di Bologna 2024"
         ],
         "25": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Obiettivo di mandato sull'azzeramento delle liste d'attesa dei nidi comunali",
+          "Comune di Bologna 2025"
         ],
         "26": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Conferma della prevalenza di prodotti biologici nel servizio di refezione scolastica Ribò",
+          "Comune di Bologna / Ribò"
         ],
         "27": [
-          0,
-          0,
-          "",
-          ""
+          1,
+          1,
+          "Difesa dei progetti educativi comunali su parità, affettività e contrasto alle discriminazioni",
+          "Atti educazione Giunta"
         ],
         "28": [
           5,
@@ -1820,16 +1604,16 @@ const CFG = {
           "Open 14/3/2023"
         ],
         "30": [
-          0,
-          0,
-          "",
-          ""
+          3,
+          3,
+          "Patti di collaborazione e Case di quartiere nel quadro del regolamento beni comuni",
+          "Regolamento beni comuni"
         ],
         "31": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Lancio delle aperture serali fino a mezzanotte di Salaborsa con Bologna di Notte",
+          "Comune di Bologna"
         ],
         "32": [
           5,
@@ -1838,10 +1622,10 @@ const CFG = {
           "Regolamento commercio"
         ],
         "33": [
-          0,
-          0,
-          "",
-          ""
+          5,
+          5,
+          "Priorità del Piano sociale di zona ai servizi pubblici domiciliari e di prossimità",
+          "Piano sociale di zona"
         ]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M7 1L8.7 4.8L13 5.2L9.8 8.1L10.7 12.5L7 10.3L3.3 12.5L4.2 8.1L1 5.2L5.3 4.8Z\" fill=\"var(--ls)\"/></svg>"
