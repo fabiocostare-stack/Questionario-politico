@@ -263,13 +263,13 @@ function nearestParties(n){const r=PARTIES.map(p=>({k:p[0],pct:aff(p[3]()).pct,c
 
 /* Cosa distingue i due partiti e liste più vicini: aiuta quando le percentuali sono ravvicinate */
 const DOTCLS={};SUBJ.forEach(x=>DOTCLS[x.k]=x.dot||x.k);
-function splitBlock(){
+function splitBlock(){if(BAND_MODE)return null;
   const rk=PARTIES.map(p=>({k:p[0],l:p[2],V:p[3](),a:aff(p[3]())})).filter(r=>r.a.c>=10).sort((x,y)=>y.a.pct-x.a.pct);
   if(rk.length<2)return null;const A=rk[0],B=rk[1],rows=[];
   Object.keys(ans).forEach(n=>{const u=ans[n],a=A.V[n],b=B.V[n];if(!(QTXT[n]&&u>0&&a&&b)||Math.abs(a-b)<2)return;const d=Math.abs(u-b)-Math.abs(u-a);if(d)rows.push({n,u,a,b,d,s:Math.abs(d)*10+Math.abs(a-b)})});
   const close=rk[0].a.pct-rk[1].a.pct<5;
   const bl=h('section','block','<h2>Cosa distingue '+esc(A.l)+' da '+esc(B.l)+'</h2><p class="lead">'+(close?'Sono i due partiti e liste più vicini a te e le percentuali sono ravvicinate. ':'Sono i due partiti e liste più vicini a te. ')+'Qui sotto le affermazioni su cui hanno posizioni nettamente diverse e la tua risposta sta più da una parte.</p>');
-  if(!rows.length){bl.appendChild(h('p','small','Tra le tue risposte non ci sono affermazioni su cui i due partiti e liste siano molto distanti.'));return bl}
+  if(!rows.length)return null;
   const key=h('div','key','<span>'+SH.me+'Tu</span><span>'+SH[A.k]+esc(A.l)+'</span><span>'+SH[B.k]+esc(B.l)+'</span>');
   const col=(party,other,list)=>{const p=h('div','panel');p.appendChild(h('h3','','Ti avvicinano a '+esc(party.l)));p.lastChild.style.marginBottom='8px';
     if(!list.length)p.appendChild(h('p','small','Nessuna affermazione in questo senso.'));
