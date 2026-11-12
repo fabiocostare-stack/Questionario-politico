@@ -278,13 +278,13 @@
       <nav class="navlinks" aria-label="Navigazione">
         <a class="pill" href="#temi">I 7 temi</a>
         <a class="pill" href="#metodo">Metodo e fonti</a>
-        <a class="pill" href="#replica">Diritto di replica</a>
+        <a class="pill" href="#replica">Contatti e replica</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <span class="badge">Bologna 2027 · Servizio civico gratuito</span>
+        <span class="badge">Bologna oggi e verso il 2027 · Servizio civico gratuito</span>
         <h1>Che posizione hai sui temi chiave di Bologna?</h1>
         <p class="lead">
           33 affermazioni concrete su ciò che si discute e vota in città, con argomenti pro e contro per farti un’opinione. Alla fine vedi il tuo profilo e la vicinanza con le forze politiche bolognesi.
@@ -294,13 +294,14 @@
             Fai il questionario di Bologna
             <span aria-hidden="true">→</span>
           </a>
+          <a class="btn-secondary" href="bologna.html#demo">Vedi un risultato di esempio (1 clic)</a>
           <a class="btn-secondary" href="#metodo">Come scegliamo i voti e le fonti</a>
         </div>
 
         <div class="stats" id="stats">
           <div class="stat"><strong id="st-q">33</strong><span>affermazioni sui nodi reali del Consiglio comunale</span></div>
-          <div class="stat"><strong id="st-p">7</strong><span>forze politiche cittadine confrontate</span></div>
-          <div class="stat"><strong id="st-v">—</strong><span>posizioni già documentate da atti e stampa</span></div>
+          <div class="stat"><strong id="st-p">6</strong><span>gruppi consiliari cittadini confrontati</span></div>
+          <div class="stat"><strong id="st-v">193</strong><span>posizioni già documentate da atti e stampa</span></div>
           <div class="stat"><strong>0</strong><span>dati personali raccolti: tutto resta nel tuo dispositivo</span></div>
         </div>
       </section>
@@ -318,7 +319,7 @@
           <article class="pillar">
             <span class="num">1</span>
             <h3>Solo posizioni documentate</h3>
-            <p>Un partito riceve un punteggio (da 1 a 5) solo se esiste un riscontro pubblico: voto in Consiglio comunale, ordine del giorno, programma o dichiarazione ufficiale del capogruppo.</p>
+            <p>Un partito riceve un punteggio (da 1 a 5) solo se esiste un riscontro pubblico: voto in Consiglio comunale, ordine del giorno, programma o dichiarazione pubblica riportata dalla stampa.</p>
           </article>
           <article class="pillar">
             <span class="num">2</span>
@@ -348,27 +349,28 @@
 
       <section id="replica">
         <div class="callout">
-          <h3>Diritto di replica per liste, candidati e comitati</h3>
+          <h3>Per redazioni, radio, associazioni e diritto di replica</h3>
           <p>
-            In vista delle comunali 2027 vogliamo che ogni lista presente in città (incluse forze oggi prive di gruppo consiliare in Comune, come il Movimento 5 Stelle dal luglio 2022, o nuove liste civiche) possa verificare, integrare o rettificare le proprie posizioni indicando un atto pubblico o una dichiarazione formale.
+            <strong>Sei un giornalista, un conduttore radiofonico o un’associazione cittadina?</strong>
+            Le 33 domande e le schede pro/contro sono liberamente utilizzabili in trasmissione, nei dibattiti pubblici o negli articoli citando il progetto. L’autore (<strong>Fabio Costa</strong>) è disponibile per raccontare lo strumento in radio o in redazione.
           </p>
           <p>
-            <strong>Sei un referente di lista, un giornalista o un cittadino che ha trovato un voto d’aula mancante?</strong>
-            Puoi inviare segnalazioni e integrazioni compilando la scheda dedicata: basterà inserire il tuo nominativo, la tua email e il messaggio con il riferimento all’atto pubblico.
+            <strong>Diritto di replica per liste, candidati e comitati:</strong>
+            in vista delle comunali 2027 ogni lista presente in città (incluse forze oggi prive di gruppo consiliare in Comune, come il Movimento 5 Stelle dal luglio 2022, o nuove liste civiche) può verificare, integrare o rettificare le proprie posizioni indicando un atto pubblico o una dichiarazione formale.
           </p>
           <div class="replica-actions">
-            <a class="replica-link" href="#scheda-replica" id="open-replica">Apri scheda di segnalazione</a>
+            <a class="replica-link" href="#scheda-replica" id="open-replica">Scrivi all’autore o invia una segnalazione</a>
           </div>
         </div>
       </section>
 
       <dialog class="sheet" id="scheda-replica" aria-labelledby="scheda-title">
         <div class="sheet-head">
-          <h3 id="scheda-title">Invia una segnalazione o rettifica</h3>
+          <h3 id="scheda-title">Contatta l’autore o invia una segnalazione</h3>
           <button type="button" class="sheet-close" id="close-replica" aria-label="Chiudi scheda">×</button>
         </div>
         <form class="sheet-body" id="replica-form">
-          <p class="sheet-note">Inserisci il tuo nominativo, la tua email per eventuale riscontro e il messaggio con il link o gli estremi dell’atto pubblico.</p>
+          <p class="sheet-note">Puoi usare questo modulo per contatti stampa/radio, collaborazioni civiche o per segnalare un atto pubblico o una rettifica.</p>
           <div class="field">
             <label for="rep-name">Nominativo (nome, cognome o lista/testata)</label>
             <input type="text" id="rep-name" name="name" required autocomplete="name" placeholder="Es. Mario Rossi — Comitato ...">

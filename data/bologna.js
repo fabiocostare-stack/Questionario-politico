@@ -21,7 +21,7 @@ const CFG = {
   "shareFooter": "Confronto basato su atti e posizioni documentate. Non è un giudizio.",
   "intro": {
     "h1": "Cosa vuoi per Bologna?",
-    "lead": "Rispondi a {TOTAL} affermazioni su mobilità, casa, sicurezza, bilancio, territorio, diritti e servizi di quartiere. Ognuna nasce da una decisione concreta del Comune del 2025-2026: alla fine vedi il tuo profilo su {AXES} temi e, dove le posizioni sono documentate, quanto sei vicino alle forze politiche cittadine.",
+    "lead": "Rispondi a {TOTAL} affermazioni su mobilità, casa, sicurezza, bilancio, territorio, diritti e servizi di quartiere. Ognuna nasce da un voto o da una decisione reale del Comune di Bologna: alla fine vedi il tuo profilo su {AXES} temi e la tua vicinanza ai 6 gruppi consiliari di Palazzo d'Accursio.",
     "facts": [
       [
         "{TOTAL}",
@@ -37,7 +37,7 @@ const CFG = {
       ]
     ],
     "demo": "Il limite di 30 km/h deve restare in vigore su tutte le strade di quartiere.",
-    "notes": "Versione pilota. Ogni domanda nasce da un atto, un bando o una decisione del Comune tra il 2025 e il novembre 2026, e la guida di ogni domanda spiega il contesto. Le posizioni delle forze politiche sono assegnate solo dove un voto o una dichiarazione sono documentati: per le altre non c'è nessuna base, quindi il confronto è ancora parziale. I candidati alle comunali 2027 non sono ancora noti. Le risposte restano solo nel tuo browser e il profilo è anonimo."
+    "notes": "Ogni domanda nasce da una delibera, un ordine del giorno o un dibattito reale a Bologna (2025-2026), con una guida pro e contro per farsi un'opinione. Il confronto copre i 6 gruppi consiliari attivi a Palazzo d'Accursio su 193 posizioni documentate da voti d'aula, atti pubblici e dichiarazioni alla stampa, e verrà integrato con i programmi ufficiali per le comunali 2027. Le risposte restano solo nel tuo browser e il profilo è anonimo."
   },
   "sections": [
     {

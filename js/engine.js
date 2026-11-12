@@ -67,7 +67,7 @@ function randomTest(){
   testRun=true;ans=coherentAnswers();imp={};open={};idx=0;view='res';topicParty=null;shown=null;render();window.scrollTo(0,0)
 }
 function exitRandomTest(){
-  if(!testRun||!testState)return;const s=testState;ans=s.ans;imp=s.imp||{};open=s.open;idx=s.idx;view=s.view;guideQuestion=s.guideQuestion;guideReturnIdx=s.guideReturnIdx;guideSection=s.guideSection;testRun=false;testState=null;render();window.scrollTo(0,0)
+  if(!testRun||!testState)return;if(location.hash==='#demo')try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}const s=testState;ans=s.ans;imp=s.imp||{};open=s.open;idx=s.idx;view=s.view;guideQuestion=s.guideQuestion;guideReturnIdx=s.guideReturnIdx;guideSection=s.guideSection;testRun=false;testState=null;render();window.scrollTo(0,0)
 }
 
 /* condivisione: link con le risposte nell'hash (non lascia mai il browser) e immagine del profilo */
@@ -76,7 +76,7 @@ const QKEYS=Object.keys(QTXT).map(Number).sort((a,b)=>a-b);
 function encodeAns(){const hasImp=QKEYS.some(n=>imp[n]&&ans[n]>0),w=hasImp?4:3,bits=[];QKEYS.forEach(n=>{const v=ans[n];const st=v===undefined?0:v+1;bits.push((st>>2)&1,(st>>1)&1,st&1);if(hasImp)bits.push(imp[n]&&v>0?1:0)});while(bits.length%8)bits.push(0);let bin='';for(let i=0;i<bits.length;i+=8){let b=0;for(let j=0;j<8;j++)b=(b<<1)|bits[i+j];bin+=String.fromCharCode(b)}return (hasImp?'2.':'1.')+btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
 function decodeAns(str){try{const ver=str.startsWith('2.')?2:str.startsWith('1.')?1:0;if(!ver)return null;const w=ver===2?4:3;let t=str.slice(2).replace(/-/g,'+').replace(/_/g,'/');while(t.length%4)t+='=';const bin=atob(t);if(bin.length!==Math.ceil(QKEYS.length*w/8))return null;const bits=[];for(let i=0;i<bin.length;i++){const b=bin.charCodeAt(i);for(let j=7;j>=0;j--)bits.push((b>>j)&1)}const out={},im={};for(let k=0;k<QKEYS.length;k++){const st=(bits[k*w]<<2)|(bits[k*w+1]<<1)|bits[k*w+2];if(st>6)return null;if(st>0)out[QKEYS[k]]=st-1;if(ver===2&&bits[k*w+3]&&st>1)im[QKEYS[k]]=1}return {ans:out,imp:im}}catch(e){return null}}
 function shareURL(){return location.href.split('#')[0]+'#r='+(CFG.shareId?CFG.shareId+'~':'')+encodeAns()}
-function tryShared(){const m=/^#r=(?:([a-z0-9-]+)~)?([A-Za-z0-9_.-]+)$/.exec(location.hash);if(!m||(m[1]||null)!==(CFG.shareId||null))return;const dd=decodeAns(m[2]),d=dd&&dd.ans;if(d&&Object.keys(d).filter(k=>d[k]>0).length>=10){shared=true;ans=d;imp=dd.imp;open={};view='res'}return shared}tryShared();
+function tryShared(){if(location.hash==='#demo'){testState={ans:{...ans},imp:{...imp},open:{...open},idx,view,guideQuestion,guideReturnIdx,guideSection};testRun=true;ans=coherentAnswers();imp={};open={};idx=0;view='res';return false}const m=/^#r=(?:([a-z0-9-]+)~)?([A-Za-z0-9_.-]+)$/.exec(location.hash);if(!m||(m[1]||null)!==(CFG.shareId||null))return;const dd=decodeAns(m[2]),d=dd&&dd.ans;if(d&&Object.keys(d).filter(k=>d[k]>0).length>=10){shared=true;ans=d;imp=dd.imp;open={};view='res'}return shared}tryShared();
 
 let pmenuOpen=false,renaming=false,confirmDel=false;
 const curName=()=>(PR.list.find(p=>p.id===PR.cur)||{}).name||'Profilo';
@@ -187,7 +187,7 @@ function renderIntro(m){
   const f=h('div','facts',CFG.intro.facts.map(([a,b])=>'<div><b>'+T(a)+'</b><span>'+T(b)+'</span></div>').join(''));L.appendChild(f);
   const c=h('div','cta');const go=h('button','btn',resume?'Riprendi da dove eri':'Inizia');go.onclick=()=>{view='flow';if(!resume)idx=0;save();render()};c.appendChild(go);
   if(resume){const rs=h('button','btn ghost','Vedi il risultato');rs.onclick=()=>{view='res';save();render()};c.appendChild(rs)}
-  const test=h('button','btn ghost','Prova un risultato casuale');test.type='button';test.onclick=randomTest;c.appendChild(test);L.appendChild(c);
+  const test=h('button','btn ghost','Vedi subito un esempio di risultato');test.type='button';test.onclick=randomTest;c.appendChild(test);L.appendChild(c);
   const R=h('aside','ballot','<h3>Come si risponde</h3><div class="demo">'+CFG.intro.demo+'</div>');
   const dm=h('div','ovals');let sel=4;const draw=()=>{dm.innerHTML='';dm.appendChild(ovals(sel,v=>{sel=v;draw()},'d'))};draw();R.appendChild(dm);
   
