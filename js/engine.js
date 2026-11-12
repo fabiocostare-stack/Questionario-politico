@@ -88,8 +88,8 @@ function delProfile(){if(testRun)exitRandomTest();const id=PR.cur;PR.list=PR.lis
 function importShared(){const d=ans,di=imp;leaveShared();const id=newProfile();PR.cur=id;open={};ans=d;imp=di;idx=0;view='res';guideQuestion=1;save();render();window.scrollTo(0,0)}
 function renderProfileMenu(){
   const pb=$('pbtn'),pm=$('pmenu');if(!pb)return;
-  pb.innerHTML='<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="9" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4.5 20c1-4 4-5.5 7.5-5.5s6.5 1.5 7.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="pname">'+esc(shared?'Profilo condiviso':'Profili')+'</span>';
-  pb.setAttribute('aria-expanded',pmenuOpen);pb.title='Profili anonimi su questo dispositivo';pm.hidden=!pmenuOpen;
+  pb.innerHTML='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="9" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4.5 20c1-4 4-5.5 7.5-5.5s6.5 1.5 7.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  pb.setAttribute('aria-label',shared?'Profilo condiviso':'Profili anonimi');pb.setAttribute('aria-expanded',pmenuOpen);pb.title=shared?'Profilo condiviso':'Profili anonimi su questo dispositivo';pm.hidden=!pmenuOpen;
   if(!pmenuOpen)return;pm.innerHTML='';
   pm.appendChild(h('p','pm-note','Profili anonimi: non serve nessun dato personale e restano solo su questo dispositivo.'));
   PR.list.forEach(p=>{const n=profCount(p.id);const b=h('button','',esc(p.name)+'<span class="n">'+n+'/'+TOTAL+'</span>');if(p.id===PR.cur&&!shared)b.setAttribute('aria-current','true');b.onclick=()=>switchProfile(p.id);pm.appendChild(b)});
