@@ -190,8 +190,8 @@ p{margin:0}
 .cmp .why{font-size:14px;color:var(--ink2);padding-top:10px}
 .foot{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
 .small{font-size:14px;color:var(--ink2)}
-@media (max-width:700px){.bar{padding-block:10px}.bar .wrap{gap:8px 10px}.brand{font-size:17px;gap:8px}.brand svg{width:22px;height:22px}.prog{order:3;flex-basis:100%}.barin{margin-left:auto;gap:6px!important}.pill{padding:6px 11px;font-size:12.5px;line-height:1.2}#pbtn{width:32px;height:32px}.map text{font-size:12.5px}.map .lab{font-size:14px}}
-@media (max-width:460px){.barin{gap:5px!important}.pill{padding:5px 10px;font-size:12px}#pbtn{width:30px;height:30px}}
+@media (max-width:700px){.bar{padding-block:10px}.bar .wrap{gap:8px 10px}.brand{font-size:17px;gap:8px}.brand svg{width:22px;height:22px}.prog{order:3;flex-basis:100%}.barin{margin-left:auto;gap:6px!important}.pill{padding:6px 12px;font-size:13.5px;line-height:1.2}#pbtn{width:34px;height:34px}.map text{font-size:12.5px}.map .lab{font-size:14px}}
+@media (max-width:460px){.barin{gap:5px!important}.pill{padding:6px 11px;font-size:13px}#pbtn{width:32px;height:32px}}
 @media (max-width:900px){
   .hero,.flow,.two{grid-template-columns:minmax(0,1fr)}
   .live{display:none}
