@@ -1,5 +1,5 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v27';
+const V='scheda-v28';
 const FILES=[
   './',
   'index.html',
