@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Scheda Politica · Rimini 2027 — Registro completo delle fonti</title>
+  <meta name="description" content="Tutte le fonti documentate delle 25 affermazioni su Rimini 2027: atti del Comune, voti in Consiglio comunale e copertura delle forze politiche.">
+  <meta name="theme-color" content="#0A7C74">
+  <link rel="manifest" href="scheda.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/fonts.css">
+  <style>
+    :root{
+      color-scheme:light;
+      --bg:#EDF0F5;--surface:#FFFFFF;--ink:#0E1726;--ink2:#434F65;--mute:#5D6980;
+      --line:#D3D9E3;--track:#E3E8F0;--me:#0A7C74;--me-ink:#FFFFFF;--soft:#D9EFEC;
+      --warn-bg:#FEF3C7;--warn-ink:#92400E;--warn-line:#F59E0B;
+      --f-display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+      --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        color-scheme:dark;
+        --bg:#0B1120;--surface:#141C2F;--ink:#EAEFF8;--ink2:#B0BACD;--mute:#8F9CB3;
+        --line:#26304A;--track:#1E2840;--me:#37B5AB;--me-ink:#04201E;--soft:#12332F;
+        --warn-bg:#3B2A0A;--warn-ink:#FCD34D;--warn-line:#B45309;
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font:400 15.5px/1.55 var(--f-body);padding:0 16px 56px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:980px;margin:0 auto}
+
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:calc(16px + env(safe-area-inset-top,0px)) 0 12px;
+    }
+    .brand{
+      font:800 18.5px/1 var(--f-display);letter-spacing:-.03em;
+      display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:inherit;
+    }
+    .brand svg{width:24px;height:24px;flex:none}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill{
+      border:1.5px solid var(--line);background:var(--surface);color:var(--ink);
+      border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:500;text-decoration:none;
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .pill:hover{border-color:var(--me)}
+    .pill.cta{background:var(--me);border-color:var(--me);color:var(--me-ink);font-weight:700}
+    .pill.cta:hover{filter:brightness(1.06)}
+
+    .hero{padding:20px 0 18px}
+    .badge{
+      display:inline-block;background:var(--soft);color:var(--me);
+      font:700 12.5px/1 var(--f-body);letter-spacing:.02em;text-transform:uppercase;
+      padding:5px 11px;border-radius:999px;margin-bottom:10px;
+    }
+    h1{
+      font:800 clamp(26px,4.6vw,38px)/1.08 var(--f-display);
+      letter-spacing:-.03em;margin:0 0 10px;
+    }
+    .lead{font-size:16px;color:var(--ink2);margin:0 0 18px}
+
+    .rules{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;
+      margin:0 0 20px;
+    }
+    .rule{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;
+      font-size:14px;color:var(--ink2);
+    }
+    .rule strong{display:block;font:700 14.5px/1.2 var(--f-display);color:var(--ink);margin-bottom:4px}
+
+    .kpis{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:0 0 22px;
+    }
+    .kpi{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:12px 15px}
+    .kpi b{display:block;font:800 24px/1.1 var(--f-display);color:var(--me);font-variant-numeric:tabular-nums}
+    .kpi span{display:block;font-size:13px;color:var(--ink2);margin-top:2px}
+
+    .controls{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:18px;
+      padding:16px 18px;margin-bottom:20px;display:flex;flex-direction:column;gap:12px;
+    }
+    .ctrl-top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .search-box{flex:1 1 240px;position:relative}
+    .search-box input{
+      width:100%;font:inherit;font-size:14.5px;color:var(--ink);background:var(--bg);
+      border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;
+    }
+    .search-box input:focus{outline:none;border-color:var(--me)}
+    .select-box select{
+      font:inherit;font-size:14px;color:var(--ink);background:var(--bg);
+      border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;cursor:pointer;
+    }
+    .select-box select:focus{outline:none;border-color:var(--me)}
+    .chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+    .chip{
+      border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+      border-radius:999px;padding:5px 12px;font:500 13px/1.2 var(--f-body);cursor:pointer;
+    }
+    .chip[aria-pressed="true"]{background:var(--me);border-color:var(--me);color:var(--me-ink);font-weight:600}
+    .count-note{font-size:13.5px;color:var(--mute)}
+
+    .q-list{display:flex;flex-direction:column;gap:14px}
+    .q-card{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:18px;
+      padding:18px 20px;
+    }
+    .q-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+    .q-sec{
+      font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;
+      color:var(--me);background:var(--soft);padding:3px 9px;border-radius:999px;
+    }
+    .q-cov{font-size:12.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+    .q-title{font:700 17.5px/1.3 var(--f-display);margin:4px 0 12px}
+
+    .ctx-box{
+      background:var(--bg);border:1px solid var(--line);border-radius:12px;
+      padding:10px 13px;font-size:13.5px;color:var(--ink2);margin-bottom:12px;
+      display:flex;flex-direction:column;gap:4px;
+    }
+    .ctx-top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .tag-ok{
+      font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;
+      background:var(--soft);color:var(--me);
+    }
+    .tag-wait{
+      font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;
+      background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line);
+    }
+    .ctx-type{font-weight:600;color:var(--ink)}
+    .ctx-link{color:var(--me);font-weight:600;text-decoration:none;word-break:break-all}
+    .ctx-link:hover{text-decoration:underline}
+
+    .party-grid{
+      display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;
+    }
+    .p-cell{
+      border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:var(--surface);
+      display:flex;flex-direction:column;gap:4px;
+    }
+    .p-cell.empty{background:var(--bg);opacity:.72}
+    .p-top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+    .p-name{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13.5px}
+    .p-dot{width:10px;height:10px;border-radius:50%;flex:none}
+    .p-score{
+      font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;
+      background:var(--track);color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums;
+    }
+    .p-why{font-size:12.5px;color:var(--ink2);line-height:1.4}
+
+    .callout{
+      background:var(--soft);border:1.5px solid var(--me);border-radius:18px;
+      padding:18px 20px;margin-top:26px;display:flex;justify-content:space-between;
+      align-items:center;gap:14px;flex-wrap:wrap;
+    }
+    .callout p{margin:0;font-size:14.5px;color:var(--ink2)}
+    .callout strong{color:var(--ink)}
+    .btn-main{
+      display:inline-flex;align-items:center;gap:6px;background:var(--me);color:var(--me-ink);
+      text-decoration:none;font:700 14px/1.2 var(--f-display);padding:11px 16px;border-radius:12px;
+      white-space:nowrap;
+    }
+    .btn-main:hover{filter:brightness(1.06)}
+
+    footer{
+      margin-top:32px;padding-top:18px;border-top:1.5px solid var(--line);
+      display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      font-size:13.5px;color:var(--mute);
+    }
+    footer a{color:var(--ink);font-weight:500;text-decoration:none}
+    footer a:hover{text-decoration:underline}
+    a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--me);outline-offset:2px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="rimini.html">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M7.5 13.5l3.8 3.8 7.2-8" fill="none" stroke="var(--me)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scheda Politica · Rimini 2027
+      </a>
+      <nav class="navlinks" aria-label="Navigazione">
+        <a class="pill" href="hub.html">Altre città</a>
+        <a class="pill" href="index.html">Metodo e garanzie</a>
+        <a class="pill cta" href="rimini.html">Fai il questionario →</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="badge">Trasparenza e verificabilità · Rimini 2027</span>
+        <h1>Registro completo delle fonti e delle posizioni</h1>
+        <p class="lead">
+          Qui trovi, domanda per domanda, sia l’atto comunale o il dibattito da cui nasce ciascuna affermazione su Rimini sia i voti d’aula, gli ordini del giorno o le prese di posizione documentate per i 6 gruppi consiliari.
+        </p>
+
+        <div class="rules">
+          <div class="rule">
+            <strong>1. Fonti di contesto</strong>
+            Indicano la delibera, la variante o il dibattito consiliare reale del Comune di Rimini da cui nasce la domanda e che alimenta le spiegazioni pro/contro della Guida.
+          </div>
+          <div class="rule">
+            <strong>2. Posizioni dei partiti (1–5)</strong>
+            Assegnate in presenza di un voto in Consiglio comunale, un atto ufficiale, un ordine del giorno o una dichiarazione formale sulla stampa locale.
+          </div>
+          <div class="rule">
+            <strong>3. Aggiornamento aperto ai programmi</strong>
+            In vista delle comunali 2027 le posizioni saranno integrate e verificate sui programmi elettorali ufficiali e tramite segnalazioni documentate.
+          </div>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi"><b id="k-q">25</b><span>affermazioni nel questionario</span></div>
+          <div class="kpi"><b id="k-ctx">25 / 25</b><span>fonti di contesto attive</span></div>
+          <div class="kpi"><b id="k-pos">150</b><span>posizioni partitiche documentate</span></div>
+          <div class="kpi"><b id="k-parties">6</b><span>gruppi consiliari monitorati</span></div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Filtri registro fonti">
+        <div class="ctrl-top">
+          <div class="search-box">
+            <label for="q-search" class="sr-only" style="position:absolute;left:-9999px">Cerca per tema, parola chiave o atto</label>
+            <input type="search" id="q-search" placeholder="Cerca per parola chiave o atto (es. Parco del Mare, Arenile, Metromare, Stadio, TARI...)">
+          </div>
+          <div class="select-box">
+            <label for="sec-filter" style="position:absolute;left:-9999px">Filtra per sezione</label>
+            <select id="sec-filter">
+              <option value="all">Tutti i 6 temi</option>
+            </select>
+          </div>
+        </div>
+        <div class="chips" id="party-chips" role="group" aria-label="Filtra per forza politica"></div>
+        <div class="count-note" id="count-note"></div>
+      </section>
+
+      <section class="q-list" id="q-list" aria-live="polite"></section>
+
+      <div class="callout">
+        <p>
+          <strong>Hai trovato un voto d’aula mancante o un atto da aggiornare su Rimini?</strong>
+          Puoi inviare integrazioni, estremi di delibere o richieste di rettifica tramite la scheda dedicata.
+        </p>
+        <a class="btn-main" href="index.html#scheda-replica">Invia segnalazione / rettifica</a>
+      </div>
+    </main>
+
+    <footer>
+      <div><strong>Scheda Politica</strong> · Progetto civico indipendente curato da Fabio Costa (senza scopo di lucro)</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="rimini.html">Questionario Rimini</a>
+        <a href="hub.html">Altre città</a>
+        <a href="index.html">Metodo e garanzie</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="data/rimini.js"></script>
+  <script>
+  (function () {
+    const CONTEXT_SOURCES = {
+      1: { status: 'ok', type: 'Variante Piano dell’Arenile 2026 / Consiglio comunale', detail: 'Approvazione della variante che consente piscine (fino a 100 mq per micro-aggregazioni) e terrazze; voto contrario e critiche di FdI (Renzi).' },
+      2: { status: 'ok', type: 'Atti Consiglio comunale / Direttiva Bolkestein', detail: 'Dibattito consiliare su evidenze pubbliche delle concessioni balneari, indennizzi ai concessionari uscenti e tutela delle imprese familiari.' },
+      3: { status: 'ok', type: 'Delibere rigenerazione ex Colonie (Murri e Bolognese)', detail: 'Proposta di concordato per l’acquisizione del diritto di superficie dell’ex Colonia Murri e indirizzi urbanistici sul recupero delle colonie.' },
+      4: { status: 'ok', type: 'Bilancio di previsione / Imposta di soggiorno', detail: 'Destinazione del gettito dell’imposta di soggiorno a grandi eventi, Capodanno diffuso e promozione turistica internazionale.' },
+      5: { status: 'ok', type: 'Accordi istituzionali / Contributi Aeroporto Fellini', detail: 'Intese tra Comune, Regione e AIRiminum per lo sviluppo delle rotte internazionali e del distretto aeroportuale di Miramare.' },
+      6: { status: 'ok', type: 'Delibere Giunta e Consiglio / Parco del Mare', detail: 'Riqualificazione e pedonalizzazione dei tratti Nord e Sud del lungomare con sostituzione di asfalto e sosta auto con aree verdi e ciclopedonali.' },
+      7: { status: 'ok', type: 'Delibere Metromare Fiera / Fondi PNRR-MIT', detail: 'Progetto di prolungamento del trasporto rapido costiero dalla Stazione FS alla Fiera di Rimini e studio tratta verso Santarcangelo.' },
+      8: { status: 'ok', type: 'Piano Urbano della Mobilità Sostenibile (PUMS)', detail: 'Sviluppo della rete ciclabile Bicipolitana e interventi di moderazione della velocità e Zone 30 nei quartieri.' },
+      9: { status: 'ok', type: 'Delibera pubblico interesse / Nuovo Stadio Romeo Neri', detail: 'Approvazione del pubblico interesse per la riqualificazione dello Stadio Romeo Neri in partenariato pubblico-privato (Aurora Immobiliare - Rimini FC).' },
+      10: { status: 'ok', type: 'Commissione consiliare / Stampa locale (25/3/2026)', detail: 'Proposta del sindaco Sadegholvaad e confronto tra i gruppi sull’individuazione di un’area per trasferire il centro islamico di Borgo Marina.' },
+      11: { status: 'ok', type: 'Lavori Commissione consiliare / Atti Consiglio', detail: 'Dibattito sul coinvolgimento preventivo dei gruppi di opposizione e dei residenti nelle scelte sul luogo di culto.' },
+      12: { status: 'ok', type: 'Ordinanze sindacali estive / Mozioni sicurezza', detail: 'Ordinanze anti-vetro e alcolici sulla fascia costiera, presidi interforze estivi e mozioni dell’opposizione contro baby gang e degrado.' },
+      13: { status: 'ok', type: 'Mozioni e Ordini del giorno Consiglio comunale', detail: 'Mozioni del centrodestra (FdI, Lega, FI) per dotare di taser la Polizia Locale di Rimini, respinte dalla maggioranza di centrosinistra.' },
+      14: { status: 'ok', type: 'Indirizzi politiche abitative / Dibattito affitti', detail: 'Confronto su emergenza abitativa, accordi per il canone concordato e proposte di regolazione degli affitti brevi turistici.' },
+      15: { status: 'ok', type: 'Delibera Consiglio / Variante Staff Hotel ("Riminizzare")', detail: 'Norme urbanistiche e usi temporanei per riconvertire alberghi dismessi in alloggi per lavoratori stagionali, studenti e residenza sociale.' },
+      16: { status: 'ok', type: 'Documento programmatico PUG / L.R. 24/2017', detail: 'Indirizzi del nuovo Piano Urbanistico Generale di Rimini sul consumo di suolo a saldo zero e rigenerazione della fascia costiera.' },
+      17: { status: 'ok', type: 'Accordo istituzionale ex Caserma Giulio Cesare', detail: 'Conferma del polo della nuova Questura e riqualificazione urbana nell’area dell’ex Caserma Giulio Cesare.' },
+      18: { status: 'ok', type: 'Delibera Consiglio comunale 28/7/2026 (TARI)', detail: 'Voto consiliare (20 favorevoli maggioranza, 9 contrari opposizione) sulla copertura con risorse di bilancio dell’aumento della tariffa rifiuti.' },
+      19: { status: 'ok', type: 'Osservazioni e dibattito / Parco eolico offshore', detail: 'Confronto politico sul progetto di parco eolico offshore al largo della costa riminese tra transizione energetica e tutela del paesaggio.' },
+      20: { status: 'ok', type: 'Ordinanza balneare Comune di Rimini', detail: 'Divieto di fumo sulla battigia e bando della plastica monouso sull’arenile riminese.' },
+      21: { status: 'ok', type: 'Indirizzi società partecipate / Gruppo Hera e PSBO', detail: 'Dibattito tra gestione tramite multiutility quotata (Hera, realizzatrice del PSBO) e proposte di ripubblicizzazione dei servizi idrici e ambientali.' },
+      22: { status: 'ok', type: 'Bilancio servizi educativi / Fondi nidi', detail: 'Stanziamenti comunali e regionali per l’abbattimento delle rette e lo scorrimento delle liste d’attesa negli asili nido.' },
+      23: { status: 'ok', type: 'Delibere lavori pubblici / Nuova piscina di Viserba', detail: 'Realizzazione e apertura del nuovo polo natatorio comunale al Parco Don Tonino Bello di Viserba e piano palestre di quartiere.' },
+      24: { status: 'ok', type: 'Ordini del giorno Consiglio / Patrocinio Summer Pride', detail: 'Mozioni consiliari sul riconoscimento simbolico dello Ius Scholae e concessione di patrocinio e contributo al Rimini Summer Pride.' },
+      25: { status: 'ok', type: 'Regolamento concessione sale e spazi comunali', detail: 'Clausola sul rispetto dei valori costituzionali e antifascisti per la concessione di spazi pubblici e bandi per l’associazionismo giovanile.' }
+    };
+
+    if (typeof CFG === 'undefined') return;
+    const SCALE_LABELS = ['', 'Per niente', 'Poco', 'Così così', 'Abbastanza', 'Del tutto'];
+    const totalQ = CFG.sections.reduce((acc, s) => acc + (s.q ? s.q.length : 0), 0);
+    let totalVotes = 0;
+    CFG.subjects.forEach(sb => {
+      Object.values(sb.data || {}).forEach(v => { if (v && v[0] > 0) totalVotes++; });
+    });
+    const ctxOkCount = Object.values(CONTEXT_SOURCES).filter(x => x.status === 'ok').length;
+    const ctxWaitCount = totalQ - ctxOkCount;
+
+    document.getElementById('k-q').textContent = totalQ;
+    document.getElementById('k-ctx').textContent = ctxOkCount + ' / ' + totalQ;
+    document.getElementById('k-pos').textContent = totalVotes;
+    document.getElementById('k-parties').textContent = CFG.subjects.length;
+
+    const secSelect = document.getElementById('sec-filter');
+    CFG.sections.forEach((sec, idx) => {
+      const opt = document.createElement('option');
+      opt.value = String(idx);
+      opt.textContent = sec.t;
+      secSelect.appendChild(opt);
+    });
+
+    const chipsEl = document.getElementById('party-chips');
+    let partyFilter = 'all';
+    const chipDefs = [
+      { id: 'all', label: 'Tutte le forze' },
+      ...CFG.subjects.map(sb => ({
+        id: sb.k,
+        label: sb.short + ' (' + Object.values(sb.data || {}).filter(v => v && v[0] > 0).length + ')'
+      }))
+    ];
+    chipDefs.forEach(def => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'chip';
+      btn.textContent = def.label;
+      btn.setAttribute('aria-pressed', def.id === partyFilter ? 'true' : 'false');
+      btn.addEventListener('click', () => {
+        partyFilter = def.id;
+        chipsEl.querySelectorAll('.chip').forEach((b, i) => {
+          b.setAttribute('aria-pressed', chipDefs[i].id === partyFilter ? 'true' : 'false');
+        });
+        render();
+      });
+      chipsEl.appendChild(btn);
+    });
+
+    const searchInput = document.getElementById('q-search');
+    const listEl = document.getElementById('q-list');
+    const noteEl = document.getElementById('count-note');
+    searchInput.addEventListener('input', render);
+    secSelect.addEventListener('change', render);
+
+    function render() {
+      const term = searchInput.value.trim().toLowerCase();
+      const secVal = secSelect.value;
+      listEl.innerHTML = '';
+      let shown = 0;
+
+      CFG.sections.forEach((sec, sIdx) => {
+        if (secVal !== 'all' && String(sIdx) !== secVal) return;
+        (sec.q || []).forEach(([n, txt]) => {
+          const ctx = CONTEXT_SOURCES[n] || { status: 'wait', type: 'In verifica', detail: '' };
+          const entries = CFG.subjects.map(sb => ({
+            sb,
+            entry: sb.data && sb.data[n] && sb.data[n][0] > 0 ? sb.data[n] : null
+          }));
+          const docCount = entries.filter(x => x.entry).length;
+
+          if (partyFilter !== 'all') {
+            const matchParty = entries.find(x => x.sb.k === partyFilter && x.entry);
+            if (!matchParty) return;
+          }
+
+          if (term) {
+            const blob = [
+              String(n), sec.t, txt, ctx.type, ctx.detail,
+              ...entries.map(x => x.sb.full + ' ' + (x.entry ? (x.entry[2] || '') + ' ' + (x.entry[3] || '') : ''))
+            ].join(' ').toLowerCase();
+            if (!blob.includes(term)) return;
+          }
+
+          shown++;
+          const card = document.createElement('article');
+          card.className = 'q-card';
+
+          const statusTag = ctx.status === 'ok'
+            ? '<span class="tag-ok">Fonte contesto attiva</span>'
+            : '<span class="tag-wait">In attesa atti 2027</span>';
+
+          const urlHtml = ctx.url
+            ? '<div><a class="ctx-link" href="' + esc(ctx.url) + '" target="_blank" rel="noopener">' + esc(ctx.url) + '</a></div>'
+            : '';
+
+          const visibleEntries = partyFilter !== 'all'
+            ? entries.filter(x => x.sb.k === partyFilter)
+            : entries;
+
+          const cellsHtml = visibleEntries.map(({ sb, entry }) => {
+            const col = sb.light || 'var(--me)';
+            if (!entry) {
+              return '<div class="p-cell empty">' +
+                '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sb.short) + '</span><span class="p-score">— Non doc.</span></div>' +
+                '<div class="p-why">Nessun voto o dichiarazione verificata.</div>' +
+              '</div>';
+            }
+            const score = entry[0];
+            const why = entry[2] || entry[3] || 'Atto documentato';
+            return '<div class="p-cell">' +
+              '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sb.short) + '</span><span class="p-score">' + score + '/5 · ' + SCALE_LABELS[score] + '</span></div>' +
+              '<div class="p-why">' + esc(why) + '</div>' +
+            '</div>';
+          }).join('');
+
+          card.innerHTML =
+            '<div class="q-head">' +
+              '<span class="q-sec">' + esc(sec.t) + '</span>' +
+              '<span class="q-cov">' + docCount + ' / ' + CFG.subjects.length + ' forze documentate</span>' +
+            '</div>' +
+            '<h2 class="q-title">' + n + '. ' + esc(txt) + '</h2>' +
+            '<div class="ctx-box">' +
+              '<div class="ctx-top">' + statusTag + '<span class="ctx-type">' + esc(ctx.type) + '</span></div>' +
+              '<div>' + esc(ctx.detail) + '</div>' +
+              urlHtml +
+            '</div>' +
+            '<div class="party-grid">' + cellsHtml + '</div>';
+
+          listEl.appendChild(card);
+        });
+      });
+
+      noteEl.textContent = shown + ' affermazioni mostrate su ' + totalQ + (ctxWaitCount > 0 ? ' (' + ctxWaitCount + ' fonti di contesto in attesa di atti 2027).' : ' · tutte le fonti di contesto sono attive.');
+      if (!shown) {
+        listEl.innerHTML = '<div class="q-card">Nessuna affermazione corrisponde ai filtri selezionati.</div>';
+      }
+    }
+
+    render();
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  })();
+  </script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b952176d8a574cd6a9ab1e1a6d46c25d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
