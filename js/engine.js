@@ -267,7 +267,7 @@ const DOTCLS={};SUBJ.forEach(x=>DOTCLS[x.k]=x.dot||x.k);
 function splitBlock(){
   const rk=PARTIES.map(p=>({k:p[0],l:p[2],V:p[3](),a:aff(p[3]())})).filter(r=>r.a.c>=10).sort((x,y)=>y.a.pct-x.a.pct);
   if(rk.length<2)return null;const A=rk[0],B=rk[1],rows=[];
-  Object.keys(ans).forEach(n=>{const u=ans[n],a=A.V[n],b=B.V[n];if(!(QTXT[n]&&u>0&&a&&b)||Math.abs(a-b)<2)return;const d=Math.abs(u-b)-Math.abs(u-a);if(d)rows.push({n,u,a,b,d,s:Math.abs(d)*10+Math.abs(a-b)})});
+  [2,1].forEach(minD=>{if(rows.length>=2)return;rows.length=0;Object.keys(ans).forEach(n=>{const u=ans[n],a=A.V[n],b=B.V[n];if(!(QTXT[n]&&u>0&&a&&b)||Math.abs(a-b)<minD)return;const d=Math.abs(u-b)-Math.abs(u-a);if(d)rows.push({n,u,a,b,d,s:Math.abs(d)*10+Math.abs(a-b)})})});
   const close=rk[0].a.pct-rk[1].a.pct<5;
   const bl=h('section','block','<h2>Cosa distingue '+esc(A.l)+' da '+esc(B.l)+'</h2><p class="lead">'+(close?'Sono i due partiti e liste più vicini a te e le percentuali sono ravvicinate. ':'Sono i due partiti e liste più vicini a te. ')+'Qui sotto le affermazioni su cui hanno posizioni nettamente diverse e la tua risposta sta più da una parte.</p>');
   if(!rows.length)return null;
