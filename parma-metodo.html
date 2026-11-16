@@ -480,8 +480,8 @@
           if (!entry || !entry[0]) return;
           shown++;
           const label = ['','Per niente','Poco','Così così','Abbastanza','Del tutto'][entry[0]] || entry[0];
-          const srcLabel = entry[3] ? (entry[3] + (entry[2] ? ' · ' + entry[2] : '')) : (entry[2] || 'Atto documentato');
-          const whyText = entry[3] && entry[1] ? '<div style="font-size:13.5px;color:var(--ink2);margin-bottom:8px">' + esc(entry[1]) + '</div>' : '';
+          const srcLabel = entry[3] || entry[2] || 'Atto documentato';
+          const whyText = entry[3] && entry[2] ? '<div style="font-size:13.5px;color:var(--ink2);margin-bottom:8px">' + esc(entry[2]) + '</div>' : '';
           const item = document.createElement('div');
           item.className = 'src-item';
           item.innerHTML =

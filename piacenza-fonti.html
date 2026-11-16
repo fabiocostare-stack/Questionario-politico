@@ -390,7 +390,7 @@
               '</div>';
             }
             const score = entry[0];
-            const why = entry[3] ? (entry[1] + ' (' + entry[3] + (entry[2] ? ', ' + entry[2] : '') + ')') : (entry[2] || entry[1] || 'Atto documentato');
+            const why = entry[3] ? (entry[2] + ' — Fonte: ' + entry[3]) : (entry[2] || 'Atto documentato');
             return '<div class="p-cell">' +
               '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sName) + '</span><span class="p-score">' + score + '/5 · ' + SCALE_LABELS[score] + '</span></div>' +
               '<div class="p-why">' + esc(why) + '</div>' +
