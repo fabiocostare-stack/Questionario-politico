@@ -371,7 +371,7 @@ function renderRes(m){
   res.appendChild(af2);
   if(evalList.length&&unranked.length)res.appendChild(h('p','small','Dati ancora insufficienti per una valutazione (servono almeno 10 posizioni confrontabili): '+unranked.map(([l,,stat])=>esc(l)+' ('+stat.c+'/'+TOTAL+')').join(', ')+'.')).style.marginTop='10px';
   res.appendChild(topicDistanceBlock());
-  {const sb=splitBlock();if(sb)res.appendChild(sb)}
+
   if(!shared&&!testRun)res.appendChild(shareBlock());
   if(CFG.layers){const fs=h('div','row');fs.style.marginTop='18px';fs.appendChild(h('span','small','Posizioni dei partiti e liste:'));const sf=h('div','seg');
   [['prog','Solo programma'],['oggi','Programma e posizioni recenti']].forEach(([k,l])=>{const b=h('button','',l);b.setAttribute('aria-pressed',k===fsrc);b.onclick=()=>{fsrc=k;buildFV();render()};sf.appendChild(b)});fs.appendChild(sf);res.appendChild(fs)}
