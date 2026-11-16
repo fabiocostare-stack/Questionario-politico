@@ -190,6 +190,14 @@ p{margin:0}
 .cmp .why{font-size:14px;color:var(--ink2);padding-top:10px}
 .foot{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
 .small{font-size:14px;color:var(--ink2)}
+.notes-fold{margin-top:10px;font-size:13.5px;color:var(--ink2)}
+.notes-fold summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink2);padding:4px 0}
+.notes-fold summary::-webkit-details-marker{display:none}
+.notes-fold summary::before{content:"▸";font-size:12px;transition:transform .15s;color:var(--me)}
+.notes-fold[open] summary::before{transform:rotate(90deg)}
+.notes-fold .notes-body{margin-top:8px;padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;gap:6px}
+.notes-fold .notes-body p{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;font-size:13px;line-height:1.4}
+.notes-fold .notes-body svg{width:11px;height:11px;flex:none;transform:translateY(1px)}
 @media (max-width:700px){.bar{padding-block:10px}.bar .wrap{gap:8px 10px}.brand{font-size:17px;gap:8px}.brand svg{width:22px;height:22px}.prog{order:3;flex-basis:100%}.barin{margin-left:auto;gap:6px!important}.pill{padding:6px 12px;font-size:13.5px;line-height:1.2}#pbtn{width:34px;height:34px}.map text{font-size:12.5px}.map .lab{font-size:14px}}
 @media (max-width:460px){.barin{gap:5px!important}.pill{padding:6px 11px;font-size:13px}#pbtn{width:32px;height:32px}}
 @media (max-width:900px){
