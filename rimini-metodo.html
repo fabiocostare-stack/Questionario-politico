@@ -449,9 +449,9 @@
     CFG.sections.forEach((sec, idx) => {
       const card = document.createElement('article');
       card.className = 'theme-card';
-      const title = sec.t.replace(/^\d+\.\s*/, '');
-      const blurb = (CFG.blurb && CFG.blurb[idx]) ? CFG.blurb[idx] : '';
-      const sample = (sec.q && sec.q[0]) ? sec.q[0][1] : '';
+      const title = (sec.t || sec.name || '').replace(/^\d+\.\s*/, '');
+      const blurb = (CFG.blurb && CFG.blurb[idx]) ? CFG.blurb[idx] : (sec.desc || '');
+      const sample = (sec.q && sec.q[0]) ? (sec.q[0][2] || sec.q[0][1]) : '';
       card.innerHTML =
         '<div class="t-head"><h3>' + esc(title) + '</h3><span class="t-cnt">' + sec.q.length + ' domande</span></div>' +
         '<p>' + esc(blurb) + '</p>' +
@@ -467,9 +467,11 @@
       const pct = Math.round((cnt / totalQ) * 100);
       const row = document.createElement('div');
       row.className = 'cov-row';
-      const col = sb.light || 'var(--me)';
+      const col = sb.light || sb.color || 'var(--me)';
+      const fullName = sb.full || sb.name || sb.id;
+      const dotHtml = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + col + ';flex:none"></span>';
       row.innerHTML =
-        '<div class="cov-name">' + (sb.glyph || '').replace('var(--' + sb.dot + ')', col) + '<span>' + esc(sb.full) + '</span></div>' +
+        '<div class="cov-name">' + dotHtml + '<span>' + esc(fullName) + '</span></div>' +
         '<div class="cov-bar" aria-hidden="true"><i style="width:' + pct + '%;background:' + col + '"></i></div>' +
         '<div class="cov-num"><strong>' + cnt + '</strong> / ' + totalQ + ' (' + pct + '%)</div>';
       covList.appendChild(row);
@@ -478,18 +480,20 @@
     // 3. Filtro e lista delle fonti
     const filtersEl = document.getElementById('party-filters');
     const srcList = document.getElementById('src-list');
-    let activeKey = sorted[0].k;
+    let activeKey = sorted[0].k || sorted[0].id;
 
     sorted.forEach(sb => {
+      const k = sb.k || sb.id;
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'fbtn';
-      btn.textContent = sb.short + ' (' + countVotes(sb) + ')';
-      btn.setAttribute('aria-pressed', sb.k === activeKey ? 'true' : 'false');
+      btn.textContent = (sb.short || sb.name || k) + ' (' + countVotes(sb) + ')';
+      btn.setAttribute('aria-pressed', k === activeKey ? 'true' : 'false');
       btn.onclick = () => {
-        activeKey = sb.k;
+        activeKey = k;
         filtersEl.querySelectorAll('.fbtn').forEach((b, i) => {
-          b.setAttribute('aria-pressed', sorted[i].k === activeKey ? 'true' : 'false');
+          const ik = sorted[i].k || sorted[i].id;
+          b.setAttribute('aria-pressed', ik === activeKey ? 'true' : 'false');
         });
         renderSources();
       };
@@ -497,23 +501,28 @@
     });
 
     function renderSources() {
-      const sb = CFG.subjects.find(x => x.k === activeKey);
+      const sb = CFG.subjects.find(x => (x.k || x.id) === activeKey);
       if (!sb) return;
       srcList.innerHTML = '';
       let shown = 0;
       CFG.sections.forEach(sec => {
-        sec.q.forEach(([n, txt]) => {
+        sec.q.forEach(q => {
+          const n = q[0];
+          const txt = q[2] || q[1];
           const entry = sb.data && sb.data[n];
           if (!entry || !entry[0]) return;
           shown++;
           const label = ['','Per niente','Poco','Così così','Abbastanza','Del tutto'][entry[0]] || entry[0];
+          const srcLabel = entry[3] ? (entry[3] + (entry[2] ? ' · ' + entry[2] : '')) : (entry[2] || 'Atto documentato');
+          const whyText = entry[3] && entry[1] ? '<div style="font-size:13.5px;color:var(--ink2);margin-bottom:8px">' + esc(entry[1]) + '</div>' : '';
           const item = document.createElement('div');
           item.className = 'src-item';
           item.innerHTML =
             '<div class="src-q">' + n + '. ' + esc(txt) + '</div>' +
+            whyText +
             '<div class="src-badges">' +
               '<span class="sbadge">Voto assegnato: <b>' + entry[0] + '/5 (' + label + ')</b></span>' +
-              '<span class="sbadge">Fonte: ' + esc(entry[2] || entry[3] || 'Atto documentato') + '</span>' +
+              '<span class="sbadge">Fonte: ' + esc(srcLabel) + '</span>' +
             '</div>';
           srcList.appendChild(item);
         });

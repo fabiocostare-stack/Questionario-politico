@@ -1,5 +1,5 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v33';
+const V='scheda-v34';
 const FILES=[
   './',
   'index.html',
@@ -10,6 +10,12 @@ const FILES=[
   'bologna-estratto.html',
   'bologna-fonti.html',
   'milano.html',
+  'parma.html',
+  'parma-metodo.html',
+  'parma-fonti.html',
+  'piacenza.html',
+  'piacenza-metodo.html',
+  'piacenza-fonti.html',
   'rimini.html',
   'rimini-metodo.html',
   'rimini-fonti.html',
@@ -19,6 +25,8 @@ const FILES=[
   'js/engine.js',
   'data/bologna.js',
   'data/milano.js',
+  'data/parma.js',
+  'data/piacenza.js',
   'data/rimini.js',
   'data/todi.js',
   'scheda.webmanifest',

@@ -313,7 +313,7 @@
     CFG.sections.forEach((sec, idx) => {
       const opt = document.createElement('option');
       opt.value = String(idx);
-      opt.textContent = sec.t;
+      opt.textContent = sec.t || ((sec.id ? sec.id + '. ' : '') + sec.name);
       secSelect.appendChild(opt);
     });
 
@@ -322,8 +322,8 @@
     const chipDefs = [
       { id: 'all', label: 'Tutte le forze' },
       ...CFG.subjects.map(sb => ({
-        id: sb.k,
-        label: sb.short + ' (' + Object.values(sb.data || {}).filter(v => v && v[0] > 0).length + ')'
+        id: sb.k || sb.id,
+        label: (sb.short || sb.name) + ' (' + Object.values(sb.data || {}).filter(v => v && v[0] > 0).length + ')'
       }))
     ];
     chipDefs.forEach(def => {
@@ -356,7 +356,10 @@
 
       CFG.sections.forEach((sec, sIdx) => {
         if (secVal !== 'all' && String(sIdx) !== secVal) return;
-        (sec.q || []).forEach(([n, txt]) => {
+        const secTitle = sec.t || ((sec.id ? sec.id + '. ' : '') + sec.name);
+        (sec.q || []).forEach(q => {
+          const n = q[0];
+          const txt = q[2] || q[1];
           const ctx = CONTEXT_SOURCES[n] || { status: 'wait', type: 'In verifica', detail: '' };
           const entries = CFG.subjects.map(sb => ({
             sb,
@@ -365,14 +368,14 @@
           const docCount = entries.filter(x => x.entry).length;
 
           if (partyFilter !== 'all') {
-            const matchParty = entries.find(x => x.sb.k === partyFilter && x.entry);
+            const matchParty = entries.find(x => (x.sb.k || x.sb.id) === partyFilter && x.entry);
             if (!matchParty) return;
           }
 
           if (term) {
             const blob = [
-              String(n), sec.t, txt, ctx.type, ctx.detail,
-              ...entries.map(x => x.sb.full + ' ' + (x.entry ? (x.entry[2] || '') + ' ' + (x.entry[3] || '') : ''))
+              String(n), secTitle, q[1] || '', txt, ctx.type, ctx.detail,
+              ...entries.map(x => (x.sb.full || x.sb.name) + ' ' + (x.entry ? (x.entry[1] || '') + ' ' + (x.entry[2] || '') + ' ' + (x.entry[3] || '') : ''))
             ].join(' ').toLowerCase();
             if (!blob.includes(term)) return;
           }
@@ -390,28 +393,29 @@
             : '';
 
           const visibleEntries = partyFilter !== 'all'
-            ? entries.filter(x => x.sb.k === partyFilter)
+            ? entries.filter(x => (x.sb.k || x.sb.id) === partyFilter)
             : entries;
 
           const cellsHtml = visibleEntries.map(({ sb, entry }) => {
-            const col = sb.light || 'var(--me)';
+            const col = sb.light || sb.color || 'var(--me)';
+            const sName = sb.short || sb.name || sb.id;
             if (!entry) {
               return '<div class="p-cell empty">' +
-                '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sb.short) + '</span><span class="p-score">— Non doc.</span></div>' +
+                '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sName) + '</span><span class="p-score">— Non doc.</span></div>' +
                 '<div class="p-why">Nessun voto o dichiarazione verificata.</div>' +
               '</div>';
             }
             const score = entry[0];
-            const why = entry[2] || entry[3] || 'Atto documentato';
+            const why = entry[3] ? (entry[1] + ' (' + entry[3] + (entry[2] ? ', ' + entry[2] : '') + ')') : (entry[2] || entry[1] || 'Atto documentato');
             return '<div class="p-cell">' +
-              '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sb.short) + '</span><span class="p-score">' + score + '/5 · ' + SCALE_LABELS[score] + '</span></div>' +
+              '<div class="p-top"><span class="p-name"><span class="p-dot" style="background:' + col + '"></span>' + esc(sName) + '</span><span class="p-score">' + score + '/5 · ' + SCALE_LABELS[score] + '</span></div>' +
               '<div class="p-why">' + esc(why) + '</div>' +
             '</div>';
           }).join('');
 
           card.innerHTML =
             '<div class="q-head">' +
-              '<span class="q-sec">' + esc(sec.t) + '</span>' +
+              '<span class="q-sec">' + esc(secTitle) + '</span>' +
               '<span class="q-cov">' + docCount + ' / ' + CFG.subjects.length + ' forze documentate</span>' +
             '</div>' +
             '<h2 class="q-title">' + n + '. ' + esc(txt) + '</h2>' +

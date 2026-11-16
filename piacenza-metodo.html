@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Scheda Politica · Piacenza 2027 — Che posizione hai sui temi chiave di Piacenza?</title>
+  <meta name="description" content="25 affermazioni concrete su ciò che si discute e vota a Piacenza, con argomenti pro e contro e confronto con le 6 forze politiche cittadine. Gratis e anonimo.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scheda Politica · Piacenza 2027 — Che posizione hai sui temi chiave di Piacenza?">
+  <meta property="og:description" content="25 affermazioni concrete su ciò che si discute e vota in città, con argomenti pro e contro per farti un’opinione. Gratis, anonimo, senza registrazione.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0A7C74">
+  <link rel="manifest" href="scheda.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="stylesheet" href="css/fonts.css">
+  <style>
+    :root{
+      color-scheme:light;
+      --bg:#EDF0F5;--surface:#FFFFFF;--ink:#0E1726;--ink2:#434F65;--mute:#5D6980;
+      --line:#D3D9E3;--track:#E3E8F0;--me:#0A7C74;--me-ink:#FFFFFF;--soft:#D9EFEC;
+      --f-display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+      --f-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        color-scheme:dark;
+        --bg:#0B1120;--surface:#141C2F;--ink:#EAEFF8;--ink2:#B0BACD;--mute:#8F9CB3;
+        --line:#26304A;--track:#1E2840;--me:#37B5AB;--me-ink:#04201E;--soft:#12332F;
+      }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font:400 16px/1.6 var(--f-body);padding:0 16px 64px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:920px;margin:0 auto}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:calc(14px + env(safe-area-inset-top,0px)) 0 10px;
+    }
+    .brand{
+      font:800 19px/1 var(--f-display);letter-spacing:-.03em;
+      display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;
+    }
+    .brand svg{width:26px;height:26px;flex:none}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .pill{
+      border:1.5px solid var(--line);background:var(--surface);color:var(--ink);
+      border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500;text-decoration:none;
+      display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+    }
+    .pill:hover{border-color:var(--me)}
+    .hero{padding:14px 0 22px}
+    .badge{
+      display:inline-block;background:var(--soft);color:var(--me);
+      font-weight:700;font-size:12.5px;letter-spacing:.02em;text-transform:uppercase;
+      padding:5px 12px;border-radius:999px;margin-bottom:10px;
+    }
+    h1{
+      font:800 clamp(30px,5.5vw,48px)/1.06 var(--f-display);
+      letter-spacing:-.03em;margin:0 0 14px;max-width:18ch;
+    }
+    .lead{font-size:18px;color:var(--ink2);max-width:72ch;margin:0 0 22px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:10px;
+      background:var(--me);color:var(--me-ink);text-decoration:none;
+      font:700 17px/1.2 var(--f-display);padding:16px 26px;border-radius:16px;
+      box-shadow:0 6px 20px rgba(10,124,116,.18);
+    }
+    .btn-primary:hover{filter:brightness(1.06)}
+    .btn-secondary{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--surface);color:var(--ink);text-decoration:none;
+      border:1.5px solid var(--line);font:600 15px/1.2 var(--f-body);
+      padding:15px 20px;border-radius:16px;
+    }
+    .btn-secondary:hover{border-color:var(--me)}
+    .stats{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px;
+      margin:28px 0 36px;
+    }
+    .stat{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:16px;
+      padding:16px 18px;
+    }
+    .stat strong{
+      display:block;font:800 28px/1.1 var(--f-display);color:var(--me);
+      font-variant-numeric:tabular-nums;
+    }
+    .stat span{display:block;font-size:14px;color:var(--ink2);margin-top:4px}
+    section{margin-top:48px}
+    h2{
+      font:800 clamp(22px,3.5vw,28px)/1.15 var(--f-display);
+      letter-spacing:-.02em;margin:0 0 8px;
+    }
+    .sec-sub{color:var(--ink2);margin:0 0 20px}
+    .themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px}
+    .theme-card{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:16px;
+      padding:18px;display:flex;flex-direction:column;gap:8px;
+    }
+    .theme-card .t-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+    .theme-card h3{font:700 17px/1.2 var(--f-display);margin:0}
+    .theme-card .t-cnt{font-size:12px;color:var(--mute);white-space:nowrap}
+    .theme-card p{margin:0;font-size:14px;color:var(--ink2)}
+    .theme-card .q-ex{
+      margin-top:auto;padding-top:10px;border-top:1px solid var(--line);
+      font-size:13px;color:var(--ink);font-style:italic;
+    }
+    .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+    .pillar{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:18px;
+      padding:20px;
+    }
+    .pillar .num{
+      display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;
+      background:var(--soft);color:var(--me);font:700 14px/1 var(--f-display);margin-bottom:10px;
+    }
+    .pillar h3{font:700 18px/1.2 var(--f-display);margin:0 0 6px}
+    .pillar p{margin:0;font-size:14.5px;color:var(--ink2)}
+    .panel{
+      background:var(--surface);border:1.5px solid var(--line);border-radius:20px;
+      padding:22px;margin-top:16px;
+    }
+    .cov-list{display:flex;flex-direction:column;gap:12px}
+    .cov-row{display:grid;grid-template-columns:220px 1fr 80px;gap:12px;align-items:center;font-size:14px}
+    .cov-name{display:flex;align-items:center;gap:8px;font-weight:600}
+    .cov-bar{height:10px;background:var(--track);border-radius:999px;overflow:hidden}
+    .cov-bar i{display:block;height:100%;border-radius:inherit}
+    .cov-num{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink2)}
+    @media (max-width:600px){
+      .cov-row{grid-template-columns:1fr auto;gap:6px}
+      .cov-bar{grid-column:1/-1;order:3}
+    }
+    .filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+    .fbtn{
+      border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+      border-radius:999px;padding:6px 14px;font:inherit;font-size:13.5px;font-weight:500;cursor:pointer;
+    }
+    .fbtn[aria-pressed="true"]{background:var(--me);border-color:var(--me);color:var(--me-ink);font-weight:600}
+    .src-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .src-item{
+      border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+      background:var(--bg);
+    }
+    .src-q{font-weight:600;font-size:15px;margin-bottom:6px}
+    .src-badges{display:flex;flex-wrap:wrap;gap:6px}
+    .sbadge{
+      display:inline-flex;align-items:center;gap:6px;
+      background:var(--surface);border:1px solid var(--line);border-radius:8px;
+      padding:4px 9px;font-size:12.5px;color:var(--ink2);
+    }
+    .sbadge b{color:var(--ink)}
+    .callout{
+      background:var(--soft);border:1.5px solid var(--me);border-radius:20px;
+      padding:22px 24px;margin-top:24px;
+    }
+    .callout h3{font:800 20px/1.2 var(--f-display);margin:0 0 8px}
+    .callout p{margin:0 0 12px;font-size:15px;color:var(--ink2)}
+    .callout p:last-child{margin-bottom:0}
+    .replica-actions{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .replica-link{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--me);color:var(--me-ink);text-decoration:none;border:0;cursor:pointer;
+      font:700 14.5px/1.2 var(--f-display);padding:11px 18px;border-radius:12px;
+    }
+    .replica-link:hover{filter:brightness(1.06)}
+    dialog.sheet{
+      border:1.5px solid var(--line);border-radius:20px;padding:0;max-width:520px;width:calc(100% - 24px);
+      background:var(--surface);color:var(--ink);box-shadow:0 20px 50px rgba(8,14,28,.28);
+    }
+    dialog.sheet::backdrop{background:rgba(11,17,32,.56);backdrop-filter:blur(2px)}
+    .sheet-head{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:18px 22px 14px;border-bottom:1px solid var(--line);
+    }
+    .sheet-head h3{font:800 19px/1.2 var(--f-display);margin:0}
+    .sheet-close{
+      border:1.5px solid var(--line);background:var(--bg);color:var(--ink);
+      width:34px;height:34px;border-radius:999px;font-size:20px;line-height:1;cursor:pointer;
+      display:grid;place-items:center;
+    }
+    .sheet-body{padding:18px 22px 22px}
+    .sheet-note{margin:0 0 14px;font-size:14px;color:var(--ink2)}
+    .field{margin-bottom:12px}
+    .field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+    .field input,.field textarea{
+      width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);
+      border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;
+    }
+    .field textarea{resize:vertical;min-height:96px}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--me)}
+    .sheet-foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+    .btn-copy{
+      border:1.5px solid var(--line);background:var(--surface);color:var(--ink);
+      border-radius:12px;padding:10px 16px;font:600 14px/1.2 var(--f-body);cursor:pointer;
+    }
+    .btn-copy:hover{border-color:var(--me)}
+    .sheet-status{
+      margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--soft);
+      color:var(--ink);font-size:13.5px;display:none;
+    }
+    .sheet-status.show{display:block}
+    footer{
+      margin-top:56px;padding-top:24px;border-top:1.5px solid var(--line);
+      display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+      font-size:14px;color:var(--mute);
+    }
+    footer a{color:var(--ink);font-weight:500;text-decoration:none}
+    footer a:hover{text-decoration:underline}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--me);outline-offset:3px}
+    @media (max-width:640px){
+      body{padding:0 14px 40px}
+      .topbar{gap:8px;padding:calc(10px + env(safe-area-inset-top,0px)) 0 4px}
+      .navlinks{display:flex;flex-wrap:nowrap;gap:6px;width:100%}
+      .navlinks .pill{flex:1 1 auto;justify-content:center;text-align:center;padding:6px 8px;font-size:12.5px;white-space:nowrap}
+      .hero{padding:6px 0 8px}
+      .badge{font-size:11.5px;padding:4px 10px;margin-bottom:8px}
+      h1{margin-bottom:10px}
+      .lead{font-size:16px;margin-bottom:14px}
+      .actions{flex-direction:column;align-items:stretch;gap:8px}
+      .btn-primary,.btn-secondary{justify-content:center;width:100%;padding:13px 18px}
+      .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0 6px}
+      .stat{padding:11px 12px;border-radius:14px}
+      .stat strong{font-size:22px}
+      .stat span{font-size:12.5px}
+      section{margin-top:24px}
+      .sec-sub{margin-bottom:12px;font-size:15px}
+      .themes,.pillars{gap:8px}
+      .theme-card,.pillar{padding:14px;border-radius:14px}
+      .panel,.callout{padding:16px;margin-top:12px;border-radius:16px}
+      footer{margin-top:28px;padding-top:16px;gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="piacenza-metodo.html">
+        <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M7.5 13.5l3.8 3.8 7.2-8" fill="none" stroke="var(--me)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Scheda Politica · Piacenza 2027
+      </a>
+      <nav class="navlinks" aria-label="Navigazione">
+        <a class="pill" href="hub.html">Altre città</a>
+        <a class="pill" href="#temi">I 6 temi</a>
+        <a class="pill" href="#metodo">Metodo e fonti</a>
+        <a class="pill" href="#replica">Contatti e replica</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <span class="badge">Verso le Comunali 2027 · Piacenza</span>
+        <h1>Che posizione hai sui temi chiave di Piacenza?</h1>
+        <p class="lead">
+          25 affermazioni concrete su ciò che si discute e vota a Palazzo Mercanti, con argomenti pro e contro per farti un’opinione. Alla fine vedi il tuo profilo e la vicinanza con le 6 forze politiche piacentine.
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="piacenza.html">
+            Fai il questionario di Piacenza
+            <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn-secondary" href="piacenza.html#demo">Vedi un risultato di esempio (1 clic)</a>
+          <a class="btn-secondary" href="#metodo">Come scegliamo i voti e le fonti</a>
+        </div>
+
+        <div class="stats" id="stats">
+          <div class="stat"><strong id="st-q">25</strong><span>affermazioni sui nodi reali del Consiglio comunale</span></div>
+          <div class="stat"><strong id="st-p">6</strong><span>forze politiche cittadine confrontate</span></div>
+          <div class="stat"><strong id="st-v">150</strong><span>posizioni già documentate da atti e stampa</span></div>
+          <div class="stat"><strong>0</strong><span>dati personali raccolti: tutto resta nel tuo dispositivo</span></div>
+        </div>
+      </section>
+
+      <section id="temi">
+        <h2>Di cosa parla il questionario</h2>
+        <p class="sec-sub">Ogni domanda nasce da una delibera, un piano urbanistico o un dibattito reale avvenuto in Consiglio comunale a Piacenza. Una guida contestuale spiega sempre le ragioni di chi è a favore e di chi è contro.</p>
+        <div class="themes" id="themes-grid"></div>
+      </section>
+
+      <section id="metodo">
+        <h2>Metodo e garanzie di neutralità</h2>
+        <p class="sec-sub">Una bussola elettorale è utile solo se trasparente. Qui trovi le regole che seguiamo prima di assegnare qualsiasi punteggio.</p>
+        <div class="pillars">
+          <article class="pillar">
+            <span class="num">1</span>
+            <h3>Solo posizioni documentate</h3>
+            <p>Un partito o lista riceve un punteggio (da 1 a 5) solo se esiste un riscontro pubblico: voto in Consiglio comunale, ordine del giorno, programma o dichiarazione pubblica riportata dalla stampa locale.</p>
+          </article>
+          <article class="pillar">
+            <span class="num">2</span>
+            <h3>Nessuna stima arbitraria</h3>
+            <p>Se su un tema una lista non si è ancora espressa in modo verificabile, la casella resta vuota e quella domanda non pesa nel confronto con quella forza politica.</p>
+          </article>
+          <article class="pillar">
+            <span class="num">3</span>
+            <h3>Privacy totale e codice aperto</h3>
+            <p>Nessun cookie di tracciamento, nessuna registrazione e nessuna chiamata a servizi esterni per il calcolo: tutto avviene interamente nel tuo browser e i file di dati sono pubblici.</p>
+          </article>
+        </div>
+
+        <div class="panel">
+          <h3 style="font:700 18px/1.2 var(--f-display);margin:0 0 6px">Copertura attuale delle fonti per forza politica</h3>
+          <p style="margin:0 0 16px;font-size:14px;color:var(--ink2)">Quante affermazioni su <span id="cov-tot">25</span> hanno già almeno un atto o dichiarazione documentata per ciascun soggetto:</p>
+          <div class="cov-list" id="cov-list"></div>
+        </div>
+
+        <div class="panel">
+          <h3 style="font:700 18px/1.2 var(--f-display);margin:0 0 6px">Esplora le posizioni e le fonti</h3>
+          <p style="margin:0;font-size:14px;color:var(--ink2)">Filtra per forza politica per verificare i voti assegnati e gli atti collegati, oppure consulta il <a href="piacenza-fonti.html" style="color:var(--me);font-weight:600">registro completo delle fonti e degli atti di Piacenza</a>.</p>
+          <div class="filter-bar" id="party-filters" role="group" aria-label="Filtra per partito"></div>
+          <div class="src-list" id="src-list"></div>
+        </div>
+      </section>
+
+      <section id="replica">
+        <div class="callout">
+          <h3>Per redazioni, radio, associazioni e diritto di replica</h3>
+          <p>
+            <strong>Sei un giornalista, un conduttore radio/TV o un’associazione del territorio piacentino?</strong>
+            Le 25 domande e le schede pro/contro sono liberamente utilizzabili in trasmissione, nei dibattiti pubblici o negli articoli citando il progetto. L’autore (<strong>Fabio Costa</strong>) è disponibile per raccontare lo strumento in radio o in redazione.
+          </p>
+          <p>
+            <strong>Diritto di replica per liste, consiglieri, candidati e comitati:</strong>
+            in vista delle comunali 2027 ogni forza politica o lista civica presente a Piacenza può verificare, integrare o rettificare le proprie posizioni indicando un atto pubblico, una mozione consiliare o una dichiarazione formale.
+          </p>
+          <div class="replica-actions">
+            <a class="replica-link" href="#scheda-replica" id="open-replica">Scrivi all’autore o invia una segnalazione</a>
+          </div>
+        </div>
+      </section>
+
+      <dialog class="sheet" id="scheda-replica" aria-labelledby="scheda-title">
+        <div class="sheet-head">
+          <h3 id="scheda-title">Contatta l’autore o invia una segnalazione</h3>
+          <button type="button" class="sheet-close" id="close-replica" aria-label="Chiudi scheda">×</button>
+        </div>
+        <form class="sheet-body" id="replica-form">
+          <p class="sheet-note">Puoi usare questo modulo per contatti stampa/radio, collaborazioni civiche o per segnalare un atto pubblico o una rettifica su Piacenza, oppure scrivere direttamente a <a href="mailto:schedapolitica@gmail.com" style="color:var(--me);font-weight:600">schedapolitica@gmail.com</a>.</p>
+          <div class="field">
+            <label for="rep-name">Nominativo (nome, cognome o lista/testata)</label>
+            <input type="text" id="rep-name" name="name" required autocomplete="name" placeholder="Es. Mario Rossi — Gruppo consiliare / Testata ...">
+          </div>
+          <div class="field">
+            <label for="rep-email">La tua email</label>
+            <input type="email" id="rep-email" name="email" required autocomplete="email" placeholder="nome@esempio.it">
+          </div>
+          <div class="field">
+            <label for="rep-msg">Messaggio</label>
+            <textarea id="rep-msg" name="message" required placeholder="Indica domanda o forza politica interessata e gli estremi dell'atto o della dichiarazione pubblica..."></textarea>
+          </div>
+          <div class="sheet-foot">
+            <button type="submit" class="replica-link">Prepara e invia email</button>
+            <button type="button" class="btn-copy" id="copy-replica">Copia testo</button>
+          </div>
+          <div class="sheet-status" id="rep-status" role="status" aria-live="polite"></div>
+        </form>
+      </dialog>
+
+      <section id="progetto">
+        <h2>Chi cura il progetto e perché</h2>
+        <div class="panel">
+          <p style="margin:0 0 12px;color:var(--ink)">
+            <strong>Scheda Politica</strong> è un’iniziativa personale indipendente curata da <strong>Fabio Costa</strong>, nata senza alcun fine di lucro né legami con partiti, comitati o liste elettorali.
+          </p>
+          <p style="margin:0 0 12px;font-size:15px;color:var(--ink2)">
+            L’obiettivo principale è offrire ai cittadini uno strumento semplice per misurarsi sui temi caldi della propria città e conoscere più nel dettaglio ciò che viene effettivamente discusso e votato in Consiglio comunale. In vista delle elezioni, le domande vengono tarate anche a partire dai <strong>programmi elettorali ufficiali</strong>, così da rendere trasparente lo schieramento e la posizione di ciascuna forza politica su ogni tema.
+          </p>
+          <p style="margin:0;font-size:14.5px;color:var(--ink2)">
+            Vuoi segnalare un atto pubblico, un programma elettorale o suggerire un miglioramento? Apri la <a href="#scheda-replica" class="open-replica-link" style="color:var(--me);font-weight:600">scheda di segnalazione</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="diffondi">
+        <h2>Vuoi condividere o portare il progetto nel tuo quartiere?</h2>
+        <p class="sec-sub">
+          Il questionario è pensato per circolare facilmente su WhatsApp, Telegram, gruppi civici, associazioni di categoria e testate locali: ogni utente può condividere un link anonimo con il proprio profilo o scaricare l’immagine riassuntiva.
+        </p>
+        <div class="actions">
+          <a class="btn-primary" href="piacenza.html">Inizia il questionario di Piacenza →</a>
+          <a class="btn-secondary" href="piacenza-fonti.html">Apri il registro completo delle fonti</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div><strong>Scheda Politica</strong> · Progetto civico indipendente curato da Fabio Costa (senza scopo di lucro)</div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <a href="piacenza.html">Questionario Piacenza</a>
+        <a href="piacenza-fonti.html">Registro fonti Piacenza</a>
+        <a href="hub.html">Altre città</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="data/piacenza.js"></script>
+  <script>
+  (function () {
+    if (typeof CFG === 'undefined') return;
+    const totalQ = CFG.sections.reduce((acc, s) => acc + (s.q ? s.q.length : 0), 0);
+    document.getElementById('st-q').textContent = totalQ;
+    document.getElementById('st-p').textContent = CFG.subjects.length;
+    document.getElementById('cov-tot').textContent = totalQ;
+
+    let totalVotes = 0;
+    CFG.subjects.forEach(sb => {
+      Object.values(sb.data || {}).forEach(v => { if (v && v[0] > 0) totalVotes++; });
+    });
+    document.getElementById('st-v').textContent = totalVotes;
+
+    const themesGrid = document.getElementById('themes-grid');
+    CFG.sections.forEach((sec, idx) => {
+      const card = document.createElement('article');
+      card.className = 'theme-card';
+      const title = (sec.t || sec.name || '').replace(/^\d+\.\s*/, '');
+      const blurb = (CFG.blurb && CFG.blurb[idx]) ? CFG.blurb[idx] : (sec.desc || '');
+      const sample = (sec.q && sec.q[0]) ? (sec.q[0][2] || sec.q[0][1]) : '';
+      card.innerHTML =
+        '<div class="t-head"><h3>' + esc(title) + '</h3><span class="t-cnt">' + sec.q.length + ' domande</span></div>' +
+        '<p>' + esc(blurb) + '</p>' +
+        (sample ? '<div class="q-ex">«' + esc(sample) + '»</div>' : '');
+      themesGrid.appendChild(card);
+    });
+
+    const covList = document.getElementById('cov-list');
+    const sorted = [...CFG.subjects].sort((a, b) => countVotes(b) - countVotes(a));
+    sorted.forEach(sb => {
+      const cnt = countVotes(sb);
+      const pct = Math.round((cnt / totalQ) * 100);
+      const row = document.createElement('div');
+      row.className = 'cov-row';
+      const col = sb.light || sb.color || 'var(--me)';
+      const fullName = sb.full || sb.name || sb.id;
+      const dotHtml = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + col + ';flex:none"></span>';
+      row.innerHTML =
+        '<div class="cov-name">' + dotHtml + '<span>' + esc(fullName) + '</span></div>' +
+        '<div class="cov-bar" aria-hidden="true"><i style="width:' + pct + '%;background:' + col + '"></i></div>' +
+        '<div class="cov-num"><strong>' + cnt + '</strong> / ' + totalQ + ' (' + pct + '%)</div>';
+      covList.appendChild(row);
+    });
+
+    const filtersEl = document.getElementById('party-filters');
+    const srcList = document.getElementById('src-list');
+    let activeKey = sorted[0].k || sorted[0].id;
+
+    sorted.forEach(sb => {
+      const k = sb.k || sb.id;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'fbtn';
+      btn.textContent = (sb.short || sb.name || k) + ' (' + countVotes(sb) + ')';
+      btn.setAttribute('aria-pressed', k === activeKey ? 'true' : 'false');
+      btn.onclick = () => {
+        activeKey = k;
+        filtersEl.querySelectorAll('.fbtn').forEach((b, i) => {
+          const ik = sorted[i].k || sorted[i].id;
+          b.setAttribute('aria-pressed', ik === activeKey ? 'true' : 'false');
+        });
+        renderSources();
+      };
+      filtersEl.appendChild(btn);
+    });
+
+    function renderSources() {
+      const sb = CFG.subjects.find(x => (x.k || x.id) === activeKey);
+      if (!sb) return;
+      srcList.innerHTML = '';
+      let shown = 0;
+      CFG.sections.forEach(sec => {
+        sec.q.forEach(q => {
+          const n = q[0];
+          const txt = q[2] || q[1];
+          const entry = sb.data && sb.data[n];
+          if (!entry || !entry[0]) return;
+          shown++;
+          const label = ['','Per niente','Poco','Così così','Abbastanza','Del tutto'][entry[0]] || entry[0];
+          const srcLabel = entry[3] ? (entry[3] + (entry[2] ? ' · ' + entry[2] : '')) : (entry[2] || 'Atto documentato');
+          const whyText = entry[3] && entry[1] ? '<div style="font-size:13.5px;color:var(--ink2);margin-bottom:8px">' + esc(entry[1]) + '</div>' : '';
+          const item = document.createElement('div');
+          item.className = 'src-item';
+          item.innerHTML =
+            '<div class="src-q">' + n + '. ' + esc(txt) + '</div>' +
+            whyText +
+            '<div class="src-badges">' +
+              '<span class="sbadge">Voto assegnato: <b>' + entry[0] + '/5 (' + label + ')</b></span>' +
+              '<span class="sbadge">Fonte: ' + esc(srcLabel) + '</span>' +
+            '</div>';
+          srcList.appendChild(item);
+        });
+      });
+      if (!shown) {
+        srcList.innerHTML = '<div class="src-item">Nessuna posizione ancora documentata per questa forza politica.</div>';
+      }
+    }
+    renderSources();
+
+    function countVotes(sb) {
+      return Object.values(sb.data || {}).filter(v => v && v[0] > 0).length;
+    }
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  })();
+  </script>
+  <script>
+  (function () {
+    const CONTACT_EMAIL = 'schedapolitica@gmail.com';
+    const dlg = document.getElementById('scheda-replica');
+    const openBtn = document.getElementById('open-replica');
+    const closeBtn = document.getElementById('close-replica');
+    const form = document.getElementById('replica-form');
+    const copyBtn = document.getElementById('copy-replica');
+    const statusEl = document.getElementById('rep-status');
+    if (!dlg || !openBtn || !form) return;
+
+    function openSheet(e) {
+      if (e) e.preventDefault();
+      statusEl.classList.remove('show');
+      statusEl.textContent = '';
+      if (typeof dlg.showModal === 'function') dlg.showModal();
+      else dlg.setAttribute('open', '');
+      const nameInput = document.getElementById('rep-name');
+      if (nameInput) nameInput.focus();
+    }
+    function closeSheet() {
+      if (typeof dlg.close === 'function') dlg.close();
+      else dlg.removeAttribute('open');
+    }
+    openBtn.addEventListener('click', openSheet);
+    document.querySelectorAll('.open-replica-link').forEach(el => el.addEventListener('click', openSheet));
+    if (closeBtn) closeBtn.addEventListener('click', closeSheet);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) closeSheet(); });
+    if (location.hash === '#scheda-replica') openSheet();
+
+    function buildPayload() {
+      const name = document.getElementById('rep-name').value.trim();
+      const email = document.getElementById('rep-email').value.trim();
+      const msg = document.getElementById('rep-msg').value.trim();
+      const subject = 'Segnalazione Piacenza 2027 — ' + (name || 'Senza nominativo');
+      const body =
+        'Nominativo: ' + name + '\n' +
+        'Email mittente: ' + email + '\n\n' +
+        'Messaggio:\n' + msg;
+      return { name, email, msg, subject, body };
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      const p = buildPayload();
+      const mailto = 'mailto:' + encodeURIComponent(CONTACT_EMAIL) +
+        '?subject=' + encodeURIComponent(p.subject) +
+        '&body=' + encodeURIComponent(p.body);
+      window.location.href = mailto;
+      statusEl.textContent = 'Apertura del client email verso ' + CONTACT_EMAIL + ' in corso. Se non si apre, usa "Copia testo".';
+      statusEl.classList.add('show');
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        if (!form.reportValidity()) return;
+        const p = buildPayload();
+        const full = 'A: ' + CONTACT_EMAIL + '\nOggetto: ' + p.subject + '\n\n' + p.body;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(full).then(() => {
+            statusEl.textContent = 'Testo copiato negli appunti: puoi incollarlo in una email verso ' + CONTACT_EMAIL + '.';
+            statusEl.classList.add('show');
+          }).catch(() => {
+            statusEl.textContent = full;
+            statusEl.classList.add('show');
+          });
+        } else {
+          statusEl.textContent = full;
+          statusEl.classList.add('show');
+        }
+      });
+    }
+  })();
+  </script>
+  <script>if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b952176d8a574cd6a9ab1e1a6d46c25d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
