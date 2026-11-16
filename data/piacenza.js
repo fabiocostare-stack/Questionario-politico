@@ -185,8 +185,8 @@ const CFG = {
       "n": "Mobilità e centro storico",
       "lo": "Accessibilità auto e parcheggi",
       "hi": "Mobilità dolce, ZTL e TPL",
-      "ml": "Accessibilità auto e parcheggi",
-      "mh": "Mobilità dolce",
+      "ml": "Auto e sosta",
+      "mh": "ZTL e TPL",
       "p": [
         9,
         10,
@@ -200,11 +200,11 @@ const CFG = {
     },
     {
       "id": "svil",
-      "n": "Urbanistica, logistica e ambiente",
+      "n": "Urbanistica, logistica e verde",
       "lo": "Espansione produttiva e grandi cantieri",
-      "hi": "Stop consumo suolo e tutela del verde",
-      "ml": "Espansione produttiva e grandi cantieri",
-      "mh": "Stop consumo suolo e tutela del verde",
+      "hi": "Stop consumo suolo e tutela verde",
+      "ml": "Sviluppo opere",
+      "mh": "Suolo zero e verde",
       "p": [
         1,
         2,
@@ -221,8 +221,8 @@ const CFG = {
       "n": "Sicurezza e convivenza urbana",
       "lo": "Prevenzione sociale e mediazione",
       "hi": "Presidio, taser e ordinanze",
-      "ml": "Prevenzione sociale e mediazione",
-      "mh": "Presidio",
+      "ml": "Prevenzione",
+      "mh": "Controlli",
       "p": [
         14,
         15,
@@ -233,18 +233,33 @@ const CFG = {
       ]
     },
     {
+      "id": "serv",
+      "n": "Scuola, rifiuti TCP e servizi",
+      "lo": "Critica TCP e dividendi Iren",
+      "hi": "Polo Pontieri, TCP e nidi ISEE",
+      "ml": "Critica TCP/Iren",
+      "mh": "Modello Giunta",
+      "p": [
+        20,
+        22,
+        24
+      ],
+      "m": [
+        23
+      ]
+    },
+    {
       "id": "wel",
-      "n": "Welfare, lavoro e diritti",
-      "lo": "Sussidiarietà, mercato e famiglia tradizionale",
-      "hi": "Intervento pubblico, casa e diritti",
-      "ml": "Sussidiarietà",
-      "mh": "Intervento pubblico",
+      "n": "Rigenerazione, lavoro, casa e diritti",
+      "lo": "Iniziativa privata e tradizione",
+      "hi": "Spazi pubblici, lavoro e diritti",
+      "ml": "Privato",
+      "mh": "Pubblico e diritti",
       "p": [
         7,
         18,
         19,
         21,
-        24,
         25
       ],
       "m": []
@@ -793,8 +808,8 @@ const CFG = {
           "Interventi FdI in Consiglio su Nuovo Ospedale e PUG (2024–2026)"
         ],
         "4": [
-          5,
-          5,
+          4,
+          4,
           "Richiesta di priorità assoluta per il raddoppio/messa in sicurezza del Ponte sul Po, il completamento della tangenziale e la manutenzione delle strade cittadine.",
           "Mozioni e atti FdI su viabilità e Ponte sul Po (2024–2026)"
         ],

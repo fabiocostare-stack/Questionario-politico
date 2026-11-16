@@ -181,12 +181,28 @@ const CFG = {
   ],
   "axes": [
     {
+      "id": "attr",
+      "n": "Aeroporto, Tardini e grandi eventi",
+      "lo": "Stop Cargo e tutela residenti",
+      "hi": "Sviluppo scalo, Tardini ed eventi",
+      "ml": "Tutela residenti",
+      "mh": "Grandi opere",
+      "p": [
+        1,
+        3,
+        4
+      ],
+      "m": [
+        2
+      ]
+    },
+    {
       "id": "mob",
       "n": "Mobilità e spazio urbano",
       "lo": "Accessibilità auto e sosta",
       "hi": "Mobilità dolce, ZTL e TPL",
-      "ml": "Accessibilità auto e sosta",
-      "mh": "Mobilità dolce",
+      "ml": "Accessibilità auto",
+      "mh": "ZTL e TPL",
       "p": [
         5,
         6,
@@ -198,29 +214,12 @@ const CFG = {
       ]
     },
     {
-      "id": "svil",
-      "n": "Grandi opere e territorio",
-      "lo": "Infrastrutture e sviluppo scalo",
-      "hi": "Tutela ambientale e stop suolo",
-      "ml": "Infrastrutture e sviluppo scalo",
-      "mh": "Tutela ambientale e stop suolo",
-      "p": [
-        2,
-        14,
-        18,
-        20
-      ],
-      "m": [
-        1
-      ]
-    },
-    {
       "id": "sic",
       "n": "Sicurezza e convivenza urbana",
       "lo": "Prevenzione sociale e spazi creativi",
       "hi": "Presidio, ordinanze e controlli",
-      "ml": "Prevenzione sociale e spazi creativi",
-      "mh": "Presidio",
+      "ml": "Prevenzione",
+      "mh": "Controlli",
       "p": [
         10,
         11,
@@ -232,16 +231,31 @@ const CFG = {
       ]
     },
     {
+      "id": "amb",
+      "n": "Territorio, PUG, Iren e clima",
+      "lo": "Meno vincoli e pragmatismo impianti",
+      "hi": "Suolo zero, Rifiuti Zero e clima",
+      "ml": "Meno vincoli",
+      "mh": "Ambiente e clima",
+      "p": [
+        14,
+        18,
+        19,
+        20,
+        21
+      ],
+      "m": []
+    },
+    {
       "id": "wel",
-      "n": "Welfare, servizi e diritti",
-      "lo": "Esternalizzazioni, mercato e sussidiarietà",
+      "n": "Welfare, casa, mense e diritti",
+      "lo": "Partenariati privati e criteri selettivi",
       "hi": "Gestione pubblica, casa e diritti",
-      "ml": "Esternalizzazioni",
-      "mh": "Gestione pubblica",
+      "ml": "Privato e selettività",
+      "mh": "Pubblico e diritti",
       "p": [
         15,
         16,
-        21,
         23,
         24,
         25
@@ -1059,14 +1073,14 @@ const CFG = {
           "Interrogazioni Lega su raccolta rifiuti e Iren (2024–2026)"
         ],
         "20": [
-          2,
-          2,
+          1,
+          1,
           "Priorità alla manutenzione di strade, ponti, frazioni e pulizia dei canali rispetto ai progetti del piano Climate Neutral 2030.",
           "Interventi Lega su bilancio lavori pubblici (2025–2026)"
         ],
         "21": [
-          3,
-          3,
+          2,
+          2,
           "Richiesta a Iren di investire di più nella manutenzione delle reti idriche e nel decoro cittadino riducendo il peso delle tariffe.",
           "Atti Consiglio su gestione Iren (2024–2026)"
         ],

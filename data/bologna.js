@@ -476,8 +476,8 @@ const CFG = {
           "PUG 2025"
         ],
         "22": [
-          3,
-          3,
+          4,
+          4,
           "PUG: rigenerazione delle aree dismesse ammessa solo con vincoli di sostenibilità e quote di edilizia sociale",
           "PUG Bologna"
         ],
@@ -674,8 +674,8 @@ const CFG = {
           "Voto bilancio FdI"
         ],
         "19": [
-          1,
-          1,
+          2,
+          2,
           "Voto contrario delibera 27/12/2021 su Passante (ritardi e compromesso inadeguato)",
           "Delibera CC 27/12/2021"
         ],
@@ -716,8 +716,8 @@ const CFG = {
           "Resto del Carlino"
         ],
         "26": [
-          3,
-          3,
+          4,
+          4,
           "Richiesta di maggiori controlli su costi, tariffe e qualità effettiva dei pasti nelle mense Ribò/Camst",
           "Resto del Carlino"
         ],
@@ -752,8 +752,8 @@ const CFG = {
           "Interventi cultura/sicurezza FdI"
         ],
         "32": [
-          2,
-          2,
+          3,
+          3,
           "Critiche ai divieti di apertura come lesivi della libertà d'impresa",
           "Interventi commercio"
         ],
@@ -920,14 +920,14 @@ const CFG = {
           "Gazzetta di Bologna / Carlino"
         ],
         "24": [
-          1,
-          1,
+          2,
+          2,
           "Sottosegretario Borgonzoni: dura critica sulla gestione fondi Garisenda",
           "Dichiarazioni Borgonzoni"
         ],
         "25": [
-          4,
-          4,
+          3,
+          3,
           "Favorevole all'ampliamento dei nidi con priorità alle famiglie lavoratrici residenti",
           "Proposte famiglia Lega"
         ],
@@ -1490,8 +1490,8 @@ const CFG = {
           "Politiche abitative"
         ],
         "11": [
-          4,
-          4,
+          5,
+          5,
           "Condivisione delle zone rosse prefettizie affiancate da interventi sociali e di rigenerazione",
           "Dichiarazioni Sindaco Lepore"
         ],
@@ -1526,8 +1526,8 @@ const CFG = {
           "Piano rifiuti Giunta Lepore"
         ],
         "17": [
-          4,
-          4,
+          3,
+          3,
           "Impostazione del bilancio comunale con IRPEF progressiva a sostegno del welfare e del trasporto pubblico",
           "Bilancio mandato Lepore"
         ],
@@ -1538,8 +1538,8 @@ const CFG = {
           "Bilancio Comune"
         ],
         "19": [
-          5,
-          5,
+          4,
+          4,
           "Delibera 27/12/2021: accordo per il Passante di nuova generazione",
           "Delibera CC 27/12/2021"
         ],
@@ -1604,8 +1604,8 @@ const CFG = {
           "Open 14/3/2023"
         ],
         "30": [
-          3,
-          3,
+          4,
+          4,
           "Patti di collaborazione e Case di quartiere nel quadro del regolamento beni comuni",
           "Regolamento beni comuni"
         ],
