@@ -1,9 +1,10 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v39';
+const V='scheda-v40';
 const FILES=[
   './',
   'index.html',
   'hub.html',
+  'privacy.html',
   'nazionale.html',
   'bologna.html',
   'bologna-2027.html',

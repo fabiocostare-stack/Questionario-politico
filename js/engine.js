@@ -1,3 +1,5 @@
+/* Endpoint per l'invio anonimo facoltativo delle statistiche (vedi collector/README.md). Vuoto = funzione disattivata. */
+const COLLECT_URL='';
 /* Stili dinamici dei partiti e liste definiti in CFG.subjects */
 (function injectSubjectStyles(){
   if (!CFG || !Array.isArray(CFG.subjects)) return;
@@ -123,6 +125,25 @@ async function saveImage(st){
     if(navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:'La mia '+CFG.title});st.textContent='Immagine pronta.';return}catch(e){if(e&&e.name==='AbortError')return}}
     const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=CFG.fileName+'.png';document.body.appendChild(a);a.click();a.remove();st.textContent='Immagine salvata nei download.'}
   catch(e){st.textContent='Non sono riuscito a creare l\'immagine su questo browser.'}}
+function collectBlock(){
+  const key='scheda-sent:'+CFG.id+':'+encodeAns();
+  const b=h('div','sharebox collect');
+  b.appendChild(h('h3','','Contribuisci alle statistiche anonime (facoltativo)'));
+  b.appendChild(h('p','small',"Se vuoi, puoi inviare in forma anonima i numeri delle tue risposte, la città e la versione del questionario. Servono solo a statistiche aggregate (ad esempio i temi più divisivi). Non inviamo nome, email, indirizzo IP né informazioni sul tuo dispositivo, e non puoi essere riconosciuto dalle risposte. Se non spunti la casella non parte nulla. <a href='privacy.html'>Leggi l'informativa</a>."));
+  const lab=h('label','consent');const cb=document.createElement('input');cb.type='checkbox';
+  lab.append(cb,document.createTextNode("Acconsento all'invio anonimo delle mie risposte per le statistiche"));
+  const row=h('div','row');const btn=h('button','btn ghost','Invia in forma anonima');btn.type='button';btn.disabled=true;
+  const st=h('span','small sharestat');st.setAttribute('role','status');st.setAttribute('aria-live','polite');
+  let sent=false;try{sent=!!localStorage.getItem(key)}catch(e){}
+  if(sent){cb.checked=true;cb.disabled=true;st.textContent='Hai già inviato queste risposte. Grazie!'}
+  cb.onchange=()=>{btn.disabled=!cb.checked};
+  btn.onclick=async()=>{if(!cb.checked)return;btn.disabled=true;st.textContent='Invio in corso…';
+    const A={};QKEYS.forEach(n=>{if(ans[n]!==undefined)A[n]=ans[n]});
+    const I=QKEYS.filter(n=>imp[n]&&ans[n]>0);
+    try{const r=await fetch(COLLECT_URL.replace(/\/$/,'')+'/submit',{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify({city:CFG.id,v:CFG.version||'',a:A,imp:I}),credentials:'omit',referrerPolicy:'no-referrer'});
+      if(!r.ok)throw new Error('http');try{localStorage.setItem(key,'1')}catch(e){}st.textContent='Inviato in forma anonima. Grazie!';cb.disabled=true}
+    catch(e){btn.disabled=false;st.textContent='Non sono riuscito a inviare. Riprova più tardi: le tue risposte restano comunque solo sul tuo dispositivo.'}};
+  if(!sent)row.appendChild(btn);b.append(lab,row,st);return b}
 function shareBlock(){
   const b=h('div','sharebox');b.appendChild(h('h3','','Salva o condividi il risultato'));
   b.appendChild(h('p','small','Il link contiene le tue risposte (solo i numeri, non le domande aperte) e funziona su qualsiasi dispositivo. Non passa da nessun server: resta nel link che copi. Per riprendere su un altro dispositivo apri il link e scegli «Salva come mio profilo».'));
@@ -193,7 +214,8 @@ function renderIntro(m){
   
   R.appendChild(h('p','small','Prova a toccare un ovale. Se non hai un\'idea, scegli "Nessuna opinione": la domanda non conta.')).style.marginTop='18px';
   hero.append(L,R);m.appendChild(hero);
-  m.appendChild(h('p','notes',CFG.intro.notes));if(CFG.version)m.appendChild(h('p','small','Versione del questionario: '+esc(CFG.version)));
+  m.appendChild(h('div','privacy-box','<b>Prima di iniziare: i tuoi dati.</b> Le risposte restano sul tuo dispositivo e il calcolo avviene nel tuo browser. Non chiediamo nome, email o registrazione e non usiamo cookie di tracciamento.'+(COLLECT_URL?' A fine questionario potrai scegliere, solo se vuoi, di inviare i risultati in forma anonima per statistiche aggregate.':'')+' <a href="privacy.html">Informativa completa</a>'));
+  m.appendChild(h('p','notes',COLLECT_URL?CFG.intro.notes.replace('restano solo nel tuo browser',"restano nel tuo browser (salvo l'invio anonimo facoltativo a fine questionario)"):CFG.intro.notes));if(CFG.version)m.appendChild(h('p','small','Versione del questionario: '+esc(CFG.version)));
 }
 /* Avanzamento delle risposte, allineato alle sezioni del questionario */
 function liveHTML(){
@@ -373,6 +395,7 @@ function renderRes(m){
   res.appendChild(topicDistanceBlock());
 
   if(!shared&&!testRun)res.appendChild(shareBlock());
+  if(!shared&&!testRun&&COLLECT_URL&&a.length>=10)res.appendChild(collectBlock());
   if(CFG.layers){const fs=h('div','row');fs.style.marginTop='18px';fs.appendChild(h('span','small','Posizioni dei partiti e liste:'));const sf=h('div','seg');
   [['prog','Solo programma'],['oggi','Programma e posizioni recenti']].forEach(([k,l])=>{const b=h('button','',l);b.setAttribute('aria-pressed',k===fsrc);b.onclick=()=>{fsrc=k;buildFV();render()};sf.appendChild(b)});fs.appendChild(sf);res.appendChild(fs)}
   if(shown===null)shown=new Set(nearestParties(4));
@@ -393,7 +416,7 @@ function renderRes(m){
   const ft=h('div','foot');const r1=h('button','btn ghost','Rivedi le risposte');r1.onclick=()=>{view='flow';idx=firstStep(0);save();render();window.scrollTo(0,0)};
   const r2=h('button','btn ghost',confirmReset?'Conferma: cancella tutto':'Ricomincia');r2.onclick=()=>{if(!confirmReset){confirmReset=true;render();return}ans={};open={};idx=0;view='intro';confirmReset=false;save();render();window.scrollTo(0,0)};if(!shared&&!testRun){ft.append(r1,r2);res.appendChild(ft)}
   const calcNote=BAND_MODE?"Come si calcola: ogni risposta viene confrontata con la posizione da 1 a 5 documentata per il partito o la lista. Una coincidenza piena vale 100 punti; uno scarto di 1, 2, 3 o 4 punti vale rispettivamente 60, 25, 5 o 0. Le risposte nette (1 e 5) pesano di più, quelle centrali (3) meno, e contano di più le domande su cui le forze politiche si distinguono davvero. Le affermazioni che segni come «Conta molto per me» pesano il doppio. Dalla media pesata dell'accordo diretto (0–100%) si ricavano le 5 fasce di vicinanza: Molto alta (almeno 65%), Alta (52–64%), Media (38–51%), Bassa (25–37%) o Molto bassa (sotto 25%), affiancate dalla percentuale e da una barra proporzionale al punteggio. Con meno di 10 posizioni confrontabili compare «—». ":"Come si calcola: ogni risposta viene confrontata con il voto da 1 a 5 assegnato al partito o lista. Una coincidenza vale 100 punti; uno scarto di 1, 2, 3 o 4 punti vale rispettivamente 60, 25, 5 o 0. Le risposte nette (1 e 5) pesano di più, quelle centrali (3) meno, e contano di più le domande su cui i partiti e liste si distinguono davvero. Le affermazioni che segni come «Conta molto per me» pesano il doppio. Poi il punteggio viene depurato dal caso: 0% significa che hai in comune con quel partito o lista quanto, o meno, di quanto ne avresti rimescolando a caso le tue risposte; 100% una coincidenza piena. Per questo le percentuali sono più basse e più distanti di una semplice media. ";
-  res.appendChild(h('p','small',calcNote+"La copertura varia da partito o lista a partito o lista: inserisco una posizione solo quando trovo una fonte documentata (atti del Consiglio o della Giunta comunale, ordini del giorno, emendamenti, votazioni in aula, programmi elettorali o dichiarazioni pubbliche di esponenti locali riportate dalla stampa). Le affermazioni senza riscontro documentato restano escluse dal calcolo per quel partito. Le risposte e i profili restano esclusivamente all'interno del tuo dispositivo e del tuo browser.")).style.marginTop='24px';
+  res.appendChild(h('p','small',calcNote+"La copertura varia da partito o lista a partito o lista: inserisco una posizione solo quando trovo una fonte documentata (atti del Consiglio o della Giunta comunale, ordini del giorno, emendamenti, votazioni in aula, programmi elettorali o dichiarazioni pubbliche di esponenti locali riportate dalla stampa). Le affermazioni senza riscontro documentato restano escluse dal calcolo per quel partito. Le risposte e i profili restano all'interno del tuo dispositivo e del tuo browser; solo se lo scegli espressamente a fine questionario puoi inviarle in forma anonima per statistiche aggregate (vedi informativa).")).style.marginTop='24px';
 }
 function render(){
   if(shared&&view!=='res')exitShared();

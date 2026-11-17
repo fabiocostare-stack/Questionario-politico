@@ -1,0 +1,12 @@
+name = "scheda-politica-stats"
+main = "src/index.mjs"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Origini autorizzate a inviare i dati (senza slash finale)
+ALLOWED_ORIGINS = "https://scheda-politica.fabio-costa-re.workers.dev,https://fabiocostare-stack.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "scheda-politica-stats"
+database_id = "SOSTITUISCI_CON_L_ID_DI_D1"

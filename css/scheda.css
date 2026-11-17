@@ -190,6 +190,11 @@ p{margin:0}
 .cmp .why{font-size:14px;color:var(--ink2);padding-top:10px}
 .foot{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
 .small{font-size:14px;color:var(--ink2)}
+.privacy-box{margin:18px 0 0;padding:14px 16px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;font-size:14px;line-height:1.5;color:var(--ink2)}
+.privacy-box b{color:var(--ink)}
+.privacy-box a,.collect a{color:var(--me);font-weight:600}
+.collect .consent{display:flex;align-items:flex-start;gap:10px;font-size:14px;margin:14px 0 10px;cursor:pointer}
+.collect .consent input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--me)}
 .notes-fold{margin-top:10px;font-size:13.5px;color:var(--ink2)}
 .notes-fold summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink2);padding:4px 0}
 .notes-fold summary::-webkit-details-marker{display:none}
