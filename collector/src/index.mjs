@@ -2,7 +2,7 @@
    Cosa salva: città, versione del questionario, risposte (0-5), domande segnate "conta molto", giorno (UTC, senza ora).
    Cosa NON salva: indirizzo IP, user-agent, cookie, identificativi, ora esatta. */
 
-const CITIES = new Set(['bologna', 'rimini', 'parma', 'piacenza']);
+const CITIES = new Set(['bologna', 'rimini', 'parma', 'piacenza', 'napoli']);
 const MAX_BODY = 4096;
 const MAX_Q = 60;
 
