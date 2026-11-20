@@ -5,7 +5,7 @@ const CFG = {
   "title": "Scheda Politica · Rimini",
   "subtitle": "Elezioni comunali 2027",
   "fileName": "scheda-politica-rimini",
-  "version": "rimini-0.3",
+  "version": "rimini-0.4",
   "storeKey": "scheda-politica-rimini-v1",
   "legacyKey": "",
   "w": {
@@ -78,7 +78,7 @@ const CFG = {
         ],
         [
           8,
-          "Il Comune deve estendere Zone 30 e piste ciclabili della Bicipolitana anche togliendo posti auto su strada nei quartieri."
+          "Il Comune deve estendere Zone 30, strade scolastiche e piste ciclabili protette della Bicipolitana nei quartieri, anche togliendo posti auto su strada."
         ],
         [
           9,
@@ -112,7 +112,7 @@ const CFG = {
       "q": [
         [
           14,
-          "Il Comune deve introdurre limiti o disincentivi agli affitti brevi turistici per favorire gli affitti a lungo termine di famiglie e studenti."
+          "Il Comune deve istituire un'Agenzia comunale per la casa e introdurre limiti o disincentivi agli affitti brevi turistici per favorire gli affitti a lungo termine di famiglie e studenti."
         ],
         [
           15,
@@ -150,7 +150,7 @@ const CFG = {
       ]
     },
     {
-      "t": "6. Scuola, welfare, cultura e diritti",
+      "t": "6. Scuola, welfare, quartieri e partecipazione",
       "q": [
         [
           22,
@@ -166,18 +166,30 @@ const CFG = {
         ],
         [
           25,
-          "Il Comune deve negare sale e spazi pubblici a chi si richiama al fascismo e promuovere spazi aggregativi per associazioni giovanili."
+          "Il Comune deve negare sale pubbliche a chi si richiama al fascismo e investire in centri civici e culturali di quartiere (come ex Cinema Astoria, ex Cinema Miramare e Polo comunitario Rimini Nord)."
+        ],
+        [
+          26,
+          "Nel piano delle opere pubbliche la priorità deve andare alla messa in sicurezza di Via Marecchiese, Via Montescudo e delle frazioni a monte (rotatorie, marciapiedi e ciclabili protette), anche rallentando nuovi interventi sulla fascia costiera."
+        ],
+        [
+          27,
+          "In Centro Storico e a Marina Centro il Comune deve azzerare il ticket sugli stalli per i residenti e aumentare i posti auto riservati, anche riducendo la sosta a rotazione per i visitatori."
+        ],
+        [
+          28,
+          "Il Comune deve assegnare a ciascuno dei 12 Forum deliberativi di quartiere un budget annuale vincolante (bilancio partecipativo) per decidere direttamente piccole opere, manutenzione del verde e sicurezza stradale."
         ]
       ]
     }
   ],
   "blurb": [
     "Piano dell'Arenile, concessioni, colonie, imposta di soggiorno e aeroporto.",
-    "Parco del Mare, Metromare Fiera, Zone 30, ciclabili e nuovo Stadio Romeo Neri.",
+    "Parco del Mare, Metromare Fiera, Zone 30, strade scolastiche, ciclabili e nuovo Stadio Romeo Neri.",
     "Luogo di culto islamico, consultazioni di quartiere, movida estiva e taser.",
-    "Affitti brevi, hotel dismessi per stagionali, consumo di suolo e poli ex Caserma Giulio Cesare / via Ugo Bassi.",
+    "Agenzia per la casa e affitti brevi, hotel dismessi per stagionali, consumo di suolo e poli ex Caserma Giulio Cesare / via Ugo Bassi.",
     "TARI, parco eolico offshore, spiaggia smoke-free e gestione servizi pubblici.",
-    "Asili nido, piscina di Viserba, impianti di quartiere, diritti civili e spazi pubblici."
+    "Asili nido, piscina di Viserba, centri culturali (ex Astoria e Miramare), frazioni a monte, sosta residenti e i 12 Forum deliberativi di quartiere."
   ],
   "axes": [
     {
@@ -210,7 +222,9 @@ const CFG = {
         8,
         9
       ],
-      "m": []
+      "m": [
+        27
+      ]
     },
     {
       "id": "sic",
@@ -230,16 +244,17 @@ const CFG = {
     },
     {
       "id": "casa",
-      "n": "Casa e urbanistica",
+      "n": "Casa, urbanistica e territorio",
       "lo": "Libero mercato e meno vincoli urbanistici",
-      "hi": "Regole sugli affitti, alloggi sociali e suolo zero",
+      "hi": "Regole sugli affitti, alloggi sociali e cura del territorio",
       "ml": "Mercato",
-      "mh": "Regole e alloggi",
+      "mh": "Regole e territorio",
       "p": [
         14,
         15,
         16,
-        17
+        17,
+        26
       ],
       "m": []
     },
@@ -260,16 +275,17 @@ const CFG = {
     },
     {
       "id": "dir",
-      "n": "Welfare, cultura e diritti",
+      "n": "Welfare, quartieri e diritti",
       "lo": "Tradizione e sussidiarietà pubblico-privato",
-      "hi": "Servizi comunali pubblici e diritti civili",
+      "hi": "Servizi comunali, partecipazione di quartiere e diritti",
       "ml": "Tradizione",
-      "mh": "Servizi e diritti",
+      "mh": "Servizi e quartieri",
       "p": [
         22,
         23,
         24,
-        25
+        25,
+        28
       ],
       "m": []
     }
@@ -314,7 +330,10 @@ const CFG = {
         "22": [5, 5, "Stanziamento di risorse comunali aggiuntive e adesione alla misura regionale 'Al nido con la Regione' per abbattere rette e liste d'attesa", "Bilancio servizi educativi 2026"],
         "23": [4, 4, "Rivendica l'apertura della nuova piscina comunale di Viserba al Parco Don Tonino Bello e il piano palestre, affiancati ai grandi eventi", "Inaugurazione piscina Viserba e Bilancio"],
         "24": [5, 5, "Approvazione degli ordini del giorno sullo Ius Scholae e conferma di patrocinio e contributo economico al Rimini Summer Pride", "Ordini del giorno C.C. e Delibere Giunta"],
-        "25": [5, 5, "Difesa del regolamento comunale che richiede il rispetto dei valori antifascisti per la concessione di sale pubbliche e bandi per spazi giovanili", "Regolamento concessione sale comunali"]
+        "25": [5, 5, "Difesa del regolamento antifascista per le sale pubbliche e investimenti su ex Cinema Astoria (riscontro Forum Q.6), polo Rimini Nord e centri civici", "Regolamento sale e Riscontro Forum Q.6 Colonnella"],
+        "26": [3, 3, "Rivendica gli interventi programmati su Via Marecchiese, rotatorie e ciclabili nelle frazioni (riscontri ai Forum Q.11 e Q.12), mantenendo l'equilibrio con le opere sulla costa", "Riscontri Giunta ai Forum Q.11 Marecchiese e Q.12 Sud Monte"],
+        "27": [2, 2, "Difende abbonamenti agevolati e nuovi parcheggi d'attestamento, ma mantiene la sosta a rotazione necessaria per commercio e visitatori in Centro e Marina Centro", "Riscontri mobilità ai Forum Q.3 e Q.8"],
+        "28": [4, 4, "Ha promosso e approvato il Regolamento dei 12 Forum deliberativi con obbligo di riscontro motivato entro 120 giorni, aprendo a forme progressive di co-progettazione", "Regolamento Forum deliberativi C.C. 2024/2025"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"6\" fill=\"var(--pd)\"/></svg>"
     },
@@ -357,7 +376,10 @@ const CFG = {
         "22": [4, 4, "Favorevole al taglio delle rette nido, chiedendo parità di sostegno per le scuole paritarie/private e priorità ai nuclei lavoratori", "Proposte famiglia e scuola FdI"],
         "23": [4, 4, "Chiede priorità per gli impianti di quartiere dei residenti, pur avendo denunciato anni di ritardi e rincari sul cantiere della piscina di Viserba", "Interrogazioni FdI piscina Viserba"],
         "24": [1, 1, "Voto contrario a ordini del giorno sullo Ius Scholae e dura critica ai contributi economici del Comune al Rimini Summer Pride", "Voti C.C. e comunicati FdI Rimini"],
-        "25": [1, 1, "Contrario a clausole ideologiche usate discrezionalmente sulla concessione di sale comunali e a favoritismi verso collettivi di sinistra", "Dibattito C.C. regolamenti sale"]
+        "25": [1, 1, "Contrario a clausole ideologiche sulle sale comunali; denuncia al contempo i ritardi sul recupero dell'ex Cinema Astoria e la carenza di spazi civici a Miramare", "Dibattito C.C. regolamenti sale ed ex Cinema Astoria"],
+        "26": [5, 5, "Denuncia da anni la disparità tra lungomare e frazioni a monte della SS16 (Corpolò, Padulli, Santa Giustina, Gaiofana), chiedendo priorità per Via Marecchiese e Via Montescudo", "Mozioni e interrogazioni FdI su frazioni e Via Marecchiese"],
+        "27": [5, 5, "Sostiene la richiesta dei residenti di Marina Centro (Delibera n. 4 Forum Q.8) e del Centro Storico (Delibera n. 2 Forum Q.3) di azzerare i costi sugli stalli gialli e recuperare posti auto", "Mozioni FdI su sosta residenti Centro e Marina Centro"],
+        "28": [4, 4, "Critica il fatto che gli attuali Forum deliberativi siano privi di budget autonomo, chiedendo che le delibere votate dai cittadini su sicurezza e manutenzioni siano vincolanti", "Interventi C.C. FdI su Regolamento Quartieri e Forum"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"8\" height=\"8\" fill=\"var(--fdi)\" transform=\"rotate(45 7 7)\"/></svg>"
     },
@@ -400,7 +422,10 @@ const CFG = {
         "22": [3, 3, "Favorevole a sostenere gli asili nido ma chiede criteri premiali per le famiglie residenti a Rimini da più anni e genitori lavoratori", "Proposte welfare familiare Lega"],
         "23": [4, 4, "Chiede priorità per gli impianti sportivi di quartiere dei cittadini, criticando i lunghi tempi di cantiere della piscina di Viserba", "Interventi impiantistica sportiva Lega"],
         "24": [1, 1, "Voto contrario in Consiglio allo Ius Scholae comunale e ferma opposizione a patrocinio e finanziamenti comunali al Rimini Summer Pride", "Voti C.C. e note stampa Lega"],
-        "25": [1, 1, "Contraria a patenti ideologiche per l'uso delle sale comunali e alla concessione di spazi pubblici a collettivi e centri sociali", "Interventi C.C. spazi pubblici Lega"]
+        "25": [1, 1, "Contraria a patenti ideologiche per l'uso delle sale comunali e alla concessione di spazi pubblici a collettivi, chiedendo sale civiche aperte a tutti nei quartieri", "Interventi C.C. spazi pubblici Lega"],
+        "26": [5, 5, "Battaglia prioritaria sul forese e sulle frazioni collinari: chiede messa in sicurezza immediata di Via Marecchiese, Via Montescudo e Via Coriano prima di nuove opere costiere", "Mozioni gruppo Lega su forese e viabilità a monte"],
+        "27": [5, 5, "Pieno sostegno alla gratuità degli stalli gialli per i residenti di Marina Centro e Centro Storico penalizzati dal taglio di centinaia di parcheggi sul lungomare e in ZTL", "Interrogazioni e proposte sosta gruppo Lega"],
+        "28": [3, 3, "Ha contestato l'impostazione iniziale dei Forum temendo organismi senza reali poteri di spesa, chiedendo ascolto vincolante sulle priorità di sicurezza e viabilità dei residenti", "Dibattito C.C. Lega su Forum di Quartiere"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><rect x=\"2\" y=\"2\" width=\"10\" height=\"10\" rx=\"2\" fill=\"var(--lg)\"/></svg>"
     },
@@ -444,7 +469,10 @@ const CFG = {
         "22": [4, 4, "Favorevole all'abbattimento delle rette e delle liste d'attesa valorizzando alla pari nidi comunali e strutture private convenzionate", "Proposte welfare e famiglia FI Rimini"],
         "23": [4, 4, "Sostiene gli investimenti sugli impianti di quartiere per le società sportive locali insieme all'attrazione di eventi", "Note FI Rimini su sport e impianti"],
         "24": [2, 2, "Approccio liberale sui diritti individuali ma contraria a delibere comunali simboliche su cittadinanza (competenza statale) e fondi politici", "Posizione FI su mozioni diritti civili"],
-        "25": [2, 2, "Richiama i valori costituzionali ed europei ma critica l'utilizzo politico dei regolamenti per l'assegnazione di spazi comunali", "Posizione FI su regolamenti comunali"]
+        "25": [2, 2, "Richiama i valori costituzionali ma critica l'utilizzo politico dei regolamenti per le sale comunali, sostenendo il recupero di spazi culturali di quartiere come ex Astoria e Miramare", "Posizione FI su regolamenti e spazi culturali"],
+        "26": [4, 4, "Sostiene la necessità di riequilibrare il piano opere pubbliche a favore della sicurezza stradale di Via Marecchiese, Via Montescudo e delle frazioni a monte", "Proposte infrastrutture e frazioni FI Rimini"],
+        "27": [4, 4, "Favorevole a forti agevolazioni e più stalli riservati per i residenti di Marina Centro e Centro Storico, abbinati a nuovi parcheggi multipiano per non penalizzare negozi e hotel", "Proposte viabilità e sosta FI Rimini"],
+        "28": [3, 3, "Favorevole a valorizzare la partecipazione civica nei 12 quartieri su decoro, verde e viabilità, purché con regole snelle e risorse certe inserite nel bilancio comunale", "Posizione FI Rimini su decentramento e quartieri"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M7 1.5L13 12.5H1Z\" fill=\"var(--fi)\"/></svg>"
     },
@@ -487,7 +515,10 @@ const CFG = {
         "22": [5, 5, "Chiede l'azzeramento delle liste d'attesa e la gratuità progressiva degli asili nido comunali a gestione pubblica", "Interventi Bilancio welfare e scuola RC"],
         "23": [5, 5, "Priorità assoluta agli impianti sportivi pubblici di quartiere e alle piscine comunali accessibili a tutte le fasce sociali", "Atti C.C. piscina Viserba e sport di base"],
         "24": [5, 5, "Con il capogruppo Marco Tonti è promotrice in aula dello Ius Scholae simbolico e del pieno sostegno comunale al Rimini Summer Pride", "Ordini del giorno Tonti (RC) e Summer Pride"],
-        "25": [5, 5, "Difesa rigorosa della clausola antifascista per la concessione di sale comunali e creazione di nuovi spazi culturali e aggregativi per i giovani", "Atti C.C. antifascismo e politiche giovanili"]
+        "25": [5, 5, "Difesa rigorosa della clausola antifascista e forte sostegno a centri culturali e polivalenti di quartiere (ex Cinema Astoria in Q.6, ex Cinema Miramare in Q.9 e Polo Rimini Nord in Q.1)", "Atti C.C. antifascismo e proposte Forum Q.1, Q.6 e Q.9"],
+        "26": [4, 4, "Sostiene le delibere dei Forum Q.11 e Q.12 per mettere in sicurezza pedoni, ciclisti e trasporto pubblico nelle frazioni a monte e ridurre il traffico su Via Montescudo e Marecchiese", "Interventi RC su mobilità sostenibile e quartieri"],
+        "27": [2, 2, "Favorevole a tutelare i residenti rispetto al traffico turistico, ma contraria a incentivare l'uso dell'auto privata in centro e sul lungomare a scapito di spazio pubblico e TPL", "Indirizzi mobilità urbana Rimini Coraggiosa"],
+        "28": [5, 5, "In prima linea per i 12 Forum deliberativi (aperti dai 16 anni anche ai residenti stranieri) e per affiancare alle delibere di quartiere strumenti di bilancio partecipativo vincolante", "Atti C.C. e proposte partecipazione Rimini Coraggiosa"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M5 1H9V5H13V9H9V13H5V9H1V5H5Z\" fill=\"var(--rc)\"/></svg>"
     },
@@ -530,7 +561,10 @@ const CFG = {
         "22": [5, 5, "Sostegno all'investimento sui nidi d'infanzia comunali, nuovi posti con fondi PNRR e riduzione delle rette per i nuclei familiari", "Bilancio servizi educativi Giunta"],
         "23": [3, 3, "Rivendica la nuova piscina di Viserba e gli impianti di quartiere, ma considera strategico investire anche nei grandi eventi sportivi internazionali", "Programma sport e grandi eventi Giunta"],
         "24": [5, 5, "Sostegno al patrocinio del Comune di Rimini al Summer Pride e alle iniziative per l'inclusione dei giovani cresciuti in città", "Delibere Giunta e voti maggioranza C.C."],
-        "25": [5, 5, "Pieno sostegno al regolamento comunale sul rispetto dei valori costituzionali antifascisti e all'apertura di nuovi spazi per la creatività giovanile", "Regolamento sale e politiche giovanili"]
+        "25": [5, 5, "Pieno sostegno al regolamento sui valori antifascisti e agli investimenti su ex Cinema Astoria (riscontro Forum Q.6), spazi civici a Miramare e Polo comunitario Rimini Nord", "Regolamento sale e Riscontri Giunta ai Forum Q.1, Q.6 e Q.9"],
+        "26": [3, 3, "Rivendica il piano asfalti, le nuove rotatorie e i riscontri operativi alle 18 delibere del Forum Marecchiese e del Forum Sud Monte, affiancati al completamento delle grandi opere costiere", "Riscontri Amministrazione ai Forum Q.2, Q.11 e Q.12"],
+        "27": [2, 2, "Nel riscontro ai Forum Q.3 e Q.8 difende l'equilibrio tra pass residenti calmierati e sosta a rotazione indispensabile per le attività economiche del centro e del lungomare", "Riscontri Giunta a Delibere Forum Q.3 e Q.8"],
+        "28": [4, 4, "Rivendica l'attivazione dei 12 Forum deliberativi di quartiere e il lavoro dell'Ufficio Partecipazione sui riscontri formali alle delibere civiche entro 120 giorni", "Percorso implementazione Forum deliberativi Giunta"]
       },
       "glyph": "<svg viewBox=\"0 0 14 14\" aria-hidden=\"true\"><path d=\"M7 1L8.7 4.8L13 5.2L9.8 8.1L10.7 12.5L7 10.3L3.3 12.5L4.2 8.1L1 5.2L5.3 4.8Z\" fill=\"var(--lj)\"/></svg>"
     }
@@ -584,9 +618,9 @@ const CFG = {
           "disagree": "Chi è in disaccordo (in particolare Lega e FdI) contesta i costi milionari dell'opera, i pesanti disagi dei cantieri sulla viabilità, l'impatto estetico di opere accessorie come il cosiddetto 'Cupolone' in stazione e i costi di gestione del servizio."
         },
         "8": {
-          "what": "Se il Comune debba estendere le Zone 30 e i percorsi protetti della Bicipolitana nei quartieri residenziali, anche quando questo comporta la rimozione di posti auto su strada.",
-          "agree": "Chi è d'accordo sottolinea che Rimini ha una conformazione pianeggiante ideale per gli spostamenti in bici e che ridurre la velocità delle auto protegge pedoni, studenti e ciclisti nei quartieri.",
-          "disagree": "Chi è in disaccordo sostiene che togliere parcheggi in strada penalizzi residenti, negozi di vicinato e lavoratori, e che la sicurezza stradale si ottenga rifacendo asfalto e marciapiedi anziché moltiplicando i divieti."
+          "what": "Se il Comune debba estendere le Zone 30, le strade scolastiche (proposte dal Forum Q.4 San Giuliano-Celle) e i percorsi protetti della Bicipolitana nei quartieri residenziali, anche quando questo comporta la rimozione di posti auto su strada.",
+          "agree": "Chi è d'accordo (PD, Rimini Coraggiosa, Lista Jamil e le proposte dei Forum Q.4, Q.7 e Q.10) sottolinea che Rimini è ideale per muoversi in bici e che strade scolastiche, ciclabili protette (come sugli argini del Marecchia e in Viale delle Piante) e attraversamenti sicuri proteggono studenti, pedoni e ciclisti.",
+          "disagree": "Chi è in disaccordo (FdI, Lega e Forza Italia) sostiene che togliere parcheggi in strada penalizzi residenti, negozi di vicinato e lavoratori, e che la sicurezza stradale si ottenga rifacendo asfalto, illuminazione e marciapiedi anziché moltiplicando Zone 30 e divieti."
         },
         "9": {
           "what": "Se la costruzione del nuovo Stadio Romeo Neri (12.200 posti coperti senza pista d'atletica) debba avvenire tramite partenariato pubblico-privato con concessione pluridecennale e inserimento di spazi commerciali e wellness.",
@@ -618,9 +652,9 @@ const CFG = {
       },
       {
         "14": {
-          "what": "Se il Comune debba introdurre limiti o disincentivi fiscali agli affitti brevi turistici per contrastare la carenza di case in affitto per famiglie residenti e studenti del Campus universitario.",
-          "agree": "Chi è d'accordo (Rimini Coraggiosa e PD) sottolinea che a Rimini trovare un affitto annuale o un contratto 4+4 è diventato quasi impossibile perché molti appartamenti vengono affittati solo nei mesi estivi ai turisti.",
-          "disagree": "Chi è in disaccordo (centrodestra, con cautela anche della Lista Jamil) difende la libertà dei piccoli proprietari di affittare il proprio immobile per integrare il reddito o evitare il rischio di morosità, proponendo piuttosto incentivi fiscali per l'affitto lungo."
+          "what": "Se il Comune debba istituire un'Agenzia comunale per la casa (proposta n. 11 ammessa al voto nel Forum Q.1 Zona Nord Mare a marzo 2026) e introdurre limiti o disincentivi fiscali agli affitti brevi turistici per contrastare la carenza di case in affitto per famiglie residenti e studenti del Campus universitario.",
+          "agree": "Chi è d'accordo (Rimini Coraggiosa, PD e i proponenti del Forum Q.1 Viserba) sottolinea che a Rimini trovare un affitto 4+4 è diventato quasi impossibile per la concorrenza degli affitti estivi e chiede un'Agenzia pubblica che faccia da garante tra proprietari e inquilini.",
+          "disagree": "Chi è in disaccordo (centrodestra, con cautela anche della Lista Jamil sugli affitti brevi) difende la libertà dei piccoli proprietari di affittare il proprio immobile per integrare il reddito o tutelarsi dalle morosità, proponendo piuttosto sgravi IMU e tutele rapide per i locatori."
         },
         "15": {
           "what": "Se il Comune debba agevolare con varianti veloci ('Riminizzare') la riconversione delle centinaia di piccoli hotel dismessi (oltre 300 in città) in alloggi per lavoratori stagionali ('staff hotel'), studentati ed edilizia sociale.",
@@ -677,9 +711,24 @@ const CFG = {
           "disagree": "Chi è in disaccordo (FdI e Lega, con posizione critica di FI sull'uso di atti comunali per temi statali) contesta l'uso del Consiglio comunale per battaglie ideologiche nazionali e critica i contributi economici comunali al Summer Pride."
         },
         "25": {
-          "what": "Se il Comune debba mantenere il vincolo del rispetto dei valori antifascisti per concedere sale e spazi pubblici comunali, promuovendo al contempo spazi aggregativi per associazioni e realtà giovanili.",
-          "agree": "Chi è d'accordo ricorda che Rimini è città Medaglia d'Oro al Valor Militare per la Resistenza e che gli spazi di tutti devono restare chiusi a chi si richiama a fascismo, razzismo o discriminazioni.",
-          "disagree": "Chi è in disaccordo teme che le clausole regolamentari vengano usate dalla maggioranza di turno per escludere avversari politici legittimi e chiede che gli spazi comunali siano assegnati con bandi neutri senza favoritismi verso collettivi d'area."
+          "what": "Se il Comune debba mantenere il vincolo del rispetto dei valori antifascisti per concedere sale pubbliche e investire prioritariamente nel recupero di centri civici e culturali nei quartieri, come l'ex Cinema Astoria (delibera Forum Q.6 Colonnella), l'ex Cinema Miramare (proposta Forum Q.9 Zona Sud Mare) e il Polo comunitario integrato di Rimini Nord (proposta Forum Q.1 Viserba).",
+          "agree": "Chi è d'accordo ricorda che Rimini è Medaglia d'Oro al Valor Militare per la Resistenza e sostiene la richiesta dei Forum di quartiere di trasformare ex cinema e immobili comunali in spazi polivalenti aperti a giovani, famiglie e associazioni fuori dal solo centro storico.",
+          "disagree": "Chi è in disaccordo teme che le clausole regolamentari vengano usate discrezionalmente contro avversari politici e denuncia i ritardi accumulati dalla Giunta sul completamento dell'ex Cinema Astoria e sulla manutenzione delle sale civiche esistenti."
+        },
+        "26": {
+          "what": "Se nel piano delle opere pubbliche il Comune debba dare priorità alla messa in sicurezza di Via Marecchiese, Via Montescudo e delle frazioni a monte della Statale 16 (Corpolò, Padulli, Spadarolo, Vergiano, Santa Cristina, Santa Giustina, Gaiofana), come richiesto dalle oltre 25 delibere e proposte dei Forum Q.2, Q.11 e Q.12, anche rallentando nuovi interventi sulla costa.",
+          "agree": "Chi è d'accordo (opposizione di centrodestra, comitati del forese e i Forum deliberativi Q.11 Marecchiese e Q.12 Zona Sud Monte) denuncia il divario tra i grandi investimenti sul lungomare e le frazioni a monte, attraversate da traffico pesante su strade prive di marciapiedi continui, rotatorie e piste ciclabili protette.",
+          "disagree": "Chi preferisce mantenere l'attuale equilibrio (Giunta Sadegholvaad, PD e Lista Jamil) ricorda i riscontri operativi già avviati su rotatorie, asfalti e ciclabili lungo Via Marecchiese e Via Montescudo, ma sottolinea che la fascia costiera è il motore economico che genera le risorse per tutta la città."
+        },
+        "27": {
+          "what": "Se in Centro Storico e a Marina Centro il Comune debba azzerare il ticket sugli stalli gialli per i residenti e aumentare i posti auto loro riservati, come votato dal Forum Q.8 Marina Centro (Delibera n. 4 del gennaio 2026) e dal Forum Q.3 Centro Storico (Delibera n. 2), anche riducendo la sosta a rotazione.",
+          "agree": "Chi è d'accordo (Forum Q.3 e Q.8, FdI, Lega e Forza Italia) osserva che la pedonalizzazione del Parco del Mare e l'estensione della ZTL hanno cancellato centinaia di parcheggi, rendendo oneroso e difficilissimo trovare posto sotto casa per chi vive tutto l'anno a Marina Centro e nel Centro Storico.",
+          "disagree": "Chi è in disaccordo (Giunta e centrosinistra) evidenzia che un'alta quota di stalli a rotazione è vitale per negozi, pubblici esercizi e visitatori, e punta piuttosto su abbonamenti residenti calmierati, parcheggi d'attestamento e trasporto pubblico."
+        },
+        "28": {
+          "what": "Se ai 12 Forum deliberativi di quartiere (istituiti dal Comune di Rimini tra il 2024 e il 2025 e aperti a tutti i residenti dai 16 anni) debba essere assegnato un budget annuale vincolante (bilancio partecipativo) per decidere direttamente piccole opere, manutenzione del verde e sicurezza stradale nel proprio quartiere.",
+          "agree": "Chi è d'accordo sottolinea che oggi i 12 Forum producono decine di delibere puntuali su attraversamenti, parchi e spazi civici, ma dipendono interamente dal riscontro della Giunta entro 120 giorni; un budget dedicato darebbe potere decisionale reale ai cittadini.",
+          "disagree": "Chi è più cauto osserva che spezzettare il bilancio comunale in 12 budget separati rischia di frammentare la programmazione delle opere pubbliche o di favorire i comitati più organizzati rispetto alla visione complessiva dell'Amministrazione eletta."
         }
       }
     ]
