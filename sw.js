@@ -1,5 +1,5 @@
 /* Service worker: la pagina funziona anche senza rete dopo il primo accesso */
-const V='scheda-v43';
+const V='scheda-v44';
 const FILES=[
   './',
   'index.html',
@@ -27,6 +27,7 @@ const FILES=[
   'css/fonts.css',
   'css/scheda.css',
   'js/engine.js',
+  'js/analytics.js',
   'data/bologna.js',
   'data/milano.js',
   'data/napoli.js',
