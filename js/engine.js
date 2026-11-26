@@ -1,5 +1,5 @@
 /* Endpoint per l'invio anonimo facoltativo delle statistiche (vedi collector/README.md). Vuoto = funzione disattivata. */
-const COLLECT_URL='';
+const COLLECT_URL='https://scheda-politica-stats.fabio-costa-re.workers.dev';
 /* Stili dinamici dei partiti e liste definiti in CFG.subjects */
 (function injectSubjectStyles(){
   if (!CFG || !Array.isArray(CFG.subjects)) return;

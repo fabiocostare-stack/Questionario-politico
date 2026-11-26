@@ -9,4 +9,4 @@ ALLOWED_ORIGINS = "https://scheda-politica.fabio-costa-re.workers.dev,https://fa
 [[d1_databases]]
 binding = "DB"
 database_name = "scheda-politica-stats"
-database_id = "SOSTITUISCI_CON_L_ID_DI_D1"
+database_id = "3e7c23aa-4f56-44ea-8aa2-8cd388be3da5"
